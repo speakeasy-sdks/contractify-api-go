@@ -4,6 +4,7 @@ package contractifyproduction
 
 import (
 	"ContractifyProduction/pkg/models/operations"
+	"ContractifyProduction/pkg/models/sdkerrors"
 	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/utils"
 	"bytes"
@@ -74,6 +75,8 @@ func (s *documents) DeleteDocument(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteDocument401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -84,6 +87,8 @@ func (s *documents) DeleteDocument(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteDocument403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -94,6 +99,8 @@ func (s *documents) DeleteDocument(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteDocument404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
 		switch {
@@ -104,6 +111,8 @@ func (s *documents) DeleteDocument(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteDocument422ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -160,6 +169,8 @@ func (s *documents) GetDocument(ctx context.Context, request operations.GetDocum
 			}
 
 			res.GetDocument200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -170,6 +181,8 @@ func (s *documents) GetDocument(ctx context.Context, request operations.GetDocum
 			}
 
 			res.GetDocument401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -180,6 +193,8 @@ func (s *documents) GetDocument(ctx context.Context, request operations.GetDocum
 			}
 
 			res.GetDocument403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -190,6 +205,8 @@ func (s *documents) GetDocument(ctx context.Context, request operations.GetDocum
 			}
 
 			res.GetDocument404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -250,6 +267,8 @@ func (s *documents) ListDocuments(ctx context.Context, request operations.ListDo
 			}
 
 			res.DocumentCollection = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -260,6 +279,8 @@ func (s *documents) ListDocuments(ctx context.Context, request operations.ListDo
 			}
 
 			res.ListDocuments401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -270,6 +291,8 @@ func (s *documents) ListDocuments(ctx context.Context, request operations.ListDo
 			}
 
 			res.ListDocuments403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -333,6 +356,8 @@ func (s *documents) UpdateDocument(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateDocument200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -343,6 +368,8 @@ func (s *documents) UpdateDocument(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateDocument401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -353,6 +380,8 @@ func (s *documents) UpdateDocument(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateDocument403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -363,6 +392,8 @@ func (s *documents) UpdateDocument(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateDocument404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

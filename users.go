@@ -4,6 +4,7 @@ package contractifyproduction
 
 import (
 	"ContractifyProduction/pkg/models/operations"
+	"ContractifyProduction/pkg/models/sdkerrors"
 	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/utils"
 	"bytes"
@@ -71,6 +72,8 @@ func (s *users) CurrentUser(ctx context.Context, security operations.CurrentUser
 			}
 
 			res.CurrentUser200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -81,6 +84,8 @@ func (s *users) CurrentUser(ctx context.Context, security operations.CurrentUser
 			}
 
 			res.CurrentUser401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -91,6 +96,8 @@ func (s *users) CurrentUser(ctx context.Context, security operations.CurrentUser
 			}
 
 			res.CurrentUser403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -151,6 +158,8 @@ func (s *users) ListUsers(ctx context.Context, request operations.ListUsersReque
 			}
 
 			res.UserCollection = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -161,6 +170,8 @@ func (s *users) ListUsers(ctx context.Context, request operations.ListUsersReque
 			}
 
 			res.ListUsers401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -171,6 +182,8 @@ func (s *users) ListUsers(ctx context.Context, request operations.ListUsersReque
 			}
 
 			res.ListUsers403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

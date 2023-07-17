@@ -4,6 +4,7 @@ package contractifyproduction
 
 import (
 	"ContractifyProduction/pkg/models/operations"
+	"ContractifyProduction/pkg/models/sdkerrors"
 	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/utils"
 	"bytes"
@@ -80,6 +81,8 @@ func (s *tasks) CreateTask(ctx context.Context, request operations.CreateTaskReq
 			}
 
 			res.CreateTask200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -90,6 +93,8 @@ func (s *tasks) CreateTask(ctx context.Context, request operations.CreateTaskReq
 			}
 
 			res.CreateTask401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -100,6 +105,8 @@ func (s *tasks) CreateTask(ctx context.Context, request operations.CreateTaskReq
 			}
 
 			res.CreateTask403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
 		switch {
@@ -110,6 +117,8 @@ func (s *tasks) CreateTask(ctx context.Context, request operations.CreateTaskReq
 			}
 
 			res.CreateTask422ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -167,6 +176,8 @@ func (s *tasks) DeleteTask(ctx context.Context, request operations.DeleteTaskReq
 			}
 
 			res.DeleteTask401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -177,6 +188,8 @@ func (s *tasks) DeleteTask(ctx context.Context, request operations.DeleteTaskReq
 			}
 
 			res.DeleteTask403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -187,6 +200,8 @@ func (s *tasks) DeleteTask(ctx context.Context, request operations.DeleteTaskReq
 			}
 
 			res.DeleteTask404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -243,6 +258,8 @@ func (s *tasks) GetTask(ctx context.Context, request operations.GetTaskRequest, 
 			}
 
 			res.GetTask200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -253,6 +270,8 @@ func (s *tasks) GetTask(ctx context.Context, request operations.GetTaskRequest, 
 			}
 
 			res.GetTask401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -263,6 +282,8 @@ func (s *tasks) GetTask(ctx context.Context, request operations.GetTaskRequest, 
 			}
 
 			res.GetTask403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -273,6 +294,8 @@ func (s *tasks) GetTask(ctx context.Context, request operations.GetTaskRequest, 
 			}
 
 			res.GetTask404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -333,6 +356,8 @@ func (s *tasks) ListTasks(ctx context.Context, request operations.ListTasksReque
 			}
 
 			res.TaskCollection = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -343,6 +368,8 @@ func (s *tasks) ListTasks(ctx context.Context, request operations.ListTasksReque
 			}
 
 			res.ListTasks401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -353,6 +380,8 @@ func (s *tasks) ListTasks(ctx context.Context, request operations.ListTasksReque
 			}
 
 			res.ListTasks403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -416,6 +445,8 @@ func (s *tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 			}
 
 			res.UpdateTask200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -426,6 +457,8 @@ func (s *tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 			}
 
 			res.UpdateTask401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -436,6 +469,8 @@ func (s *tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 			}
 
 			res.UpdateTask403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -446,6 +481,8 @@ func (s *tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 			}
 
 			res.UpdateTask404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
 		switch {
@@ -456,6 +493,8 @@ func (s *tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 			}
 
 			res.UpdateTask422ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

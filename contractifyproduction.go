@@ -165,8 +165,8 @@ func New(opts ...SDKOption) *ContractifyProduction {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "2022-08-16",
-			SDKVersion:        "1.0.0",
-			GenVersion:        "2.40.1",
+			SDKVersion:        "1.1.0",
+			GenVersion:        "2.66.0",
 		},
 	}
 	for _, opt := range opts {

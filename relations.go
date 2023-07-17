@@ -4,6 +4,7 @@ package contractifyproduction
 
 import (
 	"ContractifyProduction/pkg/models/operations"
+	"ContractifyProduction/pkg/models/sdkerrors"
 	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/utils"
 	"bytes"
@@ -80,6 +81,8 @@ func (s *relations) CreateRelation(ctx context.Context, request operations.Creat
 			}
 
 			res.CreateRelation201ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -90,6 +93,8 @@ func (s *relations) CreateRelation(ctx context.Context, request operations.Creat
 			}
 
 			res.CreateRelation401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -100,6 +105,8 @@ func (s *relations) CreateRelation(ctx context.Context, request operations.Creat
 			}
 
 			res.CreateRelation403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
 		switch {
@@ -110,6 +117,8 @@ func (s *relations) CreateRelation(ctx context.Context, request operations.Creat
 			}
 
 			res.CreateRelation422ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -167,6 +176,8 @@ func (s *relations) DeleteRelation(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteRelation400ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -177,6 +188,8 @@ func (s *relations) DeleteRelation(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteRelation401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -187,6 +200,8 @@ func (s *relations) DeleteRelation(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteRelation403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -197,6 +212,8 @@ func (s *relations) DeleteRelation(ctx context.Context, request operations.Delet
 			}
 
 			res.DeleteRelation404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -253,6 +270,8 @@ func (s *relations) GetRelation(ctx context.Context, request operations.GetRelat
 			}
 
 			res.GetRelation200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -263,6 +282,8 @@ func (s *relations) GetRelation(ctx context.Context, request operations.GetRelat
 			}
 
 			res.GetRelation401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -273,6 +294,8 @@ func (s *relations) GetRelation(ctx context.Context, request operations.GetRelat
 			}
 
 			res.GetRelation403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -283,6 +306,8 @@ func (s *relations) GetRelation(ctx context.Context, request operations.GetRelat
 			}
 
 			res.GetRelation404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -343,6 +368,8 @@ func (s *relations) ListRelations(ctx context.Context, request operations.ListRe
 			}
 
 			res.RelationCollection = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -353,6 +380,8 @@ func (s *relations) ListRelations(ctx context.Context, request operations.ListRe
 			}
 
 			res.ListRelations401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -363,6 +392,8 @@ func (s *relations) ListRelations(ctx context.Context, request operations.ListRe
 			}
 
 			res.ListRelations403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -426,6 +457,8 @@ func (s *relations) UpdateRelation(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateRelation200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -436,6 +469,8 @@ func (s *relations) UpdateRelation(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateRelation401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -446,6 +481,8 @@ func (s *relations) UpdateRelation(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateRelation403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -456,6 +493,8 @@ func (s *relations) UpdateRelation(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateRelation404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
 		switch {
@@ -466,6 +505,8 @@ func (s *relations) UpdateRelation(ctx context.Context, request operations.Updat
 			}
 
 			res.UpdateRelation422ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

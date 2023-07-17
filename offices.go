@@ -4,6 +4,7 @@ package contractifyproduction
 
 import (
 	"ContractifyProduction/pkg/models/operations"
+	"ContractifyProduction/pkg/models/sdkerrors"
 	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/utils"
 	"bytes"
@@ -80,6 +81,8 @@ func (s *offices) CreateOffice(ctx context.Context, request operations.CreateOff
 			}
 
 			res.CreateOffice201ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -90,6 +93,8 @@ func (s *offices) CreateOffice(ctx context.Context, request operations.CreateOff
 			}
 
 			res.CreateOffice401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -100,6 +105,8 @@ func (s *offices) CreateOffice(ctx context.Context, request operations.CreateOff
 			}
 
 			res.CreateOffice403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
 		switch {
@@ -110,6 +117,8 @@ func (s *offices) CreateOffice(ctx context.Context, request operations.CreateOff
 			}
 
 			res.CreateOffice422ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -167,6 +176,8 @@ func (s *offices) DeleteOffice(ctx context.Context, request operations.DeleteOff
 			}
 
 			res.DeleteOffice400ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -177,6 +188,8 @@ func (s *offices) DeleteOffice(ctx context.Context, request operations.DeleteOff
 			}
 
 			res.DeleteOffice401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -187,6 +200,8 @@ func (s *offices) DeleteOffice(ctx context.Context, request operations.DeleteOff
 			}
 
 			res.DeleteOffice403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -197,6 +212,8 @@ func (s *offices) DeleteOffice(ctx context.Context, request operations.DeleteOff
 			}
 
 			res.DeleteOffice404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -253,6 +270,8 @@ func (s *offices) GetOffice(ctx context.Context, request operations.GetOfficeReq
 			}
 
 			res.GetOffice200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -263,6 +282,8 @@ func (s *offices) GetOffice(ctx context.Context, request operations.GetOfficeReq
 			}
 
 			res.GetOffice401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -273,6 +294,8 @@ func (s *offices) GetOffice(ctx context.Context, request operations.GetOfficeReq
 			}
 
 			res.GetOffice403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -283,6 +306,8 @@ func (s *offices) GetOffice(ctx context.Context, request operations.GetOfficeReq
 			}
 
 			res.GetOffice404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -339,6 +364,8 @@ func (s *offices) ListOffices(ctx context.Context, request operations.ListOffice
 			}
 
 			res.OfficeCollection = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -349,6 +376,8 @@ func (s *offices) ListOffices(ctx context.Context, request operations.ListOffice
 			}
 
 			res.ListOffices401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -359,6 +388,8 @@ func (s *offices) ListOffices(ctx context.Context, request operations.ListOffice
 			}
 
 			res.ListOffices403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -422,6 +453,8 @@ func (s *offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 			}
 
 			res.UpdateOffice200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		switch {
@@ -432,6 +465,8 @@ func (s *offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 			}
 
 			res.UpdateOffice401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
@@ -442,6 +477,8 @@ func (s *offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 			}
 
 			res.UpdateOffice403ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 404:
 		switch {
@@ -452,6 +489,8 @@ func (s *offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 			}
 
 			res.UpdateOffice404ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 422:
 		switch {
@@ -462,6 +501,8 @@ func (s *offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 			}
 
 			res.UpdateOffice422ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
