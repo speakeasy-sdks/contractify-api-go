@@ -25,15 +25,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.DeleteDocumentSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Documents.DeleteDocument(ctx, operations.DeleteDocumentRequest{
         Company: 18789,
         Document: 324141,
-    }, operations.DeleteDocumentSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -76,15 +77,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.GetDocumentSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Documents.GetDocument(ctx, operations.GetDocumentRequest{
         Company: 617636,
         Document: 149675,
-    }, operations.GetDocumentSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -128,6 +130,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListDocumentsSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Documents.ListDocuments(ctx, operations.ListDocumentsRequest{
@@ -137,10 +143,7 @@ func main() {
         Page: contractifyproduction.Int64(943749),
         RelationID: contractifyproduction.Int64(902599),
         SignedAfter: types.MustTimeFromString("2022-02-06T12:52:33.708Z"),
-    }, operations.ListDocumentsSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -184,6 +187,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.UpdateDocumentSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Documents.UpdateDocument(ctx, operations.UpdateDocumentRequest{
@@ -215,10 +222,7 @@ func main() {
         },
         Company: 60225,
         Document: 969810,
-    }, operations.UpdateDocumentSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

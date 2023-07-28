@@ -6,3 +6,17 @@ type ContractTypeRead struct {
 	ID   *int64                `json:"id,omitempty"`
 	Name *ContractTypeNameRead `json:"name,omitempty"`
 }
+
+func (o *ContractTypeRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *ContractTypeRead) GetName() *ContractTypeNameRead {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}

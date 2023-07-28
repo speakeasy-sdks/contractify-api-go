@@ -29,3 +29,143 @@ type ContractRead struct {
 	StartDate         *types.Date            `json:"start_date,omitempty"`
 	Termination       *ContractTermination   `json:"termination,omitempty"`
 }
+
+func (o *ContractRead) GetContractTypes() []ContractTypeRead {
+	if o == nil {
+		return nil
+	}
+	return o.ContractTypes
+}
+
+func (o *ContractRead) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *ContractRead) GetCustomFieldValues() []CustomFieldValueRead {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFieldValues
+}
+
+func (o *ContractRead) GetDepartments() []DepartmentRead {
+	if o == nil {
+		return nil
+	}
+	return o.Departments
+}
+
+func (o *ContractRead) GetDocuments() []ContractDocumentRead {
+	if o == nil {
+		return nil
+	}
+	return o.Documents
+}
+
+func (o *ContractRead) GetDossier() *DossierRead {
+	if o == nil {
+		return nil
+	}
+	return o.Dossier
+}
+
+func (o *ContractRead) GetDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Duration
+}
+
+func (o *ContractRead) GetEndDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.EndDate
+}
+
+func (o *ContractRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *ContractRead) GetIsOpenEnded() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsOpenEnded
+}
+
+func (o *ContractRead) GetLegalEntities() []LegalEntityRead {
+	if o == nil {
+		return nil
+	}
+	return o.LegalEntities
+}
+
+func (o *ContractRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *ContractRead) GetOffices() []OfficeRead {
+	if o == nil {
+		return nil
+	}
+	return o.Offices
+}
+
+func (o *ContractRead) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *ContractRead) GetPermalink() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Permalink
+}
+
+func (o *ContractRead) GetPhase() *ContractPhase {
+	if o == nil {
+		return nil
+	}
+	return o.Phase
+}
+
+func (o *ContractRead) GetRelations() []RelationRead {
+	if o == nil {
+		return nil
+	}
+	return o.Relations
+}
+
+func (o *ContractRead) GetRenewal() *ContractRenewal {
+	if o == nil {
+		return nil
+	}
+	return o.Renewal
+}
+
+func (o *ContractRead) GetStartDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.StartDate
+}
+
+func (o *ContractRead) GetTermination() *ContractTermination {
+	if o == nil {
+		return nil
+	}
+	return o.Termination
+}

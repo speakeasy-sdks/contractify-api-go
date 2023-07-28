@@ -12,6 +12,20 @@ type ListContractsSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListContractsSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListContractsSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type ListContractsRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -19,14 +33,42 @@ type ListContractsRequest struct {
 	Page *int64 `queryParam:"style=form,explode=true,name=page"`
 }
 
+func (o *ListContractsRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *ListContractsRequest) GetPage() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Page
+}
+
 // ListContracts403ApplicationJSON - Forbidden
 type ListContracts403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListContracts403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListContracts401ApplicationJSON - Unauthenticated
 type ListContracts401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListContracts401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListContractsResponse struct {
@@ -39,4 +81,46 @@ type ListContractsResponse struct {
 	ListContracts401ApplicationJSONObject *ListContracts401ApplicationJSON
 	// Forbidden
 	ListContracts403ApplicationJSONObject *ListContracts403ApplicationJSON
+}
+
+func (o *ListContractsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListContractsResponse) GetContractCollection() *shared.ContractCollection {
+	if o == nil {
+		return nil
+	}
+	return o.ContractCollection
+}
+
+func (o *ListContractsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListContractsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListContractsResponse) GetListContracts401ApplicationJSONObject() *ListContracts401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListContracts401ApplicationJSONObject
+}
+
+func (o *ListContractsResponse) GetListContracts403ApplicationJSONObject() *ListContracts403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListContracts403ApplicationJSONObject
 }

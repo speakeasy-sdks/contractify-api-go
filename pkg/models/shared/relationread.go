@@ -20,3 +20,87 @@ type RelationRead struct {
 	Vat         *string    `json:"vat,omitempty"`
 	Website     *string    `json:"website,omitempty"`
 }
+
+func (o *RelationRead) GetAddress() *Address {
+	if o == nil {
+		return nil
+	}
+	return o.Address
+}
+
+func (o *RelationRead) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *RelationRead) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *RelationRead) GetFax() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fax
+}
+
+func (o *RelationRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *RelationRead) GetMobilePhone() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MobilePhone
+}
+
+func (o *RelationRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *RelationRead) GetPermalink() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Permalink
+}
+
+func (o *RelationRead) GetPhone() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Phone
+}
+
+func (o *RelationRead) GetReference() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Reference
+}
+
+func (o *RelationRead) GetVat() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Vat
+}
+
+func (o *RelationRead) GetWebsite() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Website
+}

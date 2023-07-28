@@ -12,6 +12,20 @@ type UpdateContractSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *UpdateContractSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *UpdateContractSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type UpdateContractRequest struct {
 	ContractWrite *shared.ContractWrite `request:"mediaType=application/json"`
 	// Id of the company
@@ -20,9 +34,44 @@ type UpdateContractRequest struct {
 	Contract int64 `pathParam:"style=simple,explode=false,name=contract"`
 }
 
+func (o *UpdateContractRequest) GetContractWrite() *shared.ContractWrite {
+	if o == nil {
+		return nil
+	}
+	return o.ContractWrite
+}
+
+func (o *UpdateContractRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *UpdateContractRequest) GetContract() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Contract
+}
+
 type UpdateContract422ApplicationJSONErrors struct {
 	Errors []string `json:"errors,omitempty"`
 	Field  *string  `json:"field,omitempty"`
+}
+
+func (o *UpdateContract422ApplicationJSONErrors) GetErrors() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *UpdateContract422ApplicationJSONErrors) GetField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Field
 }
 
 // UpdateContract422ApplicationJSON - Invalid data posted
@@ -31,9 +80,30 @@ type UpdateContract422ApplicationJSON struct {
 	Message *string                                  `json:"message,omitempty"`
 }
 
+func (o *UpdateContract422ApplicationJSON) GetErrors() []UpdateContract422ApplicationJSONErrors {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *UpdateContract422ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // UpdateContract404ApplicationJSON - Not Found
 type UpdateContract404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *UpdateContract404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // UpdateContract403ApplicationJSON - Forbidden
@@ -41,14 +111,35 @@ type UpdateContract403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *UpdateContract403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // UpdateContract401ApplicationJSON - Unauthenticated
 type UpdateContract401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *UpdateContract401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // UpdateContract200ApplicationJSON - OK
 type UpdateContract200ApplicationJSON struct {
 	Data *shared.ContractRead `json:"data,omitempty"`
+}
+
+func (o *UpdateContract200ApplicationJSON) GetData() *shared.ContractRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type UpdateContractResponse struct {
@@ -65,4 +156,60 @@ type UpdateContractResponse struct {
 	UpdateContract404ApplicationJSONObject *UpdateContract404ApplicationJSON
 	// Invalid data posted
 	UpdateContract422ApplicationJSONObject *UpdateContract422ApplicationJSON
+}
+
+func (o *UpdateContractResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *UpdateContractResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *UpdateContractResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *UpdateContractResponse) GetUpdateContract200ApplicationJSONObject() *UpdateContract200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateContract200ApplicationJSONObject
+}
+
+func (o *UpdateContractResponse) GetUpdateContract401ApplicationJSONObject() *UpdateContract401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateContract401ApplicationJSONObject
+}
+
+func (o *UpdateContractResponse) GetUpdateContract403ApplicationJSONObject() *UpdateContract403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateContract403ApplicationJSONObject
+}
+
+func (o *UpdateContractResponse) GetUpdateContract404ApplicationJSONObject() *UpdateContract404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateContract404ApplicationJSONObject
+}
+
+func (o *UpdateContractResponse) GetUpdateContract422ApplicationJSONObject() *UpdateContract422ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateContract422ApplicationJSONObject
 }

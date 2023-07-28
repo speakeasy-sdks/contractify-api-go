@@ -27,6 +27,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.CreateOfficeSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Offices.CreateOffice(ctx, operations.CreateOfficeRequest{
@@ -44,10 +48,7 @@ func main() {
             Zip: contractifyproduction.String("9940"),
         },
         Company: 653140,
-    }, operations.CreateOfficeSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -90,15 +91,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.DeleteOfficeSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Offices.DeleteOffice(ctx, operations.DeleteOfficeRequest{
         Company: 670638,
         Office: 170909,
-    }, operations.DeleteOfficeSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -141,15 +143,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.GetOfficeSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Offices.GetOffice(ctx, operations.GetOfficeRequest{
         Company: 210382,
         Office: 358152,
-    }, operations.GetOfficeSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -192,14 +195,15 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListOfficesSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Offices.ListOffices(ctx, operations.ListOfficesRequest{
         Company: 128926,
-    }, operations.ListOfficesSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -243,6 +247,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.UpdateOfficeSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Offices.UpdateOffice(ctx, operations.UpdateOfficeRequest{
@@ -261,10 +269,7 @@ func main() {
         },
         Company: 750686,
         Office: 315428,
-    }, operations.UpdateOfficeSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

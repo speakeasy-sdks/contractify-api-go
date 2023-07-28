@@ -7,3 +7,17 @@ type CustomFieldCollection struct {
 	Data []CustomFieldRead `json:"data,omitempty"`
 	Meta *Pagination       `json:"meta,omitempty"`
 }
+
+func (o *CustomFieldCollection) GetData() []CustomFieldRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
+func (o *CustomFieldCollection) GetMeta() *Pagination {
+	if o == nil {
+		return nil
+	}
+	return o.Meta
+}

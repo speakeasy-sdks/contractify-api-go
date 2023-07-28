@@ -7,3 +7,17 @@ type TaskCollection struct {
 	Data []TaskRead  `json:"data,omitempty"`
 	Meta *Pagination `json:"meta,omitempty"`
 }
+
+func (o *TaskCollection) GetData() []TaskRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
+func (o *TaskCollection) GetMeta() *Pagination {
+	if o == nil {
+		return nil
+	}
+	return o.Meta
+}

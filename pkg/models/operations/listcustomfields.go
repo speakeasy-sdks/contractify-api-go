@@ -12,9 +12,30 @@ type ListCustomFieldsSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListCustomFieldsSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListCustomFieldsSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type ListCustomFieldsRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
+}
+
+func (o *ListCustomFieldsRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
 }
 
 // ListCustomFields403ApplicationJSON - Forbidden
@@ -22,9 +43,23 @@ type ListCustomFields403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListCustomFields403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListCustomFields401ApplicationJSON - Unauthenticated
 type ListCustomFields401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListCustomFields401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListCustomFieldsResponse struct {
@@ -37,4 +72,46 @@ type ListCustomFieldsResponse struct {
 	ListCustomFields401ApplicationJSONObject *ListCustomFields401ApplicationJSON
 	// Forbidden
 	ListCustomFields403ApplicationJSONObject *ListCustomFields403ApplicationJSON
+}
+
+func (o *ListCustomFieldsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListCustomFieldsResponse) GetCustomFieldCollection() *shared.CustomFieldCollection {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFieldCollection
+}
+
+func (o *ListCustomFieldsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListCustomFieldsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListCustomFieldsResponse) GetListCustomFields401ApplicationJSONObject() *ListCustomFields401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListCustomFields401ApplicationJSONObject
+}
+
+func (o *ListCustomFieldsResponse) GetListCustomFields403ApplicationJSONObject() *ListCustomFields403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListCustomFields403ApplicationJSONObject
 }

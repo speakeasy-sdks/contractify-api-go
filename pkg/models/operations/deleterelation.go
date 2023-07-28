@@ -11,6 +11,20 @@ type DeleteRelationSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *DeleteRelationSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *DeleteRelationSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type DeleteRelationRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -18,9 +32,30 @@ type DeleteRelationRequest struct {
 	Relation int64 `pathParam:"style=simple,explode=false,name=relation"`
 }
 
+func (o *DeleteRelationRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *DeleteRelationRequest) GetRelation() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Relation
+}
+
 // DeleteRelation404ApplicationJSON - Not Found
 type DeleteRelation404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteRelation404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // DeleteRelation403ApplicationJSON - Forbidden
@@ -28,14 +63,35 @@ type DeleteRelation403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteRelation403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteRelation401ApplicationJSON - Unauthenticated
 type DeleteRelation401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteRelation401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteRelation400ApplicationJSON - Precondition failed
 type DeleteRelation400ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteRelation400ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type DeleteRelationResponse struct {
@@ -50,4 +106,53 @@ type DeleteRelationResponse struct {
 	DeleteRelation403ApplicationJSONObject *DeleteRelation403ApplicationJSON
 	// Not Found
 	DeleteRelation404ApplicationJSONObject *DeleteRelation404ApplicationJSON
+}
+
+func (o *DeleteRelationResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteRelationResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteRelationResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteRelationResponse) GetDeleteRelation400ApplicationJSONObject() *DeleteRelation400ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteRelation400ApplicationJSONObject
+}
+
+func (o *DeleteRelationResponse) GetDeleteRelation401ApplicationJSONObject() *DeleteRelation401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteRelation401ApplicationJSONObject
+}
+
+func (o *DeleteRelationResponse) GetDeleteRelation403ApplicationJSONObject() *DeleteRelation403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteRelation403ApplicationJSONObject
+}
+
+func (o *DeleteRelationResponse) GetDeleteRelation404ApplicationJSONObject() *DeleteRelation404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteRelation404ApplicationJSONObject
 }

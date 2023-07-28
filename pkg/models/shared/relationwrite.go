@@ -13,3 +13,66 @@ type RelationWrite struct {
 	Vat         *string  `json:"vat,omitempty"`
 	Website     *string  `json:"website,omitempty"`
 }
+
+func (o *RelationWrite) GetAddress() *Address {
+	if o == nil {
+		return nil
+	}
+	return o.Address
+}
+
+func (o *RelationWrite) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *RelationWrite) GetFax() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fax
+}
+
+func (o *RelationWrite) GetMobilePhone() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MobilePhone
+}
+
+func (o *RelationWrite) GetName() string {
+	if o == nil {
+		return ""
+	}
+	return o.Name
+}
+
+func (o *RelationWrite) GetPhone() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Phone
+}
+
+func (o *RelationWrite) GetReference() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Reference
+}
+
+func (o *RelationWrite) GetVat() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Vat
+}
+
+func (o *RelationWrite) GetWebsite() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Website
+}

@@ -13,3 +13,38 @@ type UserCurrent struct {
 	ID                  *int64        `json:"id,omitempty"`
 	Name                *string       `json:"name,omitempty"`
 }
+
+func (o *UserCurrent) GetCompaniesWhereAdmin() []CompanyRead {
+	if o == nil {
+		return nil
+	}
+	return o.CompaniesWhereAdmin
+}
+
+func (o *UserCurrent) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *UserCurrent) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *UserCurrent) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *UserCurrent) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}

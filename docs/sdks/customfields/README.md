@@ -22,14 +22,15 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListCustomFieldsSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.CustomFields.ListCustomFields(ctx, operations.ListCustomFieldsRequest{
         Company: 473600,
-    }, operations.ListCustomFieldsSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

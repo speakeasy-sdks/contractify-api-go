@@ -12,6 +12,20 @@ type UpdateOfficeSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *UpdateOfficeSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *UpdateOfficeSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type UpdateOfficeRequest struct {
 	OfficeWrite *shared.OfficeWrite `request:"mediaType=application/json"`
 	// Id of the company
@@ -20,9 +34,44 @@ type UpdateOfficeRequest struct {
 	Office int64 `pathParam:"style=simple,explode=false,name=office"`
 }
 
+func (o *UpdateOfficeRequest) GetOfficeWrite() *shared.OfficeWrite {
+	if o == nil {
+		return nil
+	}
+	return o.OfficeWrite
+}
+
+func (o *UpdateOfficeRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *UpdateOfficeRequest) GetOffice() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Office
+}
+
 type UpdateOffice422ApplicationJSONErrors struct {
 	Errors []string `json:"errors,omitempty"`
 	Field  *string  `json:"field,omitempty"`
+}
+
+func (o *UpdateOffice422ApplicationJSONErrors) GetErrors() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *UpdateOffice422ApplicationJSONErrors) GetField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Field
 }
 
 // UpdateOffice422ApplicationJSON - Invalid data posted
@@ -31,9 +80,30 @@ type UpdateOffice422ApplicationJSON struct {
 	Message *string                                `json:"message,omitempty"`
 }
 
+func (o *UpdateOffice422ApplicationJSON) GetErrors() []UpdateOffice422ApplicationJSONErrors {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *UpdateOffice422ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // UpdateOffice404ApplicationJSON - Not Found
 type UpdateOffice404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *UpdateOffice404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // UpdateOffice403ApplicationJSON - Forbidden
@@ -41,14 +111,35 @@ type UpdateOffice403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *UpdateOffice403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // UpdateOffice401ApplicationJSON - Unauthenticated
 type UpdateOffice401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *UpdateOffice401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // UpdateOffice200ApplicationJSON - OK
 type UpdateOffice200ApplicationJSON struct {
 	Data *shared.OfficeRead `json:"data,omitempty"`
+}
+
+func (o *UpdateOffice200ApplicationJSON) GetData() *shared.OfficeRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type UpdateOfficeResponse struct {
@@ -65,4 +156,60 @@ type UpdateOfficeResponse struct {
 	UpdateOffice404ApplicationJSONObject *UpdateOffice404ApplicationJSON
 	// Invalid data posted
 	UpdateOffice422ApplicationJSONObject *UpdateOffice422ApplicationJSON
+}
+
+func (o *UpdateOfficeResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *UpdateOfficeResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *UpdateOfficeResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *UpdateOfficeResponse) GetUpdateOffice200ApplicationJSONObject() *UpdateOffice200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateOffice200ApplicationJSONObject
+}
+
+func (o *UpdateOfficeResponse) GetUpdateOffice401ApplicationJSONObject() *UpdateOffice401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateOffice401ApplicationJSONObject
+}
+
+func (o *UpdateOfficeResponse) GetUpdateOffice403ApplicationJSONObject() *UpdateOffice403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateOffice403ApplicationJSONObject
+}
+
+func (o *UpdateOfficeResponse) GetUpdateOffice404ApplicationJSONObject() *UpdateOffice404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateOffice404ApplicationJSONObject
+}
+
+func (o *UpdateOfficeResponse) GetUpdateOffice422ApplicationJSONObject() *UpdateOffice422ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateOffice422ApplicationJSONObject
 }

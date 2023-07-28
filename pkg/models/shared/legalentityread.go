@@ -12,3 +12,59 @@ type LegalEntityRead struct {
 	Vat     *string `json:"vat,omitempty"`
 	Zip     *string `json:"zip,omitempty"`
 }
+
+func (o *LegalEntityRead) GetBus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bus
+}
+
+func (o *LegalEntityRead) GetCity() *string {
+	if o == nil {
+		return nil
+	}
+	return o.City
+}
+
+func (o *LegalEntityRead) GetCountry() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Country
+}
+
+func (o *LegalEntityRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *LegalEntityRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *LegalEntityRead) GetStreet() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Street
+}
+
+func (o *LegalEntityRead) GetVat() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Vat
+}
+
+func (o *LegalEntityRead) GetZip() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Zip
+}

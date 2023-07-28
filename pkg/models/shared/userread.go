@@ -45,3 +45,38 @@ type UserRead struct {
 	Name      *string       `json:"name,omitempty"`
 	Role      *UserReadRole `json:"role,omitempty"`
 }
+
+func (o *UserRead) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *UserRead) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *UserRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *UserRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *UserRead) GetRole() *UserReadRole {
+	if o == nil {
+		return nil
+	}
+	return o.Role
+}

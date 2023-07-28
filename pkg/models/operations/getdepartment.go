@@ -12,6 +12,20 @@ type GetDepartmentSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *GetDepartmentSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *GetDepartmentSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type GetDepartmentRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -19,9 +33,30 @@ type GetDepartmentRequest struct {
 	Department int64 `pathParam:"style=simple,explode=false,name=department"`
 }
 
+func (o *GetDepartmentRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *GetDepartmentRequest) GetDepartment() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Department
+}
+
 // GetDepartment404ApplicationJSON - Not Found
 type GetDepartment404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *GetDepartment404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // GetDepartment403ApplicationJSON - Forbidden
@@ -29,14 +64,35 @@ type GetDepartment403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetDepartment403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetDepartment401ApplicationJSON - Unauthenticated
 type GetDepartment401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetDepartment401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetDepartment200ApplicationJSON - OK
 type GetDepartment200ApplicationJSON struct {
 	Data *shared.DepartmentRead `json:"data,omitempty"`
+}
+
+func (o *GetDepartment200ApplicationJSON) GetData() *shared.DepartmentRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type GetDepartmentResponse struct {
@@ -51,4 +107,53 @@ type GetDepartmentResponse struct {
 	GetDepartment403ApplicationJSONObject *GetDepartment403ApplicationJSON
 	// Not Found
 	GetDepartment404ApplicationJSONObject *GetDepartment404ApplicationJSON
+}
+
+func (o *GetDepartmentResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetDepartmentResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetDepartmentResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetDepartmentResponse) GetGetDepartment200ApplicationJSONObject() *GetDepartment200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetDepartment200ApplicationJSONObject
+}
+
+func (o *GetDepartmentResponse) GetGetDepartment401ApplicationJSONObject() *GetDepartment401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetDepartment401ApplicationJSONObject
+}
+
+func (o *GetDepartmentResponse) GetGetDepartment403ApplicationJSONObject() *GetDepartment403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetDepartment403ApplicationJSONObject
+}
+
+func (o *GetDepartmentResponse) GetGetDepartment404ApplicationJSONObject() *GetDepartment404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetDepartment404ApplicationJSONObject
 }

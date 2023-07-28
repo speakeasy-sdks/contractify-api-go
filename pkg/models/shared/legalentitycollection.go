@@ -6,3 +6,10 @@ package shared
 type LegalEntityCollection struct {
 	Data []LegalEntityRead `json:"data,omitempty"`
 }
+
+func (o *LegalEntityCollection) GetData() []LegalEntityRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}

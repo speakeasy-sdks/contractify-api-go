@@ -22,14 +22,15 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListLegalEntitiesSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.LegalEntities.ListLegalEntities(ctx, operations.ListLegalEntitiesRequest{
         Company: 666767,
-    }, operations.ListLegalEntitiesSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

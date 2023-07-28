@@ -84,3 +84,101 @@ type TaskRead struct {
 	Status             *TaskReadStatus           `json:"status,omitempty"`
 	Title              *string                   `json:"title,omitempty"`
 }
+
+func (o *TaskRead) GetContractID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ContractID
+}
+
+func (o *TaskRead) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *TaskRead) GetDueDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.DueDate
+}
+
+func (o *TaskRead) GetDueDateDependsOn() *TaskReadDueDateDependsOn {
+	if o == nil {
+		return nil
+	}
+	return o.DueDateDependsOn
+}
+
+func (o *TaskRead) GetDueDateInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DueDateInterval
+}
+
+func (o *TaskRead) GetEscalationDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.EscalationDate
+}
+
+func (o *TaskRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *TaskRead) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *TaskRead) GetPermalink() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Permalink
+}
+
+func (o *TaskRead) GetReminderDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.ReminderDate
+}
+
+func (o *TaskRead) GetReminderDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ReminderDuration
+}
+
+func (o *TaskRead) GetRepetitionInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RepetitionInterval
+}
+
+func (o *TaskRead) GetStatus() *TaskReadStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *TaskRead) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
+}

@@ -7,3 +7,17 @@ type DocumentCollection struct {
 	Data []DocumentRead `json:"data,omitempty"`
 	Meta *Pagination    `json:"meta,omitempty"`
 }
+
+func (o *DocumentCollection) GetData() []DocumentRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
+func (o *DocumentCollection) GetMeta() *Pagination {
+	if o == nil {
+		return nil
+	}
+	return o.Meta
+}

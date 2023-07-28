@@ -12,6 +12,20 @@ type ListTasksSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListTasksSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListTasksSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type ListTasksRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -19,14 +33,42 @@ type ListTasksRequest struct {
 	Page *int64 `queryParam:"style=form,explode=true,name=page"`
 }
 
+func (o *ListTasksRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *ListTasksRequest) GetPage() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Page
+}
+
 // ListTasks403ApplicationJSON - Forbidden
 type ListTasks403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListTasks403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListTasks401ApplicationJSON - Unauthenticated
 type ListTasks401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListTasks401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListTasksResponse struct {
@@ -39,4 +81,46 @@ type ListTasksResponse struct {
 	ListTasks401ApplicationJSONObject *ListTasks401ApplicationJSON
 	// Forbidden
 	ListTasks403ApplicationJSONObject *ListTasks403ApplicationJSON
+}
+
+func (o *ListTasksResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListTasksResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListTasksResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListTasksResponse) GetTaskCollection() *shared.TaskCollection {
+	if o == nil {
+		return nil
+	}
+	return o.TaskCollection
+}
+
+func (o *ListTasksResponse) GetListTasks401ApplicationJSONObject() *ListTasks401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListTasks401ApplicationJSONObject
+}
+
+func (o *ListTasksResponse) GetListTasks403ApplicationJSONObject() *ListTasks403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListTasks403ApplicationJSONObject
 }

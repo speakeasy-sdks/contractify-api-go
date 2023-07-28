@@ -10,3 +10,45 @@ type DocumentWrite struct {
 	Name              string                  `json:"name"`
 	OwnerID           *int64                  `json:"owner_id,omitempty"`
 }
+
+func (o *DocumentWrite) GetContracts() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Contracts
+}
+
+func (o *DocumentWrite) GetCustomFieldValues() []CustomFieldValueWrite {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFieldValues
+}
+
+func (o *DocumentWrite) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *DocumentWrite) GetDossiers() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Dossiers
+}
+
+func (o *DocumentWrite) GetName() string {
+	if o == nil {
+		return ""
+	}
+	return o.Name
+}
+
+func (o *DocumentWrite) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}

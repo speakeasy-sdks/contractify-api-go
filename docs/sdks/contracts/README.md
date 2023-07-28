@@ -28,6 +28,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.CreateContractSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Contracts.CreateContract(ctx, operations.CreateContractRequest{
@@ -97,10 +101,7 @@ func main() {
             },
         },
         Company: 392785,
-    }, operations.CreateContractSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -143,15 +144,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.DeleteContractSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Contracts.DeleteContract(ctx, operations.DeleteContractRequest{
         Company: 925597,
         Contract: 836079,
-    }, operations.DeleteContractSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -194,15 +196,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.GetContractSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Contracts.GetContract(ctx, operations.GetContractRequest{
         Company: 71036,
         Contract: 337396,
-    }, operations.GetContractSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -245,15 +248,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListContractsSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Contracts.ListContracts(ctx, operations.ListContractsRequest{
         Company: 87129,
         Page: contractifyproduction.Int64(648172),
-    }, operations.ListContractsSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -298,6 +302,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.UpdateContractSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Contracts.UpdateContract(ctx, operations.UpdateContractRequest{
@@ -371,10 +379,7 @@ func main() {
         },
         Company: 105907,
         Contract: 414662,
-    }, operations.UpdateContractSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

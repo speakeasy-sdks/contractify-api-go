@@ -12,15 +12,57 @@ type CreateContractSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *CreateContractSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *CreateContractSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type CreateContractRequest struct {
 	ContractWrite *shared.ContractWrite `request:"mediaType=application/json"`
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
 }
 
+func (o *CreateContractRequest) GetContractWrite() *shared.ContractWrite {
+	if o == nil {
+		return nil
+	}
+	return o.ContractWrite
+}
+
+func (o *CreateContractRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
 type CreateContract422ApplicationJSONErrors struct {
 	Errors []string `json:"errors,omitempty"`
 	Field  *string  `json:"field,omitempty"`
+}
+
+func (o *CreateContract422ApplicationJSONErrors) GetErrors() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *CreateContract422ApplicationJSONErrors) GetField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Field
 }
 
 // CreateContract422ApplicationJSON - Invalid data posted
@@ -29,9 +71,30 @@ type CreateContract422ApplicationJSON struct {
 	Message *string                                  `json:"message,omitempty"`
 }
 
+func (o *CreateContract422ApplicationJSON) GetErrors() []CreateContract422ApplicationJSONErrors {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *CreateContract422ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // CreateContract403ApplicationJSON - Forbidden
 type CreateContract403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *CreateContract403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // CreateContract401ApplicationJSON - Unauthenticated
@@ -39,9 +102,23 @@ type CreateContract401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *CreateContract401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // CreateContract201ApplicationJSON - Created
 type CreateContract201ApplicationJSON struct {
 	Data *shared.ContractRead `json:"data,omitempty"`
+}
+
+func (o *CreateContract201ApplicationJSON) GetData() *shared.ContractRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type CreateContractResponse struct {
@@ -56,4 +133,53 @@ type CreateContractResponse struct {
 	CreateContract403ApplicationJSONObject *CreateContract403ApplicationJSON
 	// Invalid data posted
 	CreateContract422ApplicationJSONObject *CreateContract422ApplicationJSON
+}
+
+func (o *CreateContractResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateContractResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateContractResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateContractResponse) GetCreateContract201ApplicationJSONObject() *CreateContract201ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateContract201ApplicationJSONObject
+}
+
+func (o *CreateContractResponse) GetCreateContract401ApplicationJSONObject() *CreateContract401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateContract401ApplicationJSONObject
+}
+
+func (o *CreateContractResponse) GetCreateContract403ApplicationJSONObject() *CreateContract403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateContract403ApplicationJSONObject
+}
+
+func (o *CreateContractResponse) GetCreateContract422ApplicationJSONObject() *CreateContract422ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateContract422ApplicationJSONObject
 }

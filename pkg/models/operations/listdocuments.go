@@ -15,6 +15,20 @@ type ListDocumentsSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListDocumentsSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListDocumentsSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 // ListDocumentsEsigningStatus - Return documents currently having this status in the eSigning process, can be comma separated
 type ListDocumentsEsigningStatus string
 
@@ -76,14 +90,70 @@ type ListDocumentsRequest struct {
 	SignedAfter *time.Time `queryParam:"style=form,explode=true,name=signed_after"`
 }
 
+func (o *ListDocumentsRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *ListDocumentsRequest) GetEsigningStatus() *ListDocumentsEsigningStatus {
+	if o == nil {
+		return nil
+	}
+	return o.EsigningStatus
+}
+
+func (o *ListDocumentsRequest) GetEsigningUpdatedAfter() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.EsigningUpdatedAfter
+}
+
+func (o *ListDocumentsRequest) GetPage() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Page
+}
+
+func (o *ListDocumentsRequest) GetRelationID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.RelationID
+}
+
+func (o *ListDocumentsRequest) GetSignedAfter() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.SignedAfter
+}
+
 // ListDocuments403ApplicationJSON - Forbidden
 type ListDocuments403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListDocuments403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListDocuments401ApplicationJSON - Unauthenticated
 type ListDocuments401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListDocuments401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListDocumentsResponse struct {
@@ -96,4 +166,46 @@ type ListDocumentsResponse struct {
 	ListDocuments401ApplicationJSONObject *ListDocuments401ApplicationJSON
 	// Forbidden
 	ListDocuments403ApplicationJSONObject *ListDocuments403ApplicationJSON
+}
+
+func (o *ListDocumentsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListDocumentsResponse) GetDocumentCollection() *shared.DocumentCollection {
+	if o == nil {
+		return nil
+	}
+	return o.DocumentCollection
+}
+
+func (o *ListDocumentsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListDocumentsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListDocumentsResponse) GetListDocuments401ApplicationJSONObject() *ListDocuments401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListDocuments401ApplicationJSONObject
+}
+
+func (o *ListDocumentsResponse) GetListDocuments403ApplicationJSONObject() *ListDocuments403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListDocuments403ApplicationJSONObject
 }

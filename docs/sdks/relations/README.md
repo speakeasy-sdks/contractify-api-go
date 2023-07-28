@@ -27,6 +27,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.CreateRelationSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Relations.CreateRelation(ctx, operations.CreateRelationRequest{
@@ -48,10 +52,7 @@ func main() {
             Website: contractifyproduction.String("https://www.example.org"),
         },
         Company: 607831,
-    }, operations.CreateRelationSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -94,15 +95,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.DeleteRelationSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Relations.DeleteRelation(ctx, operations.DeleteRelationRequest{
         Company: 363711,
         Relation: 325047,
-    }, operations.DeleteRelationSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -145,15 +147,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.GetRelationSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Relations.GetRelation(ctx, operations.GetRelationRequest{
         Company: 570197,
         Relation: 38425,
-    }, operations.GetRelationSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -196,16 +199,17 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListRelationsSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Relations.ListRelations(ctx, operations.ListRelationsRequest{
         Company: 438601,
         Page: contractifyproduction.Int64(634274),
         Reference: contractifyproduction.String("doloribus"),
-    }, operations.ListRelationsSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -249,6 +253,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.UpdateRelationSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Relations.UpdateRelation(ctx, operations.UpdateRelationRequest{
@@ -271,10 +279,7 @@ func main() {
         },
         Company: 958950,
         Relation: 102044,
-    }, operations.UpdateRelationSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

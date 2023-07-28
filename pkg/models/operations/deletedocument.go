@@ -11,6 +11,20 @@ type DeleteDocumentSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *DeleteDocumentSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *DeleteDocumentSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type DeleteDocumentRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -18,9 +32,37 @@ type DeleteDocumentRequest struct {
 	Document int64 `pathParam:"style=simple,explode=false,name=document"`
 }
 
+func (o *DeleteDocumentRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *DeleteDocumentRequest) GetDocument() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Document
+}
+
 type DeleteDocument422ApplicationJSONErrors struct {
 	Errors []string `json:"errors,omitempty"`
 	Field  *string  `json:"field,omitempty"`
+}
+
+func (o *DeleteDocument422ApplicationJSONErrors) GetErrors() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *DeleteDocument422ApplicationJSONErrors) GetField() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Field
 }
 
 // DeleteDocument422ApplicationJSON - Invalid data posted
@@ -29,9 +71,30 @@ type DeleteDocument422ApplicationJSON struct {
 	Message *string                                  `json:"message,omitempty"`
 }
 
+func (o *DeleteDocument422ApplicationJSON) GetErrors() []DeleteDocument422ApplicationJSONErrors {
+	if o == nil {
+		return nil
+	}
+	return o.Errors
+}
+
+func (o *DeleteDocument422ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteDocument404ApplicationJSON - Not Found
 type DeleteDocument404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteDocument404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // DeleteDocument403ApplicationJSON - Forbidden
@@ -39,9 +102,23 @@ type DeleteDocument403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteDocument403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteDocument401ApplicationJSON - Unauthenticated
 type DeleteDocument401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteDocument401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type DeleteDocumentResponse struct {
@@ -56,4 +133,53 @@ type DeleteDocumentResponse struct {
 	DeleteDocument404ApplicationJSONObject *DeleteDocument404ApplicationJSON
 	// Invalid data posted
 	DeleteDocument422ApplicationJSONObject *DeleteDocument422ApplicationJSON
+}
+
+func (o *DeleteDocumentResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteDocumentResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteDocumentResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteDocumentResponse) GetDeleteDocument401ApplicationJSONObject() *DeleteDocument401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDocument401ApplicationJSONObject
+}
+
+func (o *DeleteDocumentResponse) GetDeleteDocument403ApplicationJSONObject() *DeleteDocument403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDocument403ApplicationJSONObject
+}
+
+func (o *DeleteDocumentResponse) GetDeleteDocument404ApplicationJSONObject() *DeleteDocument404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDocument404ApplicationJSONObject
+}
+
+func (o *DeleteDocumentResponse) GetDeleteDocument422ApplicationJSONObject() *DeleteDocument422ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDocument422ApplicationJSONObject
 }

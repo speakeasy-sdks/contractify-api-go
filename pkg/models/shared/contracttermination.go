@@ -11,3 +11,24 @@ type ContractTermination struct {
 	TerminationDate       *types.Date `json:"termination_date,omitempty"`
 	TerminationDuration   *string     `json:"termination_duration,omitempty"`
 }
+
+func (o *ContractTermination) GetIsTerminableAtAnyTime() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsTerminableAtAnyTime
+}
+
+func (o *ContractTermination) GetTerminationDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.TerminationDate
+}
+
+func (o *ContractTermination) GetTerminationDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TerminationDuration
+}

@@ -12,6 +12,20 @@ type GetTaskSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *GetTaskSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *GetTaskSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type GetTaskRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -19,9 +33,30 @@ type GetTaskRequest struct {
 	Task int64 `pathParam:"style=simple,explode=false,name=task"`
 }
 
+func (o *GetTaskRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *GetTaskRequest) GetTask() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Task
+}
+
 // GetTask404ApplicationJSON - Not Found
 type GetTask404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *GetTask404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // GetTask403ApplicationJSON - Forbidden
@@ -29,14 +64,35 @@ type GetTask403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetTask403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetTask401ApplicationJSON - Unauthenticated
 type GetTask401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetTask401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetTask200ApplicationJSON - OK
 type GetTask200ApplicationJSON struct {
 	Data *shared.TaskRead `json:"data,omitempty"`
+}
+
+func (o *GetTask200ApplicationJSON) GetData() *shared.TaskRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type GetTaskResponse struct {
@@ -51,4 +107,53 @@ type GetTaskResponse struct {
 	GetTask403ApplicationJSONObject *GetTask403ApplicationJSON
 	// Not Found
 	GetTask404ApplicationJSONObject *GetTask404ApplicationJSON
+}
+
+func (o *GetTaskResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetTaskResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetTaskResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetTaskResponse) GetGetTask200ApplicationJSONObject() *GetTask200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetTask200ApplicationJSONObject
+}
+
+func (o *GetTaskResponse) GetGetTask401ApplicationJSONObject() *GetTask401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetTask401ApplicationJSONObject
+}
+
+func (o *GetTaskResponse) GetGetTask403ApplicationJSONObject() *GetTask403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetTask403ApplicationJSONObject
+}
+
+func (o *GetTaskResponse) GetGetTask404ApplicationJSONObject() *GetTask404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetTask404ApplicationJSONObject
 }

@@ -6,3 +6,17 @@ type ContractRenewal struct {
 	AutomaticRenewal       *ContractAutomaticRenewal `json:"automatic_renewal,omitempty"`
 	IsAutomaticallyRenewed *bool                     `json:"is_automatically_renewed,omitempty"`
 }
+
+func (o *ContractRenewal) GetAutomaticRenewal() *ContractAutomaticRenewal {
+	if o == nil {
+		return nil
+	}
+	return o.AutomaticRenewal
+}
+
+func (o *ContractRenewal) GetIsAutomaticallyRenewed() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsAutomaticallyRenewed
+}

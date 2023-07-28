@@ -7,3 +7,17 @@ type UserCollection struct {
 	Data []UserRead  `json:"data,omitempty"`
 	Meta *Pagination `json:"meta,omitempty"`
 }
+
+func (o *UserCollection) GetData() []UserRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
+func (o *UserCollection) GetMeta() *Pagination {
+	if o == nil {
+		return nil
+	}
+	return o.Meta
+}

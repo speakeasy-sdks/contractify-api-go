@@ -12,6 +12,20 @@ type GetContractSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *GetContractSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *GetContractSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type GetContractRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -19,9 +33,30 @@ type GetContractRequest struct {
 	Contract int64 `pathParam:"style=simple,explode=false,name=contract"`
 }
 
+func (o *GetContractRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *GetContractRequest) GetContract() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Contract
+}
+
 // GetContract404ApplicationJSON - Not Found
 type GetContract404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *GetContract404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // GetContract403ApplicationJSON - Forbidden
@@ -29,14 +64,35 @@ type GetContract403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetContract403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetContract401ApplicationJSON - Unauthenticated
 type GetContract401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetContract401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetContract200ApplicationJSON - OK
 type GetContract200ApplicationJSON struct {
 	Data *shared.ContractRead `json:"data,omitempty"`
+}
+
+func (o *GetContract200ApplicationJSON) GetData() *shared.ContractRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type GetContractResponse struct {
@@ -51,4 +107,53 @@ type GetContractResponse struct {
 	GetContract403ApplicationJSONObject *GetContract403ApplicationJSON
 	// Not Found
 	GetContract404ApplicationJSONObject *GetContract404ApplicationJSON
+}
+
+func (o *GetContractResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetContractResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetContractResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetContractResponse) GetGetContract200ApplicationJSONObject() *GetContract200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetContract200ApplicationJSONObject
+}
+
+func (o *GetContractResponse) GetGetContract401ApplicationJSONObject() *GetContract401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetContract401ApplicationJSONObject
+}
+
+func (o *GetContractResponse) GetGetContract403ApplicationJSONObject() *GetContract403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetContract403ApplicationJSONObject
+}
+
+func (o *GetContractResponse) GetGetContract404ApplicationJSONObject() *GetContract404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetContract404ApplicationJSONObject
 }

@@ -19,3 +19,80 @@ type DocumentRead struct {
 	Permalink         *string                `json:"permalink,omitempty"`
 	Versions          []DocumentVersionRead  `json:"versions,omitempty"`
 }
+
+func (o *DocumentRead) GetContracts() []ContractRead {
+	if o == nil {
+		return nil
+	}
+	return o.Contracts
+}
+
+func (o *DocumentRead) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *DocumentRead) GetCustomFieldValues() []CustomFieldValueRead {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFieldValues
+}
+
+func (o *DocumentRead) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *DocumentRead) GetDossiers() []DossierRead {
+	if o == nil {
+		return nil
+	}
+	return o.Dossiers
+}
+
+func (o *DocumentRead) GetDownloadURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DownloadURL
+}
+
+func (o *DocumentRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *DocumentRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *DocumentRead) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *DocumentRead) GetPermalink() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Permalink
+}
+
+func (o *DocumentRead) GetVersions() []DocumentVersionRead {
+	if o == nil {
+		return nil
+	}
+	return o.Versions
+}

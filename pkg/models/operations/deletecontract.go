@@ -11,6 +11,20 @@ type DeleteContractSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *DeleteContractSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *DeleteContractSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type DeleteContractRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -18,9 +32,30 @@ type DeleteContractRequest struct {
 	Contract int64 `pathParam:"style=simple,explode=false,name=contract"`
 }
 
+func (o *DeleteContractRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *DeleteContractRequest) GetContract() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Contract
+}
+
 // DeleteContract404ApplicationJSON - Not Found
 type DeleteContract404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteContract404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // DeleteContract403ApplicationJSON - Forbidden
@@ -28,14 +63,35 @@ type DeleteContract403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteContract403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteContract401ApplicationJSON - Unauthenticated
 type DeleteContract401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteContract401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteContract400ApplicationJSON - Precondition failed
 type DeleteContract400ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteContract400ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type DeleteContractResponse struct {
@@ -50,4 +106,53 @@ type DeleteContractResponse struct {
 	DeleteContract403ApplicationJSONObject *DeleteContract403ApplicationJSON
 	// Not Found
 	DeleteContract404ApplicationJSONObject *DeleteContract404ApplicationJSON
+}
+
+func (o *DeleteContractResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteContractResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteContractResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteContractResponse) GetDeleteContract400ApplicationJSONObject() *DeleteContract400ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteContract400ApplicationJSONObject
+}
+
+func (o *DeleteContractResponse) GetDeleteContract401ApplicationJSONObject() *DeleteContract401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteContract401ApplicationJSONObject
+}
+
+func (o *DeleteContractResponse) GetDeleteContract403ApplicationJSONObject() *DeleteContract403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteContract403ApplicationJSONObject
+}
+
+func (o *DeleteContractResponse) GetDeleteContract404ApplicationJSONObject() *DeleteContract404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteContract404ApplicationJSONObject
 }

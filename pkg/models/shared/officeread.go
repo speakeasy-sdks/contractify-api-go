@@ -16,3 +16,87 @@ type OfficeRead struct {
 	Street         *string `json:"street,omitempty"`
 	Zip            *string `json:"zip,omitempty"`
 }
+
+func (o *OfficeRead) GetBus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bus
+}
+
+func (o *OfficeRead) GetCity() *string {
+	if o == nil {
+		return nil
+	}
+	return o.City
+}
+
+func (o *OfficeRead) GetContactPerson() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ContactPerson
+}
+
+func (o *OfficeRead) GetCountry() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Country
+}
+
+func (o *OfficeRead) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *OfficeRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *OfficeRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *OfficeRead) GetNumberIdentity() *string {
+	if o == nil {
+		return nil
+	}
+	return o.NumberIdentity
+}
+
+func (o *OfficeRead) GetPermalink() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Permalink
+}
+
+func (o *OfficeRead) GetPhone() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Phone
+}
+
+func (o *OfficeRead) GetStreet() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Street
+}
+
+func (o *OfficeRead) GetZip() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Zip
+}

@@ -8,3 +8,31 @@ type DossierRead struct {
 	Name            *string `json:"name,omitempty"`
 	Permalink       *string `json:"permalink,omitempty"`
 }
+
+func (o *DossierRead) GetDossiertypeName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DossiertypeName
+}
+
+func (o *DossierRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *DossierRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *DossierRead) GetPermalink() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Permalink
+}

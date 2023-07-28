@@ -6,3 +6,10 @@ package shared
 type DepartmentCollection struct {
 	Data []DepartmentRead `json:"data,omitempty"`
 }
+
+func (o *DepartmentCollection) GetData() []DepartmentRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}

@@ -6,3 +6,10 @@ package shared
 type ContractTypeCollection struct {
 	Data []ContractTypeRead `json:"data,omitempty"`
 }
+
+func (o *ContractTypeCollection) GetData() []ContractTypeRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}

@@ -12,9 +12,30 @@ type ListDepartmentsSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListDepartmentsSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListDepartmentsSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type ListDepartmentsRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
+}
+
+func (o *ListDepartmentsRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
 }
 
 // ListDepartments403ApplicationJSON - Forbidden
@@ -22,9 +43,23 @@ type ListDepartments403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListDepartments403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListDepartments401ApplicationJSON - Unauthenticated
 type ListDepartments401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListDepartments401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListDepartmentsResponse struct {
@@ -37,4 +72,46 @@ type ListDepartmentsResponse struct {
 	ListDepartments401ApplicationJSONObject *ListDepartments401ApplicationJSON
 	// Forbidden
 	ListDepartments403ApplicationJSONObject *ListDepartments403ApplicationJSON
+}
+
+func (o *ListDepartmentsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListDepartmentsResponse) GetDepartmentCollection() *shared.DepartmentCollection {
+	if o == nil {
+		return nil
+	}
+	return o.DepartmentCollection
+}
+
+func (o *ListDepartmentsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListDepartmentsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListDepartmentsResponse) GetListDepartments401ApplicationJSONObject() *ListDepartments401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListDepartments401ApplicationJSONObject
+}
+
+func (o *ListDepartmentsResponse) GetListDepartments403ApplicationJSONObject() *ListDepartments403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListDepartments403ApplicationJSONObject
 }

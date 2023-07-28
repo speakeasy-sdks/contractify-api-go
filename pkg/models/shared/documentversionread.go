@@ -11,3 +11,52 @@ type DocumentVersionRead struct {
 	MimeType         *string `json:"mime_type,omitempty"`
 	Name             *string `json:"name,omitempty"`
 }
+
+func (o *DocumentVersionRead) GetCreatedAt() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *DocumentVersionRead) GetDetectedLanugage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DetectedLanugage
+}
+
+func (o *DocumentVersionRead) GetDownloadURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DownloadURL
+}
+
+func (o *DocumentVersionRead) GetFileSize() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.FileSize
+}
+
+func (o *DocumentVersionRead) GetFileType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FileType
+}
+
+func (o *DocumentVersionRead) GetMimeType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MimeType
+}
+
+func (o *DocumentVersionRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}

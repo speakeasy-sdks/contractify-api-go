@@ -83,3 +83,66 @@ type TaskUpdate struct {
 	Status             *TaskUpdateStatus `json:"status,omitempty"`
 	Title              *string           `json:"title,omitempty"`
 }
+
+func (o *TaskUpdate) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *TaskUpdate) GetDueDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.DueDate
+}
+
+func (o *TaskUpdate) GetDueDateDependsOn() *TaskUpdateDueDateDependsOn {
+	if o == nil {
+		return nil
+	}
+	return o.DueDateDependsOn
+}
+
+func (o *TaskUpdate) GetDueDateInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DueDateInterval
+}
+
+func (o *TaskUpdate) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *TaskUpdate) GetReminderDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ReminderDuration
+}
+
+func (o *TaskUpdate) GetRepetitionInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RepetitionInterval
+}
+
+func (o *TaskUpdate) GetStatus() *TaskUpdateStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *TaskUpdate) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
+}

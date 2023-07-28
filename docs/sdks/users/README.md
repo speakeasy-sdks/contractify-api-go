@@ -23,12 +23,13 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.CurrentUserSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
-    res, err := s.Users.CurrentUser(ctx, operations.CurrentUserSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    res, err := s.Users.CurrentUser(ctx, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -70,15 +71,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListUsersSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Users.ListUsers(ctx, operations.ListUsersRequest{
         Company: 474697,
         Page: contractifyproduction.Int64(244425),
-    }, operations.ListUsersSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

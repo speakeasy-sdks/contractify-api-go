@@ -11,3 +11,52 @@ type Pagination struct {
 	To          *int64  `json:"to,omitempty"`
 	Total       *int64  `json:"total,omitempty"`
 }
+
+func (o *Pagination) GetCurrentPage() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.CurrentPage
+}
+
+func (o *Pagination) GetFrom() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.From
+}
+
+func (o *Pagination) GetLastPage() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.LastPage
+}
+
+func (o *Pagination) GetPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Path
+}
+
+func (o *Pagination) GetPerPage() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.PerPage
+}
+
+func (o *Pagination) GetTo() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.To
+}
+
+func (o *Pagination) GetTotal() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Total
+}

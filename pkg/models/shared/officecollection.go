@@ -6,3 +6,10 @@ package shared
 type OfficeCollection struct {
 	Data []OfficeRead `json:"data,omitempty"`
 }
+
+func (o *OfficeCollection) GetData() []OfficeRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}

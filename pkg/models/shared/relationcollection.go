@@ -7,3 +7,17 @@ type RelationCollection struct {
 	Data []RelationRead `json:"data,omitempty"`
 	Meta *Pagination    `json:"meta,omitempty"`
 }
+
+func (o *RelationCollection) GetData() []RelationRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
+func (o *RelationCollection) GetMeta() *Pagination {
+	if o == nil {
+		return nil
+	}
+	return o.Meta
+}

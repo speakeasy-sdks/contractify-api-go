@@ -15,3 +15,80 @@ type OfficeWrite struct {
 	Street         *string `json:"street,omitempty"`
 	Zip            *string `json:"zip,omitempty"`
 }
+
+func (o *OfficeWrite) GetBus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Bus
+}
+
+func (o *OfficeWrite) GetCity() *string {
+	if o == nil {
+		return nil
+	}
+	return o.City
+}
+
+func (o *OfficeWrite) GetContactPerson() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ContactPerson
+}
+
+func (o *OfficeWrite) GetCountry() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Country
+}
+
+func (o *OfficeWrite) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *OfficeWrite) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *OfficeWrite) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *OfficeWrite) GetNumberIdentity() *string {
+	if o == nil {
+		return nil
+	}
+	return o.NumberIdentity
+}
+
+func (o *OfficeWrite) GetPhone() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Phone
+}
+
+func (o *OfficeWrite) GetStreet() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Street
+}
+
+func (o *OfficeWrite) GetZip() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Zip
+}

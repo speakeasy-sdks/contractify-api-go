@@ -7,3 +7,24 @@ type DepartmentRead struct {
 	Name      *string `json:"name,omitempty"`
 	Permalink *string `json:"permalink,omitempty"`
 }
+
+func (o *DepartmentRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *DepartmentRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *DepartmentRead) GetPermalink() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Permalink
+}

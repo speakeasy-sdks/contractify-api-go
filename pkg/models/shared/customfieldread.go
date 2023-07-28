@@ -9,3 +9,38 @@ type CustomFieldRead struct {
 	Name       *string `json:"name,omitempty"`
 	Type       *string `json:"type,omitempty"`
 }
+
+func (o *CustomFieldRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *CustomFieldRead) GetIsContract() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsContract
+}
+
+func (o *CustomFieldRead) GetIsDocument() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsDocument
+}
+
+func (o *CustomFieldRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *CustomFieldRead) GetType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Type
+}

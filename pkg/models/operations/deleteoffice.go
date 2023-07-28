@@ -11,6 +11,20 @@ type DeleteOfficeSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *DeleteOfficeSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *DeleteOfficeSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type DeleteOfficeRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -18,9 +32,30 @@ type DeleteOfficeRequest struct {
 	Office int64 `pathParam:"style=simple,explode=false,name=office"`
 }
 
+func (o *DeleteOfficeRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *DeleteOfficeRequest) GetOffice() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Office
+}
+
 // DeleteOffice404ApplicationJSON - Not Found
 type DeleteOffice404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteOffice404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // DeleteOffice403ApplicationJSON - Forbidden
@@ -28,14 +63,35 @@ type DeleteOffice403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteOffice403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteOffice401ApplicationJSON - Unauthenticated
 type DeleteOffice401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteOffice401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteOffice400ApplicationJSON - Precondition failed
 type DeleteOffice400ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteOffice400ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type DeleteOfficeResponse struct {
@@ -50,4 +106,53 @@ type DeleteOfficeResponse struct {
 	DeleteOffice403ApplicationJSONObject *DeleteOffice403ApplicationJSON
 	// Not Found
 	DeleteOffice404ApplicationJSONObject *DeleteOffice404ApplicationJSON
+}
+
+func (o *DeleteOfficeResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteOfficeResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteOfficeResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteOfficeResponse) GetDeleteOffice400ApplicationJSONObject() *DeleteOffice400ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteOffice400ApplicationJSONObject
+}
+
+func (o *DeleteOfficeResponse) GetDeleteOffice401ApplicationJSONObject() *DeleteOffice401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteOffice401ApplicationJSONObject
+}
+
+func (o *DeleteOfficeResponse) GetDeleteOffice403ApplicationJSONObject() *DeleteOffice403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteOffice403ApplicationJSONObject
+}
+
+func (o *DeleteOfficeResponse) GetDeleteOffice404ApplicationJSONObject() *DeleteOffice404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteOffice404ApplicationJSONObject
 }

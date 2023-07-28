@@ -12,6 +12,20 @@ type ListRelationsSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListRelationsSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListRelationsSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type ListRelationsRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -21,14 +35,49 @@ type ListRelationsRequest struct {
 	Reference *string `queryParam:"style=form,explode=true,name=reference"`
 }
 
+func (o *ListRelationsRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *ListRelationsRequest) GetPage() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Page
+}
+
+func (o *ListRelationsRequest) GetReference() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Reference
+}
+
 // ListRelations403ApplicationJSON - Forbidden
 type ListRelations403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListRelations403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListRelations401ApplicationJSON - Unauthenticated
 type ListRelations401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListRelations401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListRelationsResponse struct {
@@ -41,4 +90,46 @@ type ListRelationsResponse struct {
 	ListRelations401ApplicationJSONObject *ListRelations401ApplicationJSON
 	// Forbidden
 	ListRelations403ApplicationJSONObject *ListRelations403ApplicationJSON
+}
+
+func (o *ListRelationsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListRelationsResponse) GetRelationCollection() *shared.RelationCollection {
+	if o == nil {
+		return nil
+	}
+	return o.RelationCollection
+}
+
+func (o *ListRelationsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListRelationsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListRelationsResponse) GetListRelations401ApplicationJSONObject() *ListRelations401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListRelations401ApplicationJSONObject
+}
+
+func (o *ListRelationsResponse) GetListRelations403ApplicationJSONObject() *ListRelations403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListRelations403ApplicationJSONObject
 }

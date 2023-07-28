@@ -12,6 +12,20 @@ type GetOfficeSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *GetOfficeSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *GetOfficeSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type GetOfficeRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -19,9 +33,30 @@ type GetOfficeRequest struct {
 	Office int64 `pathParam:"style=simple,explode=false,name=office"`
 }
 
+func (o *GetOfficeRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *GetOfficeRequest) GetOffice() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Office
+}
+
 // GetOffice404ApplicationJSON - Not Found
 type GetOffice404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *GetOffice404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // GetOffice403ApplicationJSON - Forbidden
@@ -29,14 +64,35 @@ type GetOffice403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetOffice403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetOffice401ApplicationJSON - Unauthenticated
 type GetOffice401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *GetOffice401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // GetOffice200ApplicationJSON - OK
 type GetOffice200ApplicationJSON struct {
 	Data *shared.OfficeRead `json:"data,omitempty"`
+}
+
+func (o *GetOffice200ApplicationJSON) GetData() *shared.OfficeRead {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type GetOfficeResponse struct {
@@ -51,4 +107,53 @@ type GetOfficeResponse struct {
 	GetOffice403ApplicationJSONObject *GetOffice403ApplicationJSON
 	// Not Found
 	GetOffice404ApplicationJSONObject *GetOffice404ApplicationJSON
+}
+
+func (o *GetOfficeResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetOfficeResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetOfficeResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetOfficeResponse) GetGetOffice200ApplicationJSONObject() *GetOffice200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetOffice200ApplicationJSONObject
+}
+
+func (o *GetOfficeResponse) GetGetOffice401ApplicationJSONObject() *GetOffice401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetOffice401ApplicationJSONObject
+}
+
+func (o *GetOfficeResponse) GetGetOffice403ApplicationJSONObject() *GetOffice403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetOffice403ApplicationJSONObject
+}
+
+func (o *GetOfficeResponse) GetGetOffice404ApplicationJSONObject() *GetOffice404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetOffice404ApplicationJSONObject
 }

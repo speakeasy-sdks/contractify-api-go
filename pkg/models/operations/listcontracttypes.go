@@ -12,9 +12,30 @@ type ListContractTypesSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListContractTypesSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListContractTypesSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type ListContractTypesRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
+}
+
+func (o *ListContractTypesRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
 }
 
 // ListContractTypes403ApplicationJSON - Forbidden
@@ -22,9 +43,23 @@ type ListContractTypes403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListContractTypes403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListContractTypes401ApplicationJSON - Unauthenticated
 type ListContractTypes401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListContractTypes401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListContractTypesResponse struct {
@@ -37,4 +72,46 @@ type ListContractTypesResponse struct {
 	ListContractTypes401ApplicationJSONObject *ListContractTypes401ApplicationJSON
 	// Forbidden
 	ListContractTypes403ApplicationJSONObject *ListContractTypes403ApplicationJSON
+}
+
+func (o *ListContractTypesResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListContractTypesResponse) GetContractTypeCollection() *shared.ContractTypeCollection {
+	if o == nil {
+		return nil
+	}
+	return o.ContractTypeCollection
+}
+
+func (o *ListContractTypesResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListContractTypesResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListContractTypesResponse) GetListContractTypes401ApplicationJSONObject() *ListContractTypes401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListContractTypes401ApplicationJSONObject
+}
+
+func (o *ListContractTypesResponse) GetListContractTypes403ApplicationJSONObject() *ListContractTypes403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListContractTypes403ApplicationJSONObject
 }

@@ -28,6 +28,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.CreateTaskSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Tasks.CreateTask(ctx, operations.CreateTaskRequest{
@@ -44,10 +48,7 @@ func main() {
             Title: contractifyproduction.String("My task"),
         },
         Company: 208876,
-    }, operations.CreateTaskSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -90,15 +91,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.DeleteTaskSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Tasks.DeleteTask(ctx, operations.DeleteTaskRequest{
         Company: 635059,
         Task: 161309,
-    }, operations.DeleteTaskSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -141,15 +143,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.GetTaskSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Tasks.GetTask(ctx, operations.GetTaskRequest{
         Company: 995300,
         Task: 653108,
-    }, operations.GetTaskSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -192,15 +195,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListTasksSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Tasks.ListTasks(ctx, operations.ListTasksRequest{
         Company: 581850,
         Page: contractifyproduction.Int64(253291),
-    }, operations.ListTasksSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -245,6 +249,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.UpdateTaskSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Tasks.UpdateTask(ctx, operations.UpdateTaskRequest{
@@ -261,10 +269,7 @@ func main() {
         },
         Company: 414369,
         Task: 466311,
-    }, operations.UpdateTaskSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

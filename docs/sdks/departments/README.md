@@ -27,6 +27,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.CreateDepartmentSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Departments.CreateDepartment(ctx, operations.CreateDepartmentRequest{
@@ -34,10 +38,7 @@ func main() {
             Name: contractifyproduction.String("Sales"),
         },
         Company: 264555,
-    }, operations.CreateDepartmentSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -80,15 +81,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.DeleteDepartmentSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Departments.DeleteDepartment(ctx, operations.DeleteDepartmentRequest{
         Company: 186332,
         Department: 774234,
-    }, operations.DeleteDepartmentSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -131,15 +133,16 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.GetDepartmentSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Departments.GetDepartment(ctx, operations.GetDepartmentRequest{
         Company: 736918,
         Department: 456150,
-    }, operations.GetDepartmentSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -182,14 +185,15 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListDepartmentsSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Departments.ListDepartments(ctx, operations.ListDepartmentsRequest{
         Company: 216550,
-    }, operations.ListDepartmentsSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -233,6 +237,10 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.UpdateDepartmentSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Departments.UpdateDepartment(ctx, operations.UpdateDepartmentRequest{
@@ -241,10 +249,7 @@ func main() {
         },
         Company: 568434,
         Department: 135218,
-    }, operations.UpdateDepartmentSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

@@ -84,3 +84,73 @@ type TaskWrite struct {
 	Status             *TaskWriteStatus `json:"status,omitempty"`
 	Title              *string          `json:"title,omitempty"`
 }
+
+func (o *TaskWrite) GetContractID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ContractID
+}
+
+func (o *TaskWrite) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *TaskWrite) GetDueDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.DueDate
+}
+
+func (o *TaskWrite) GetDueDateDependsOn() *TaskWriteDueDateDependsOn {
+	if o == nil {
+		return nil
+	}
+	return o.DueDateDependsOn
+}
+
+func (o *TaskWrite) GetDueDateInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DueDateInterval
+}
+
+func (o *TaskWrite) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *TaskWrite) GetReminderDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ReminderDuration
+}
+
+func (o *TaskWrite) GetRepetitionInterval() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RepetitionInterval
+}
+
+func (o *TaskWrite) GetStatus() *TaskWriteStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *TaskWrite) GetTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Title
+}

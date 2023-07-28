@@ -11,6 +11,20 @@ type DeleteDepartmentSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *DeleteDepartmentSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *DeleteDepartmentSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type DeleteDepartmentRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -18,9 +32,30 @@ type DeleteDepartmentRequest struct {
 	Department int64 `pathParam:"style=simple,explode=false,name=department"`
 }
 
+func (o *DeleteDepartmentRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *DeleteDepartmentRequest) GetDepartment() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Department
+}
+
 // DeleteDepartment404ApplicationJSON - Not Found
 type DeleteDepartment404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteDepartment404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // DeleteDepartment403ApplicationJSON - Forbidden
@@ -28,14 +63,35 @@ type DeleteDepartment403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteDepartment403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteDepartment401ApplicationJSON - Unauthenticated
 type DeleteDepartment401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteDepartment401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteDepartment400ApplicationJSON - Precondition failed
 type DeleteDepartment400ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteDepartment400ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type DeleteDepartmentResponse struct {
@@ -50,4 +106,53 @@ type DeleteDepartmentResponse struct {
 	DeleteDepartment403ApplicationJSONObject *DeleteDepartment403ApplicationJSON
 	// Not Found
 	DeleteDepartment404ApplicationJSONObject *DeleteDepartment404ApplicationJSON
+}
+
+func (o *DeleteDepartmentResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteDepartmentResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteDepartmentResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteDepartmentResponse) GetDeleteDepartment400ApplicationJSONObject() *DeleteDepartment400ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDepartment400ApplicationJSONObject
+}
+
+func (o *DeleteDepartmentResponse) GetDeleteDepartment401ApplicationJSONObject() *DeleteDepartment401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDepartment401ApplicationJSONObject
+}
+
+func (o *DeleteDepartmentResponse) GetDeleteDepartment403ApplicationJSONObject() *DeleteDepartment403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDepartment403ApplicationJSONObject
+}
+
+func (o *DeleteDepartmentResponse) GetDeleteDepartment404ApplicationJSONObject() *DeleteDepartment404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteDepartment404ApplicationJSONObject
 }

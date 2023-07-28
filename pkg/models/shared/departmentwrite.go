@@ -5,3 +5,10 @@ package shared
 type DepartmentWrite struct {
 	Name *string `json:"name,omitempty"`
 }
+
+func (o *DepartmentWrite) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}

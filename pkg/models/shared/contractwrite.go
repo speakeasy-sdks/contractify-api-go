@@ -25,3 +25,122 @@ type ContractWrite struct {
 	StartDate         *types.Date             `json:"start_date,omitempty"`
 	Termination       *ContractTermination    `json:"termination,omitempty"`
 }
+
+func (o *ContractWrite) GetContractTypes() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ContractTypes
+}
+
+func (o *ContractWrite) GetCustomFieldValues() []CustomFieldValueWrite {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFieldValues
+}
+
+func (o *ContractWrite) GetDepartments() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Departments
+}
+
+func (o *ContractWrite) GetDocuments() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Documents
+}
+
+func (o *ContractWrite) GetDossierID() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.DossierID
+}
+
+func (o *ContractWrite) GetDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Duration
+}
+
+func (o *ContractWrite) GetEndDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.EndDate
+}
+
+func (o *ContractWrite) GetIsOpenEnded() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsOpenEnded
+}
+
+func (o *ContractWrite) GetLegalEntities() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.LegalEntities
+}
+
+func (o *ContractWrite) GetName() string {
+	if o == nil {
+		return ""
+	}
+	return o.Name
+}
+
+func (o *ContractWrite) GetOffices() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Offices
+}
+
+func (o *ContractWrite) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *ContractWrite) GetPhase() *ContractPhase {
+	if o == nil {
+		return nil
+	}
+	return o.Phase
+}
+
+func (o *ContractWrite) GetRelations() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.Relations
+}
+
+func (o *ContractWrite) GetRenewal() *ContractRenewal {
+	if o == nil {
+		return nil
+	}
+	return o.Renewal
+}
+
+func (o *ContractWrite) GetStartDate() *types.Date {
+	if o == nil {
+		return nil
+	}
+	return o.StartDate
+}
+
+func (o *ContractWrite) GetTermination() *ContractTermination {
+	if o == nil {
+		return nil
+	}
+	return o.Termination
+}

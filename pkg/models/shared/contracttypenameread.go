@@ -7,3 +7,24 @@ type ContractTypeNameRead struct {
 	Fr *string `json:"fr,omitempty"`
 	Nl *string `json:"nl,omitempty"`
 }
+
+func (o *ContractTypeNameRead) GetEn() *string {
+	if o == nil {
+		return nil
+	}
+	return o.En
+}
+
+func (o *ContractTypeNameRead) GetFr() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Fr
+}
+
+func (o *ContractTypeNameRead) GetNl() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Nl
+}

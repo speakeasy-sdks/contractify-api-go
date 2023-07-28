@@ -16,3 +16,59 @@ type ContractDocumentRead struct {
 	OwnerID     *int64                `json:"owner_id,omitempty"`
 	Versions    []DocumentVersionRead `json:"versions,omitempty"`
 }
+
+func (o *ContractDocumentRead) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *ContractDocumentRead) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *ContractDocumentRead) GetDossiers() []DossierRead {
+	if o == nil {
+		return nil
+	}
+	return o.Dossiers
+}
+
+func (o *ContractDocumentRead) GetDownloadURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DownloadURL
+}
+
+func (o *ContractDocumentRead) GetID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *ContractDocumentRead) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *ContractDocumentRead) GetOwnerID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.OwnerID
+}
+
+func (o *ContractDocumentRead) GetVersions() []DocumentVersionRead {
+	if o == nil {
+		return nil
+	}
+	return o.Versions
+}

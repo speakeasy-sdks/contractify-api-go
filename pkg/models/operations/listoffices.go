@@ -12,9 +12,30 @@ type ListOfficesSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *ListOfficesSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *ListOfficesSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type ListOfficesRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
+}
+
+func (o *ListOfficesRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
 }
 
 // ListOffices403ApplicationJSON - Forbidden
@@ -22,9 +43,23 @@ type ListOffices403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *ListOffices403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // ListOffices401ApplicationJSON - Unauthenticated
 type ListOffices401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *ListOffices401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type ListOfficesResponse struct {
@@ -37,4 +72,46 @@ type ListOfficesResponse struct {
 	ListOffices401ApplicationJSONObject *ListOffices401ApplicationJSON
 	// Forbidden
 	ListOffices403ApplicationJSONObject *ListOffices403ApplicationJSON
+}
+
+func (o *ListOfficesResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListOfficesResponse) GetOfficeCollection() *shared.OfficeCollection {
+	if o == nil {
+		return nil
+	}
+	return o.OfficeCollection
+}
+
+func (o *ListOfficesResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListOfficesResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListOfficesResponse) GetListOffices401ApplicationJSONObject() *ListOffices401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListOffices401ApplicationJSONObject
+}
+
+func (o *ListOfficesResponse) GetListOffices403ApplicationJSONObject() *ListOffices403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListOffices403ApplicationJSONObject
 }

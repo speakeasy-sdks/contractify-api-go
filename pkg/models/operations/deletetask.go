@@ -11,6 +11,20 @@ type DeleteTaskSecurity struct {
 	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
+func (o *DeleteTaskSecurity) GetOAuth2() string {
+	if o == nil {
+		return ""
+	}
+	return o.OAuth2
+}
+
+func (o *DeleteTaskSecurity) GetPersonalAccessToken() string {
+	if o == nil {
+		return ""
+	}
+	return o.PersonalAccessToken
+}
+
 type DeleteTaskRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
@@ -18,9 +32,30 @@ type DeleteTaskRequest struct {
 	Task int64 `pathParam:"style=simple,explode=false,name=task"`
 }
 
+func (o *DeleteTaskRequest) GetCompany() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Company
+}
+
+func (o *DeleteTaskRequest) GetTask() int64 {
+	if o == nil {
+		return 0
+	}
+	return o.Task
+}
+
 // DeleteTask404ApplicationJSON - Not Found
 type DeleteTask404ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteTask404ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 // DeleteTask403ApplicationJSON - Forbidden
@@ -28,9 +63,23 @@ type DeleteTask403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
 }
 
+func (o *DeleteTask403ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
 // DeleteTask401ApplicationJSON - Unauthenticated
 type DeleteTask401ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`
+}
+
+func (o *DeleteTask401ApplicationJSON) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
 }
 
 type DeleteTaskResponse struct {
@@ -43,4 +92,46 @@ type DeleteTaskResponse struct {
 	DeleteTask403ApplicationJSONObject *DeleteTask403ApplicationJSON
 	// Not Found
 	DeleteTask404ApplicationJSONObject *DeleteTask404ApplicationJSON
+}
+
+func (o *DeleteTaskResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteTaskResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteTaskResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteTaskResponse) GetDeleteTask401ApplicationJSONObject() *DeleteTask401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteTask401ApplicationJSONObject
+}
+
+func (o *DeleteTaskResponse) GetDeleteTask403ApplicationJSONObject() *DeleteTask403ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteTask403ApplicationJSONObject
+}
+
+func (o *DeleteTaskResponse) GetDeleteTask404ApplicationJSONObject() *DeleteTask404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteTask404ApplicationJSONObject
 }

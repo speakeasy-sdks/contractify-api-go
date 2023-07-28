@@ -22,14 +22,15 @@ import(
 
 func main() {
     s := contractifyproduction.New()
+    operationSecurity := operations.ListSubfoldersSecurity{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }
 
     ctx := context.Background()
     res, err := s.Subfolders.ListSubfolders(ctx, operations.ListSubfoldersRequest{
         Company: 652790,
-    }, operations.ListSubfoldersSecurity{
-        OAuth2: "",
-        PersonalAccessToken: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
