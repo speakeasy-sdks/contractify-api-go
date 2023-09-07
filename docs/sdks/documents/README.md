@@ -32,8 +32,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Documents.DeleteDocument(ctx, operations.DeleteDocumentRequest{
-        Company: 18789,
-        Document: 324141,
+        Company: 20218,
+        Document: 368241,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -84,8 +84,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Documents.GetDocument(ctx, operations.GetDocumentRequest{
-        Company: 617636,
-        Document: 149675,
+        Company: 832620,
+        Document: 957156,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -137,12 +137,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Documents.ListDocuments(ctx, operations.ListDocumentsRequest{
-        Company: 612096,
+        Company: 778157,
         EsigningStatus: operations.ListDocumentsEsigningStatusSentToLegal.ToPointer(),
-        EsigningUpdatedAfter: types.MustTimeFromString("2022-03-24T20:42:46.563Z"),
-        Page: contractifyproduction.Int64(943749),
-        RelationID: contractifyproduction.Int64(902599),
-        SignedAfter: types.MustTimeFromString("2022-02-06T12:52:33.708Z"),
+        EsigningUpdatedAfter: types.MustTimeFromString("2020-05-23T06:06:25.221Z"),
+        Page: contractifyproduction.Int64(978619),
+        RelationID: contractifyproduction.Int64(473608),
+        SignedAfter: types.MustTimeFromString("2020-08-07T00:03:55.328Z"),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -197,20 +197,11 @@ func main() {
         DocumentWrite: &shared.DocumentWrite{
             Contracts: []int64{
                 1,
-                1,
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
                     CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("iure"),
-                },
-                shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("saepe"),
-                },
-                shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("quidem"),
+                    Value: contractifyproduction.String("esse"),
                 },
             },
             Description: contractifyproduction.String("Lorem ipsum dolor sit amet."),
@@ -220,8 +211,8 @@ func main() {
             Name: "filename.pdf",
             OwnerID: contractifyproduction.Int64(1),
         },
-        Company: 60225,
-        Document: 969810,
+        Company: 520478,
+        Document: 780529,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

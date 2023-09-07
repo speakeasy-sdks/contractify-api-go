@@ -29,7 +29,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.LegalEntities.ListLegalEntities(ctx, operations.ListLegalEntitiesRequest{
-        Company: 666767,
+        Company: 678880,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

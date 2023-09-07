@@ -78,8 +78,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Users.ListUsers(ctx, operations.ListUsersRequest{
-        Company: 474697,
-        Page: contractifyproduction.Int64(244425),
+        Company: 943749,
+        Page: contractifyproduction.Int64(902599),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

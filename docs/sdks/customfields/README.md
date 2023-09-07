@@ -29,7 +29,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CustomFields.ListCustomFields(ctx, operations.ListCustomFieldsRequest{
-        Company: 473600,
+        Company: 479977,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

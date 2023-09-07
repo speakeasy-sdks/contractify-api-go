@@ -47,7 +47,7 @@ func main() {
             Street: contractifyproduction.String("Polenstraat 163"),
             Zip: contractifyproduction.String("9940"),
         },
-        Company: 653140,
+        Company: 118274,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -98,8 +98,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offices.DeleteOffice(ctx, operations.DeleteOfficeRequest{
-        Company: 670638,
-        Office: 170909,
+        Company: 720633,
+        Office: 639921,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -150,8 +150,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offices.GetOffice(ctx, operations.GetOfficeRequest{
-        Company: 210382,
-        Office: 358152,
+        Company: 582020,
+        Office: 143353,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -202,7 +202,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offices.ListOffices(ctx, operations.ListOfficesRequest{
-        Company: 128926,
+        Company: 537373,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -267,8 +267,8 @@ func main() {
             Street: contractifyproduction.String("Polenstraat 163"),
             Zip: contractifyproduction.String("9940"),
         },
-        Company: 750686,
-        Office: 315428,
+        Company: 944669,
+        Office: 758616,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

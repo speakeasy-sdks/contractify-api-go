@@ -37,7 +37,7 @@ func main() {
         DepartmentWrite: &shared.DepartmentWrite{
             Name: contractifyproduction.String("Sales"),
         },
-        Company: 264555,
+        Company: 568045,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -88,8 +88,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Departments.DeleteDepartment(ctx, operations.DeleteDepartmentRequest{
-        Company: 186332,
-        Department: 774234,
+        Company: 392785,
+        Department: 925597,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -140,8 +140,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Departments.GetDepartment(ctx, operations.GetDepartmentRequest{
-        Company: 736918,
-        Department: 456150,
+        Company: 836079,
+        Department: 71036,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -192,7 +192,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Departments.ListDepartments(ctx, operations.ListDepartmentsRequest{
-        Company: 216550,
+        Company: 337396,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -247,8 +247,8 @@ func main() {
         DepartmentWrite: &shared.DepartmentWrite{
             Name: contractifyproduction.String("Sales"),
         },
-        Company: 568434,
-        Department: 135218,
+        Company: 87129,
+        Department: 648172,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

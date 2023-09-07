@@ -51,7 +51,7 @@ func main() {
             Vat: contractifyproduction.String("BE12345678"),
             Website: contractifyproduction.String("https://www.example.org"),
         },
-        Company: 607831,
+        Company: 521848,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -102,8 +102,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Relations.DeleteRelation(ctx, operations.DeleteRelationRequest{
-        Company: 363711,
-        Relation: 325047,
+        Company: 105907,
+        Relation: 414662,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -154,8 +154,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Relations.GetRelation(ctx, operations.GetRelationRequest{
-        Company: 570197,
-        Relation: 38425,
+        Company: 473600,
+        Relation: 264555,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -206,9 +206,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Relations.ListRelations(ctx, operations.ListRelationsRequest{
-        Company: 438601,
-        Page: contractifyproduction.Int64(634274),
-        Reference: contractifyproduction.String("doloribus"),
+        Company: 186332,
+        Page: contractifyproduction.Int64(774234),
+        Reference: contractifyproduction.String("cum"),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -277,8 +277,8 @@ func main() {
             Vat: contractifyproduction.String("BE12345678"),
             Website: contractifyproduction.String("https://www.example.org"),
         },
-        Company: 958950,
-        Relation: 102044,
+        Company: 456150,
+        Relation: 216550,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

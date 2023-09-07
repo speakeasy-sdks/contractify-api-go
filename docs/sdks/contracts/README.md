@@ -37,33 +37,18 @@ func main() {
     res, err := s.Contracts.CreateContract(ctx, operations.CreateContractRequest{
         ContractWrite: &shared.ContractWrite{
             ContractTypes: []int64{
-                844266,
-                602763,
-                857946,
+                715190,
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
                     CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("illum"),
-                },
-                shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("vel"),
-                },
-                shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("error"),
+                    Value: contractifyproduction.String("quibusdam"),
                 },
             },
             Departments: []int64{
-                384382,
-                437587,
-                297534,
+                602763,
             },
             Documents: []int64{
-                1,
-                1,
-                1,
                 1,
             },
             DossierID: 1,
@@ -71,20 +56,16 @@ func main() {
             EndDate: types.MustDateFromString("2021-12-31"),
             IsOpenEnded: contractifyproduction.Bool(false),
             LegalEntities: []int64{
-                963663,
+                857946,
             },
             Name: "Partnership agreement",
             Offices: []int64{
-                383441,
-                477665,
+                544883,
             },
             OwnerID: contractifyproduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
-                812169,
-                528895,
-                479977,
-                568045,
+                847252,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
@@ -100,7 +81,7 @@ func main() {
                 TerminationDuration: contractifyproduction.String("P1M"),
             },
         },
-        Company: 392785,
+        Company: 423655,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -151,8 +132,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Contracts.DeleteContract(ctx, operations.DeleteContractRequest{
-        Company: 925597,
-        Contract: 836079,
+        Company: 623564,
+        Contract: 645894,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -203,8 +184,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Contracts.GetContract(ctx, operations.GetContractRequest{
-        Company: 71036,
-        Contract: 337396,
+        Company: 384382,
+        Contract: 437587,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -255,8 +236,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Contracts.ListContracts(ctx, operations.ListContractsRequest{
-        Company: 87129,
-        Page: contractifyproduction.Int64(648172),
+        Company: 297534,
+        Page: contractifyproduction.Int64(891773),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -311,34 +292,18 @@ func main() {
     res, err := s.Contracts.UpdateContract(ctx, operations.UpdateContractRequest{
         ContractWrite: &shared.ContractWrite{
             ContractTypes: []int64{
-                368241,
+                56713,
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
                     CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("sapiente"),
-                },
-                shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("quo"),
-                },
-                shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("odit"),
-                },
-                shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("at"),
+                    Value: contractifyproduction.String("delectus"),
                 },
             },
             Departments: []int64{
-                978619,
-                473608,
-                799159,
-                800911,
+                272656,
             },
             Documents: []int64{
-                1,
                 1,
             },
             DossierID: 1,
@@ -346,22 +311,16 @@ func main() {
             EndDate: types.MustDateFromString("2021-12-31"),
             IsOpenEnded: contractifyproduction.Bool(false),
             LegalEntities: []int64{
-                780529,
-                678880,
-                118274,
+                383441,
             },
             Name: "Partnership agreement",
             Offices: []int64{
-                639921,
-                582020,
-                143353,
+                477665,
             },
             OwnerID: contractifyproduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
-                944669,
-                758616,
-                521848,
+                791725,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
@@ -377,8 +336,8 @@ func main() {
                 TerminationDuration: contractifyproduction.String("P1M"),
             },
         },
-        Company: 105907,
-        Contract: 414662,
+        Company: 812169,
+        Contract: 528895,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

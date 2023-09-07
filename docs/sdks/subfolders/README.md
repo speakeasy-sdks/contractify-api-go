@@ -29,7 +29,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Subfolders.ListSubfolders(ctx, operations.ListSubfoldersRequest{
-        Company: 652790,
+        Company: 568434,
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
