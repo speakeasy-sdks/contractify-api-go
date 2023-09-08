@@ -1,7 +1,5 @@
 # ContractCollection
 
-OK
-
 
 ## Fields
 

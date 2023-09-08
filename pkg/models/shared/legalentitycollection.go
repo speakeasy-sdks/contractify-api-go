@@ -2,7 +2,6 @@
 
 package shared
 
-// LegalEntityCollection - OK
 type LegalEntityCollection struct {
 	Data []LegalEntityRead `json:"data,omitempty"`
 }

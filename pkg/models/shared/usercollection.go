@@ -2,7 +2,6 @@
 
 package shared
 
-// UserCollection - OK
 type UserCollection struct {
 	Data []UserRead  `json:"data,omitempty"`
 	Meta *Pagination `json:"meta,omitempty"`

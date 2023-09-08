@@ -1,7 +1,5 @@
 # OfficeCollection
 
-OK
-
 
 ## Fields
 

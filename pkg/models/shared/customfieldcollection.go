@@ -2,7 +2,6 @@
 
 package shared
 
-// CustomFieldCollection - OK
 type CustomFieldCollection struct {
 	Data []CustomFieldRead `json:"data,omitempty"`
 	Meta *Pagination       `json:"meta,omitempty"`

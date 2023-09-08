@@ -2,7 +2,6 @@
 
 package shared
 
-// DocumentCollection - OK
 type DocumentCollection struct {
 	Data []DocumentRead `json:"data,omitempty"`
 	Meta *Pagination    `json:"meta,omitempty"`

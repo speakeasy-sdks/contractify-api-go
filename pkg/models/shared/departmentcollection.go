@@ -2,7 +2,6 @@
 
 package shared
 
-// DepartmentCollection - OK
 type DepartmentCollection struct {
 	Data []DepartmentRead `json:"data,omitempty"`
 }

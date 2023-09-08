@@ -1,7 +1,5 @@
 # CustomFieldCollection
 
-OK
-
 
 ## Fields
 

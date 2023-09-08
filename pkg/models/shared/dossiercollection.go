@@ -2,7 +2,6 @@
 
 package shared
 
-// DossierCollection - OK
 type DossierCollection struct {
 	Data []DossierRead `json:"data,omitempty"`
 	Meta *Pagination   `json:"meta,omitempty"`

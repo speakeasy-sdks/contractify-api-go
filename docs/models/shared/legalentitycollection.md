@@ -1,7 +1,5 @@
 # LegalEntityCollection
 
-OK
-
 
 ## Fields
 

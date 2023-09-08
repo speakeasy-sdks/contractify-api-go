@@ -1,7 +1,5 @@
 # DepartmentCollection
 
-OK
-
 
 ## Fields
 

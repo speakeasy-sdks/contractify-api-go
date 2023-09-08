@@ -2,7 +2,6 @@
 
 package shared
 
-// ContractTypeCollection - OK
 type ContractTypeCollection struct {
 	Data []ContractTypeRead `json:"data,omitempty"`
 }

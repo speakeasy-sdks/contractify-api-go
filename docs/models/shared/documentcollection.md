@@ -1,7 +1,5 @@
 # DocumentCollection
 
-OK
-
 
 ## Fields
 

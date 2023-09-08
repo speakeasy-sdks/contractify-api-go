@@ -2,7 +2,6 @@
 
 package shared
 
-// RelationCollection - OK
 type RelationCollection struct {
 	Data []RelationRead `json:"data,omitempty"`
 	Meta *Pagination    `json:"meta,omitempty"`

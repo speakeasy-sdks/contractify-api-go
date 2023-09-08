@@ -1,7 +1,5 @@
 # UserCollection
 
-OK
-
 
 ## Fields
 

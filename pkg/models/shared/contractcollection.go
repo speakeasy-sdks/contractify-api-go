@@ -2,7 +2,6 @@
 
 package shared
 
-// ContractCollection - OK
 type ContractCollection struct {
 	Data []ContractRead `json:"data,omitempty"`
 	Meta *Pagination    `json:"meta,omitempty"`

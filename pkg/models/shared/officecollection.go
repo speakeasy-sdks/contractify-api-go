@@ -2,7 +2,6 @@
 
 package shared
 
-// OfficeCollection - OK
 type OfficeCollection struct {
 	Data []OfficeRead `json:"data,omitempty"`
 }

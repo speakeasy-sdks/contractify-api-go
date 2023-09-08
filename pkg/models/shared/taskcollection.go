@@ -2,7 +2,6 @@
 
 package shared
 
-// TaskCollection - OK
 type TaskCollection struct {
 	Data []TaskRead  `json:"data,omitempty"`
 	Meta *Pagination `json:"meta,omitempty"`

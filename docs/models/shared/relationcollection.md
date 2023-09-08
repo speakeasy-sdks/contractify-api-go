@@ -1,7 +1,5 @@
 # RelationCollection
 
-OK
-
 
 ## Fields
 

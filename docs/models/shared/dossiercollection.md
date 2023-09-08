@@ -1,7 +1,5 @@
 # DossierCollection
 
-OK
-
 
 ## Fields
 
