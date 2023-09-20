@@ -21,7 +21,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListLegalEntitiesSecurity{
             OAuth2: "",
             PersonalAccessToken: "",

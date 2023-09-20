@@ -21,7 +21,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListSubfoldersSecurity{
             OAuth2: "",
             PersonalAccessToken: "",

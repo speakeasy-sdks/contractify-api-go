@@ -3,6 +3,7 @@
 package shared
 
 import (
+	"ContractifyProduction/pkg/utils"
 	"time"
 )
 
@@ -19,6 +20,17 @@ type RelationRead struct {
 	Reference   *string    `json:"reference,omitempty"`
 	Vat         *string    `json:"vat,omitempty"`
 	Website     *string    `json:"website,omitempty"`
+}
+
+func (r RelationRead) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RelationRead) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *RelationRead) GetAddress() *Address {

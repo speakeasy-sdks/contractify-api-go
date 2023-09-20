@@ -26,7 +26,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.CreateDepartmentSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -35,7 +35,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Departments.CreateDepartment(ctx, operations.CreateDepartmentRequest{
         DepartmentWrite: &shared.DepartmentWrite{
-            Name: contractifyproduction.String("Sales"),
+            Name: ContractifyProduction.String("Sales"),
         },
         Company: 568045,
     }, operationSecurity)
@@ -80,7 +80,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.DeleteDepartmentSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -132,7 +132,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.GetDepartmentSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -184,7 +184,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListDepartmentsSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -236,7 +236,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.UpdateDepartmentSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -245,7 +245,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Departments.UpdateDepartment(ctx, operations.UpdateDepartmentRequest{
         DepartmentWrite: &shared.DepartmentWrite{
-            Name: contractifyproduction.String("Sales"),
+            Name: ContractifyProduction.String("Sales"),
         },
         Company: 87129,
         Department: 648172,

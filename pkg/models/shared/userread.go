@@ -3,6 +3,7 @@
 package shared
 
 import (
+	"ContractifyProduction/pkg/utils"
 	"encoding/json"
 	"fmt"
 	"time"
@@ -44,6 +45,17 @@ type UserRead struct {
 	ID        *int64        `json:"id,omitempty"`
 	Name      *string       `json:"name,omitempty"`
 	Role      *UserReadRole `json:"role,omitempty"`
+}
+
+func (u UserRead) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UserRead) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *UserRead) GetCreatedAt() *time.Time {

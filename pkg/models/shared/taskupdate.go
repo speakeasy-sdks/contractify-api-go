@@ -4,6 +4,7 @@ package shared
 
 import (
 	"ContractifyProduction/pkg/types"
+	"ContractifyProduction/pkg/utils"
 	"encoding/json"
 	"fmt"
 )
@@ -82,6 +83,17 @@ type TaskUpdate struct {
 	RepetitionInterval *string           `json:"repetition_interval,omitempty"`
 	Status             *TaskUpdateStatus `json:"status,omitempty"`
 	Title              *string           `json:"title,omitempty"`
+}
+
+func (t TaskUpdate) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TaskUpdate) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *TaskUpdate) GetDescription() *string {

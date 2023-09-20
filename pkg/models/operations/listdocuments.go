@@ -4,6 +4,7 @@ package operations
 
 import (
 	"ContractifyProduction/pkg/models/shared"
+	"ContractifyProduction/pkg/utils"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -88,6 +89,17 @@ type ListDocumentsRequest struct {
 	RelationID *int64 `queryParam:"style=form,explode=true,name=relation_id"`
 	// Return documents e-signed after the given date
 	SignedAfter *time.Time `queryParam:"style=form,explode=true,name=signed_after"`
+}
+
+func (l ListDocumentsRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(l, "", false)
+}
+
+func (l *ListDocumentsRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *ListDocumentsRequest) GetCompany() int64 {

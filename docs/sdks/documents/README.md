@@ -24,7 +24,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.DeleteDocumentSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -76,7 +76,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.GetDocumentSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -129,7 +129,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListDocumentsSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -140,8 +140,8 @@ func main() {
         Company: 778157,
         EsigningStatus: operations.ListDocumentsEsigningStatusSentToLegal.ToPointer(),
         EsigningUpdatedAfter: types.MustTimeFromString("2020-05-23T06:06:25.221Z"),
-        Page: contractifyproduction.Int64(978619),
-        RelationID: contractifyproduction.Int64(473608),
+        Page: ContractifyProduction.Int64(978619),
+        RelationID: ContractifyProduction.Int64(473608),
         SignedAfter: types.MustTimeFromString("2020-08-07T00:03:55.328Z"),
     }, operationSecurity)
     if err != nil {
@@ -186,7 +186,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.UpdateDocumentSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -200,16 +200,16 @@ func main() {
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("esse"),
+                    CustomFieldID: ContractifyProduction.Int64(2),
+                    Value: ContractifyProduction.String("esse"),
                 },
             },
-            Description: contractifyproduction.String("Lorem ipsum dolor sit amet."),
+            Description: ContractifyProduction.String("Lorem ipsum dolor sit amet."),
             Dossiers: []int64{
                 1,
             },
             Name: "filename.pdf",
-            OwnerID: contractifyproduction.Int64(1),
+            OwnerID: ContractifyProduction.Int64(1),
         },
         Company: 520478,
         Document: 780529,

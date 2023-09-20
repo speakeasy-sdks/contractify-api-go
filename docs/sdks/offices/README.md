@@ -26,7 +26,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.CreateOfficeSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -35,17 +35,17 @@ func main() {
     ctx := context.Background()
     res, err := s.Offices.CreateOffice(ctx, operations.CreateOfficeRequest{
         OfficeWrite: &shared.OfficeWrite{
-            Bus: contractifyproduction.String("1"),
-            City: contractifyproduction.String("Sleidinge"),
-            ContactPerson: contractifyproduction.String("Ada Lovelace"),
-            Country: contractifyproduction.String("Belgium"),
-            Email: contractifyproduction.String("info@contractify.be"),
-            ID: contractifyproduction.Int64(1),
-            Name: contractifyproduction.String("Ghent"),
-            NumberIdentity: contractifyproduction.String("OFF-GHENT"),
-            Phone: contractifyproduction.String("+32 9 234 28 97"),
-            Street: contractifyproduction.String("Polenstraat 163"),
-            Zip: contractifyproduction.String("9940"),
+            Bus: ContractifyProduction.String("1"),
+            City: ContractifyProduction.String("Sleidinge"),
+            ContactPerson: ContractifyProduction.String("Ada Lovelace"),
+            Country: ContractifyProduction.String("Belgium"),
+            Email: ContractifyProduction.String("info@contractify.be"),
+            ID: ContractifyProduction.Int64(1),
+            Name: ContractifyProduction.String("Ghent"),
+            NumberIdentity: ContractifyProduction.String("OFF-GHENT"),
+            Phone: ContractifyProduction.String("+32 9 234 28 97"),
+            Street: ContractifyProduction.String("Polenstraat 163"),
+            Zip: ContractifyProduction.String("9940"),
         },
         Company: 118274,
     }, operationSecurity)
@@ -90,7 +90,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.DeleteOfficeSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -142,7 +142,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.GetOfficeSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -194,7 +194,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListOfficesSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -246,7 +246,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.UpdateOfficeSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -255,17 +255,17 @@ func main() {
     ctx := context.Background()
     res, err := s.Offices.UpdateOffice(ctx, operations.UpdateOfficeRequest{
         OfficeWrite: &shared.OfficeWrite{
-            Bus: contractifyproduction.String("1"),
-            City: contractifyproduction.String("Sleidinge"),
-            ContactPerson: contractifyproduction.String("Ada Lovelace"),
-            Country: contractifyproduction.String("Belgium"),
-            Email: contractifyproduction.String("info@contractify.be"),
-            ID: contractifyproduction.Int64(1),
-            Name: contractifyproduction.String("Ghent"),
-            NumberIdentity: contractifyproduction.String("OFF-GHENT"),
-            Phone: contractifyproduction.String("+32 9 234 28 97"),
-            Street: contractifyproduction.String("Polenstraat 163"),
-            Zip: contractifyproduction.String("9940"),
+            Bus: ContractifyProduction.String("1"),
+            City: ContractifyProduction.String("Sleidinge"),
+            ContactPerson: ContractifyProduction.String("Ada Lovelace"),
+            Country: ContractifyProduction.String("Belgium"),
+            Email: ContractifyProduction.String("info@contractify.be"),
+            ID: ContractifyProduction.Int64(1),
+            Name: ContractifyProduction.String("Ghent"),
+            NumberIdentity: ContractifyProduction.String("OFF-GHENT"),
+            Phone: ContractifyProduction.String("+32 9 234 28 97"),
+            Street: ContractifyProduction.String("Polenstraat 163"),
+            Zip: ContractifyProduction.String("9940"),
         },
         Company: 944669,
         Office: 758616,

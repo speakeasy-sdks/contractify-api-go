@@ -4,12 +4,24 @@ package shared
 
 import (
 	"ContractifyProduction/pkg/types"
+	"ContractifyProduction/pkg/utils"
 )
 
 type ContractTermination struct {
 	IsTerminableAtAnyTime *bool       `json:"is_terminable_at_any_time,omitempty"`
 	TerminationDate       *types.Date `json:"termination_date,omitempty"`
 	TerminationDuration   *string     `json:"termination_duration,omitempty"`
+}
+
+func (c ContractTermination) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ContractTermination) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *ContractTermination) GetIsTerminableAtAnyTime() *bool {

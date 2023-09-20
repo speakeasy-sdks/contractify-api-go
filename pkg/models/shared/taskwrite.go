@@ -4,6 +4,7 @@ package shared
 
 import (
 	"ContractifyProduction/pkg/types"
+	"ContractifyProduction/pkg/utils"
 	"encoding/json"
 	"fmt"
 )
@@ -83,6 +84,17 @@ type TaskWrite struct {
 	RepetitionInterval *string          `json:"repetition_interval,omitempty"`
 	Status             *TaskWriteStatus `json:"status,omitempty"`
 	Title              *string          `json:"title,omitempty"`
+}
+
+func (t TaskWrite) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TaskWrite) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *TaskWrite) GetContractID() *int64 {

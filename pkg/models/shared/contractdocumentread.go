@@ -3,6 +3,7 @@
 package shared
 
 import (
+	"ContractifyProduction/pkg/utils"
 	"time"
 )
 
@@ -15,6 +16,17 @@ type ContractDocumentRead struct {
 	Name        *string               `json:"name,omitempty"`
 	OwnerID     *int64                `json:"owner_id,omitempty"`
 	Versions    []DocumentVersionRead `json:"versions,omitempty"`
+}
+
+func (c ContractDocumentRead) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ContractDocumentRead) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *ContractDocumentRead) GetCreatedAt() *time.Time {

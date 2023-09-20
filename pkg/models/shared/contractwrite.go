@@ -4,6 +4,7 @@ package shared
 
 import (
 	"ContractifyProduction/pkg/types"
+	"ContractifyProduction/pkg/utils"
 )
 
 type ContractWrite struct {
@@ -24,6 +25,17 @@ type ContractWrite struct {
 	Renewal           *ContractRenewal        `json:"renewal,omitempty"`
 	StartDate         *types.Date             `json:"start_date,omitempty"`
 	Termination       *ContractTermination    `json:"termination,omitempty"`
+}
+
+func (c ContractWrite) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *ContractWrite) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *ContractWrite) GetContractTypes() []int64 {

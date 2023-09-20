@@ -3,6 +3,7 @@
 package shared
 
 import (
+	"ContractifyProduction/pkg/utils"
 	"time"
 )
 
@@ -12,6 +13,17 @@ type UserCurrent struct {
 	Email               *string       `json:"email,omitempty"`
 	ID                  *int64        `json:"id,omitempty"`
 	Name                *string       `json:"name,omitempty"`
+}
+
+func (u UserCurrent) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *UserCurrent) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *UserCurrent) GetCompaniesWhereAdmin() []CompanyRead {

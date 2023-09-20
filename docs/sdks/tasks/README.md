@@ -27,7 +27,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.CreateTaskSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -36,16 +36,16 @@ func main() {
     ctx := context.Background()
     res, err := s.Tasks.CreateTask(ctx, operations.CreateTaskRequest{
         TaskWrite: &shared.TaskWrite{
-            ContractID: contractifyproduction.Int64(1),
-            Description: contractifyproduction.String("Lorem ipsum dolor sit amet."),
+            ContractID: ContractifyProduction.Int64(1),
+            Description: ContractifyProduction.String("Lorem ipsum dolor sit amet."),
             DueDate: types.MustDateFromString("2021-12-31"),
             DueDateDependsOn: shared.TaskWriteDueDateDependsOnEndDate.ToPointer(),
-            DueDateInterval: contractifyproduction.String("-P10D"),
-            OwnerID: contractifyproduction.Int64(1),
-            ReminderDuration: contractifyproduction.String("P1M"),
-            RepetitionInterval: contractifyproduction.String("P1Y"),
+            DueDateInterval: ContractifyProduction.String("-P10D"),
+            OwnerID: ContractifyProduction.Int64(1),
+            ReminderDuration: ContractifyProduction.String("P1M"),
+            RepetitionInterval: ContractifyProduction.String("P1Y"),
             Status: shared.TaskWriteStatusAccomplished.ToPointer(),
-            Title: contractifyproduction.String("My task"),
+            Title: ContractifyProduction.String("My task"),
         },
         Company: 135218,
     }, operationSecurity)
@@ -90,7 +90,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.DeleteTaskSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -142,7 +142,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.GetTaskSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -194,7 +194,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListTasksSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -203,7 +203,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Tasks.ListTasks(ctx, operations.ListTasksRequest{
         Company: 612096,
-        Page: contractifyproduction.Int64(222321),
+        Page: ContractifyProduction.Int64(222321),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -248,7 +248,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.UpdateTaskSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -257,15 +257,15 @@ func main() {
     ctx := context.Background()
     res, err := s.Tasks.UpdateTask(ctx, operations.UpdateTaskRequest{
         TaskUpdate: &shared.TaskUpdate{
-            Description: contractifyproduction.String("Lorem ipsum dolor sit amet."),
+            Description: ContractifyProduction.String("Lorem ipsum dolor sit amet."),
             DueDate: types.MustDateFromString("2021-12-31"),
             DueDateDependsOn: shared.TaskUpdateDueDateDependsOnEndDate.ToPointer(),
-            DueDateInterval: contractifyproduction.String("-P10D"),
-            OwnerID: contractifyproduction.Int64(1),
-            ReminderDuration: contractifyproduction.String("P1M"),
-            RepetitionInterval: contractifyproduction.String("P1Y"),
+            DueDateInterval: ContractifyProduction.String("-P10D"),
+            OwnerID: ContractifyProduction.Int64(1),
+            ReminderDuration: ContractifyProduction.String("P1M"),
+            RepetitionInterval: ContractifyProduction.String("P1Y"),
             Status: shared.TaskUpdateStatusAccomplished.ToPointer(),
-            Title: contractifyproduction.String("My task"),
+            Title: ContractifyProduction.String("My task"),
         },
         Company: 616934,
         Task: 386489,

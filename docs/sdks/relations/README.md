@@ -26,7 +26,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.CreateRelationSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -36,20 +36,20 @@ func main() {
     res, err := s.Relations.CreateRelation(ctx, operations.CreateRelationRequest{
         RelationWrite: &shared.RelationWrite{
             Address: &shared.Address{
-                AddressLine1: contractifyproduction.String("221B Baker Street"),
-                AddressLine2: contractifyproduction.String("Marylebone"),
-                City: contractifyproduction.String("London"),
-                Country: contractifyproduction.String("United Kingdom"),
-                PostalCode: contractifyproduction.String("NW1 6XE"),
+                AddressLine1: ContractifyProduction.String("221B Baker Street"),
+                AddressLine2: ContractifyProduction.String("Marylebone"),
+                City: ContractifyProduction.String("London"),
+                Country: ContractifyProduction.String("United Kingdom"),
+                PostalCode: ContractifyProduction.String("NW1 6XE"),
             },
-            Email: contractifyproduction.String("sherlock@example.org"),
-            Fax: contractifyproduction.String("+3211324354"),
-            MobilePhone: contractifyproduction.String("+23477123456"),
+            Email: ContractifyProduction.String("sherlock@example.org"),
+            Fax: ContractifyProduction.String("+3211324354"),
+            MobilePhone: ContractifyProduction.String("+23477123456"),
             Name: "Sherlock Holmes Detective Services",
-            Phone: contractifyproduction.String("+23477123456"),
-            Reference: contractifyproduction.String("REF123"),
-            Vat: contractifyproduction.String("BE12345678"),
-            Website: contractifyproduction.String("https://www.example.org"),
+            Phone: ContractifyProduction.String("+23477123456"),
+            Reference: ContractifyProduction.String("REF123"),
+            Vat: ContractifyProduction.String("BE12345678"),
+            Website: ContractifyProduction.String("https://www.example.org"),
         },
         Company: 521848,
     }, operationSecurity)
@@ -94,7 +94,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.DeleteRelationSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -146,7 +146,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.GetRelationSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -198,7 +198,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListRelationsSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -207,8 +207,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Relations.ListRelations(ctx, operations.ListRelationsRequest{
         Company: 186332,
-        Page: contractifyproduction.Int64(774234),
-        Reference: contractifyproduction.String("cum"),
+        Page: ContractifyProduction.Int64(774234),
+        Reference: ContractifyProduction.String("cum"),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -252,7 +252,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.UpdateRelationSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -262,20 +262,20 @@ func main() {
     res, err := s.Relations.UpdateRelation(ctx, operations.UpdateRelationRequest{
         RelationWrite: &shared.RelationWrite{
             Address: &shared.Address{
-                AddressLine1: contractifyproduction.String("221B Baker Street"),
-                AddressLine2: contractifyproduction.String("Marylebone"),
-                City: contractifyproduction.String("London"),
-                Country: contractifyproduction.String("United Kingdom"),
-                PostalCode: contractifyproduction.String("NW1 6XE"),
+                AddressLine1: ContractifyProduction.String("221B Baker Street"),
+                AddressLine2: ContractifyProduction.String("Marylebone"),
+                City: ContractifyProduction.String("London"),
+                Country: ContractifyProduction.String("United Kingdom"),
+                PostalCode: ContractifyProduction.String("NW1 6XE"),
             },
-            Email: contractifyproduction.String("sherlock@example.org"),
-            Fax: contractifyproduction.String("+3211324354"),
-            MobilePhone: contractifyproduction.String("+23477123456"),
+            Email: ContractifyProduction.String("sherlock@example.org"),
+            Fax: ContractifyProduction.String("+3211324354"),
+            MobilePhone: ContractifyProduction.String("+23477123456"),
             Name: "Sherlock Holmes Detective Services",
-            Phone: contractifyproduction.String("+23477123456"),
-            Reference: contractifyproduction.String("REF123"),
-            Vat: contractifyproduction.String("BE12345678"),
-            Website: contractifyproduction.String("https://www.example.org"),
+            Phone: ContractifyProduction.String("+23477123456"),
+            Reference: ContractifyProduction.String("REF123"),
+            Vat: ContractifyProduction.String("BE12345678"),
+            Website: ContractifyProduction.String("https://www.example.org"),
         },
         Company: 456150,
         Relation: 216550,

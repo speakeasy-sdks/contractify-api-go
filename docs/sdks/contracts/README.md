@@ -27,7 +27,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.CreateContractSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -41,8 +41,8 @@ func main() {
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("quibusdam"),
+                    CustomFieldID: ContractifyProduction.Int64(2),
+                    Value: ContractifyProduction.String("quibusdam"),
                 },
             },
             Departments: []int64{
@@ -52,9 +52,9 @@ func main() {
                 1,
             },
             DossierID: 1,
-            Duration: contractifyproduction.String("P1Y"),
+            Duration: ContractifyProduction.String("P1Y"),
             EndDate: types.MustDateFromString("2021-12-31"),
-            IsOpenEnded: contractifyproduction.Bool(false),
+            IsOpenEnded: ContractifyProduction.Bool(false),
             LegalEntities: []int64{
                 857946,
             },
@@ -62,23 +62,23 @@ func main() {
             Offices: []int64{
                 544883,
             },
-            OwnerID: contractifyproduction.Int64(1),
+            OwnerID: ContractifyProduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
                 847252,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
-                    NumberOfRenewals: contractifyproduction.Int64(1),
-                    RenewalPeriod: contractifyproduction.String("P3Y"),
+                    NumberOfRenewals: ContractifyProduction.Int64(1),
+                    RenewalPeriod: ContractifyProduction.String("P3Y"),
                 },
-                IsAutomaticallyRenewed: contractifyproduction.Bool(false),
+                IsAutomaticallyRenewed: ContractifyProduction.Bool(false),
             },
             StartDate: types.MustDateFromString("2021-01-01"),
             Termination: &shared.ContractTermination{
-                IsTerminableAtAnyTime: contractifyproduction.Bool(false),
+                IsTerminableAtAnyTime: ContractifyProduction.Bool(false),
                 TerminationDate: types.MustDateFromString("2021-11-30"),
-                TerminationDuration: contractifyproduction.String("P1M"),
+                TerminationDuration: ContractifyProduction.String("P1M"),
             },
         },
         Company: 423655,
@@ -124,7 +124,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.DeleteContractSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -176,7 +176,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.GetContractSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -228,7 +228,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.ListContractsSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -237,7 +237,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Contracts.ListContracts(ctx, operations.ListContractsRequest{
         Company: 297534,
-        Page: contractifyproduction.Int64(891773),
+        Page: ContractifyProduction.Int64(891773),
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
@@ -282,7 +282,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := ContractifyProduction.New()
     operationSecurity := operations.UpdateContractSecurity{
             OAuth2: "",
             PersonalAccessToken: "",
@@ -296,8 +296,8 @@ func main() {
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
-                    CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("delectus"),
+                    CustomFieldID: ContractifyProduction.Int64(2),
+                    Value: ContractifyProduction.String("delectus"),
                 },
             },
             Departments: []int64{
@@ -307,9 +307,9 @@ func main() {
                 1,
             },
             DossierID: 1,
-            Duration: contractifyproduction.String("P1Y"),
+            Duration: ContractifyProduction.String("P1Y"),
             EndDate: types.MustDateFromString("2021-12-31"),
-            IsOpenEnded: contractifyproduction.Bool(false),
+            IsOpenEnded: ContractifyProduction.Bool(false),
             LegalEntities: []int64{
                 383441,
             },
@@ -317,23 +317,23 @@ func main() {
             Offices: []int64{
                 477665,
             },
-            OwnerID: contractifyproduction.Int64(1),
+            OwnerID: ContractifyProduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
                 791725,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
-                    NumberOfRenewals: contractifyproduction.Int64(1),
-                    RenewalPeriod: contractifyproduction.String("P3Y"),
+                    NumberOfRenewals: ContractifyProduction.Int64(1),
+                    RenewalPeriod: ContractifyProduction.String("P3Y"),
                 },
-                IsAutomaticallyRenewed: contractifyproduction.Bool(false),
+                IsAutomaticallyRenewed: ContractifyProduction.Bool(false),
             },
             StartDate: types.MustDateFromString("2021-01-01"),
             Termination: &shared.ContractTermination{
-                IsTerminableAtAnyTime: contractifyproduction.Bool(false),
+                IsTerminableAtAnyTime: ContractifyProduction.Bool(false),
                 TerminationDate: types.MustDateFromString("2021-11-30"),
-                TerminationDuration: contractifyproduction.String("P1M"),
+                TerminationDuration: ContractifyProduction.String("P1M"),
             },
         },
         Company: 812169,
