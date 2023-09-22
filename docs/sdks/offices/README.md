@@ -20,35 +20,36 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.CreateOfficeSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.CreateOffice(ctx, operations.CreateOfficeRequest{
         OfficeWrite: &shared.OfficeWrite{
-            Bus: ContractifyProduction.String("1"),
-            City: ContractifyProduction.String("Sleidinge"),
-            ContactPerson: ContractifyProduction.String("Ada Lovelace"),
-            Country: ContractifyProduction.String("Belgium"),
-            Email: ContractifyProduction.String("info@contractify.be"),
-            ID: ContractifyProduction.Int64(1),
-            Name: ContractifyProduction.String("Ghent"),
-            NumberIdentity: ContractifyProduction.String("OFF-GHENT"),
-            Phone: ContractifyProduction.String("+32 9 234 28 97"),
-            Street: ContractifyProduction.String("Polenstraat 163"),
-            Zip: ContractifyProduction.String("9940"),
+            Bus: contractifyproduction.String("1"),
+            City: contractifyproduction.String("Sleidinge"),
+            ContactPerson: contractifyproduction.String("Ada Lovelace"),
+            Country: contractifyproduction.String("Belgium"),
+            Email: contractifyproduction.String("info@contractify.be"),
+            ID: contractifyproduction.Int64(1),
+            Name: contractifyproduction.String("Ghent"),
+            NumberIdentity: contractifyproduction.String("OFF-GHENT"),
+            Phone: contractifyproduction.String("+32 9 234 28 97"),
+            Street: contractifyproduction.String("Polenstraat 163"),
+            Zip: contractifyproduction.String("9940"),
         },
-        Company: 118274,
-    }, operationSecurity)
+        Company: 720633,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -61,11 +62,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.CreateOfficeRequest](../../models/operations/createofficerequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.CreateOfficeSecurity](../../models/operations/createofficesecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `request`                                                                        | [operations.CreateOfficeRequest](../../models/operations/createofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -85,22 +85,24 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.DeleteOfficeSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.DeleteOffice(ctx, operations.DeleteOfficeRequest{
-        Company: 720633,
-        Office: 639921,
-    }, operationSecurity)
+        Company: 639921,
+        Office: 582020,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -113,11 +115,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.DeleteOfficeRequest](../../models/operations/deleteofficerequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.DeleteOfficeSecurity](../../models/operations/deleteofficesecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `request`                                                                        | [operations.DeleteOfficeRequest](../../models/operations/deleteofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -137,22 +138,24 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.GetOfficeSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.GetOffice(ctx, operations.GetOfficeRequest{
-        Company: 582020,
-        Office: 143353,
-    }, operationSecurity)
+        Company: 143353,
+        Office: 537373,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -165,11 +168,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
-| `request`                                                                    | [operations.GetOfficeRequest](../../models/operations/getofficerequest.md)   | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `security`                                                                   | [operations.GetOfficeSecurity](../../models/operations/getofficesecurity.md) | :heavy_check_mark:                                                           | The security requirements to use for the request.                            |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
+| `request`                                                                  | [operations.GetOfficeRequest](../../models/operations/getofficerequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -189,21 +191,23 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.ListOfficesSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.ListOffices(ctx, operations.ListOfficesRequest{
-        Company: 537373,
-    }, operationSecurity)
+        Company: 944669,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -216,11 +220,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.ListOfficesRequest](../../models/operations/listofficesrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.ListOfficesSecurity](../../models/operations/listofficessecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.ListOfficesRequest](../../models/operations/listofficesrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -240,36 +243,37 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.UpdateOfficeSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.UpdateOffice(ctx, operations.UpdateOfficeRequest{
         OfficeWrite: &shared.OfficeWrite{
-            Bus: ContractifyProduction.String("1"),
-            City: ContractifyProduction.String("Sleidinge"),
-            ContactPerson: ContractifyProduction.String("Ada Lovelace"),
-            Country: ContractifyProduction.String("Belgium"),
-            Email: ContractifyProduction.String("info@contractify.be"),
-            ID: ContractifyProduction.Int64(1),
-            Name: ContractifyProduction.String("Ghent"),
-            NumberIdentity: ContractifyProduction.String("OFF-GHENT"),
-            Phone: ContractifyProduction.String("+32 9 234 28 97"),
-            Street: ContractifyProduction.String("Polenstraat 163"),
-            Zip: ContractifyProduction.String("9940"),
+            Bus: contractifyproduction.String("1"),
+            City: contractifyproduction.String("Sleidinge"),
+            ContactPerson: contractifyproduction.String("Ada Lovelace"),
+            Country: contractifyproduction.String("Belgium"),
+            Email: contractifyproduction.String("info@contractify.be"),
+            ID: contractifyproduction.Int64(1),
+            Name: contractifyproduction.String("Ghent"),
+            NumberIdentity: contractifyproduction.String("OFF-GHENT"),
+            Phone: contractifyproduction.String("+32 9 234 28 97"),
+            Street: contractifyproduction.String("Polenstraat 163"),
+            Zip: contractifyproduction.String("9940"),
         },
-        Company: 944669,
-        Office: 758616,
-    }, operationSecurity)
+        Company: 758616,
+        Office: 521848,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -282,11 +286,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.UpdateOfficeRequest](../../models/operations/updateofficerequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.UpdateOfficeSecurity](../../models/operations/updateofficesecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `request`                                                                        | [operations.UpdateOfficeRequest](../../models/operations/updateofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response

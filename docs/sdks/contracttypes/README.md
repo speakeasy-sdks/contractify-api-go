@@ -16,21 +16,23 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.ListContractTypesSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{
-        Company: 592845,
-    }, operationSecurity)
+        Company: 715190,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -43,11 +45,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
-| `request`                                                                                    | [operations.ListContractTypesRequest](../../models/operations/listcontracttypesrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.ListContractTypesSecurity](../../models/operations/listcontracttypessecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `request`                                                                                  | [operations.ListContractTypesRequest](../../models/operations/listcontracttypesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response

@@ -20,69 +20,70 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	"ContractifyProduction/pkg/models/operations"
 	"ContractifyProduction/pkg/types"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.CreateContractSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Contracts.CreateContract(ctx, operations.CreateContractRequest{
         ContractWrite: &shared.ContractWrite{
             ContractTypes: []int64{
-                715190,
+                844266,
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
-                    CustomFieldID: ContractifyProduction.Int64(2),
-                    Value: ContractifyProduction.String("quibusdam"),
+                    CustomFieldID: contractifyproduction.Int64(2),
+                    Value: contractifyproduction.String("unde"),
                 },
             },
             Departments: []int64{
-                602763,
+                857946,
             },
             Documents: []int64{
                 1,
             },
             DossierID: 1,
-            Duration: ContractifyProduction.String("P1Y"),
+            Duration: contractifyproduction.String("P1Y"),
             EndDate: types.MustDateFromString("2021-12-31"),
-            IsOpenEnded: ContractifyProduction.Bool(false),
+            IsOpenEnded: contractifyproduction.Bool(false),
             LegalEntities: []int64{
-                857946,
+                544883,
             },
             Name: "Partnership agreement",
             Offices: []int64{
-                544883,
+                847252,
             },
-            OwnerID: ContractifyProduction.Int64(1),
+            OwnerID: contractifyproduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
-                847252,
+                423655,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
-                    NumberOfRenewals: ContractifyProduction.Int64(1),
-                    RenewalPeriod: ContractifyProduction.String("P3Y"),
+                    NumberOfRenewals: contractifyproduction.Int64(1),
+                    RenewalPeriod: contractifyproduction.String("P3Y"),
                 },
-                IsAutomaticallyRenewed: ContractifyProduction.Bool(false),
+                IsAutomaticallyRenewed: contractifyproduction.Bool(false),
             },
             StartDate: types.MustDateFromString("2021-01-01"),
             Termination: &shared.ContractTermination{
-                IsTerminableAtAnyTime: ContractifyProduction.Bool(false),
+                IsTerminableAtAnyTime: contractifyproduction.Bool(false),
                 TerminationDate: types.MustDateFromString("2021-11-30"),
-                TerminationDuration: ContractifyProduction.String("P1M"),
+                TerminationDuration: contractifyproduction.String("P1M"),
             },
         },
-        Company: 423655,
-    }, operationSecurity)
+        Company: 623564,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -95,11 +96,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.CreateContractRequest](../../models/operations/createcontractrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.CreateContractSecurity](../../models/operations/createcontractsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.CreateContractRequest](../../models/operations/createcontractrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -119,22 +119,24 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.DeleteContractSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Contracts.DeleteContract(ctx, operations.DeleteContractRequest{
-        Company: 623564,
-        Contract: 645894,
-    }, operationSecurity)
+        Company: 645894,
+        Contract: 384382,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -147,11 +149,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.DeleteContractRequest](../../models/operations/deletecontractrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.DeleteContractSecurity](../../models/operations/deletecontractsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.DeleteContractRequest](../../models/operations/deletecontractrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -171,22 +172,24 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.GetContractSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Contracts.GetContract(ctx, operations.GetContractRequest{
-        Company: 384382,
-        Contract: 437587,
-    }, operationSecurity)
+        Company: 437587,
+        Contract: 297534,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -199,11 +202,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.GetContractRequest](../../models/operations/getcontractrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.GetContractSecurity](../../models/operations/getcontractsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.GetContractRequest](../../models/operations/getcontractrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -223,22 +225,24 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.ListContractsSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Contracts.ListContracts(ctx, operations.ListContractsRequest{
-        Company: 297534,
-        Page: ContractifyProduction.Int64(891773),
-    }, operationSecurity)
+        Company: 891773,
+        Page: contractifyproduction.Int64(56713),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -251,11 +255,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.ListContractsRequest](../../models/operations/listcontractsrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.ListContractsSecurity](../../models/operations/listcontractssecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
+| `request`                                                                          | [operations.ListContractsRequest](../../models/operations/listcontractsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -275,70 +278,71 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	"ContractifyProduction/pkg/models/operations"
 	"ContractifyProduction/pkg/types"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.UpdateContractSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Contracts.UpdateContract(ctx, operations.UpdateContractRequest{
         ContractWrite: &shared.ContractWrite{
             ContractTypes: []int64{
-                56713,
+                963663,
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
-                    CustomFieldID: ContractifyProduction.Int64(2),
-                    Value: ContractifyProduction.String("delectus"),
+                    CustomFieldID: contractifyproduction.Int64(2),
+                    Value: contractifyproduction.String("tempora"),
                 },
             },
             Departments: []int64{
-                272656,
+                383441,
             },
             Documents: []int64{
                 1,
             },
             DossierID: 1,
-            Duration: ContractifyProduction.String("P1Y"),
+            Duration: contractifyproduction.String("P1Y"),
             EndDate: types.MustDateFromString("2021-12-31"),
-            IsOpenEnded: ContractifyProduction.Bool(false),
+            IsOpenEnded: contractifyproduction.Bool(false),
             LegalEntities: []int64{
-                383441,
+                477665,
             },
             Name: "Partnership agreement",
             Offices: []int64{
-                477665,
+                791725,
             },
-            OwnerID: ContractifyProduction.Int64(1),
+            OwnerID: contractifyproduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
-                791725,
+                812169,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
-                    NumberOfRenewals: ContractifyProduction.Int64(1),
-                    RenewalPeriod: ContractifyProduction.String("P3Y"),
+                    NumberOfRenewals: contractifyproduction.Int64(1),
+                    RenewalPeriod: contractifyproduction.String("P3Y"),
                 },
-                IsAutomaticallyRenewed: ContractifyProduction.Bool(false),
+                IsAutomaticallyRenewed: contractifyproduction.Bool(false),
             },
             StartDate: types.MustDateFromString("2021-01-01"),
             Termination: &shared.ContractTermination{
-                IsTerminableAtAnyTime: ContractifyProduction.Bool(false),
+                IsTerminableAtAnyTime: contractifyproduction.Bool(false),
                 TerminationDate: types.MustDateFromString("2021-11-30"),
-                TerminationDuration: ContractifyProduction.String("P1M"),
+                TerminationDuration: contractifyproduction.String("P1M"),
             },
         },
-        Company: 812169,
-        Contract: 528895,
-    }, operationSecurity)
+        Company: 528895,
+        Contract: 479977,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -351,11 +355,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.UpdateContractRequest](../../models/operations/updatecontractrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.UpdateContractSecurity](../../models/operations/updatecontractsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.UpdateContractRequest](../../models/operations/updatecontractrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response

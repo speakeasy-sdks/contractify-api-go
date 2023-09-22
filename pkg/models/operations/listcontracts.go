@@ -7,25 +7,6 @@ import (
 	"net/http"
 )
 
-type ListContractsSecurity struct {
-	OAuth2              string `security:"scheme,type=oauth2,name=Authorization"`
-	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
-}
-
-func (o *ListContractsSecurity) GetOAuth2() string {
-	if o == nil {
-		return ""
-	}
-	return o.OAuth2
-}
-
-func (o *ListContractsSecurity) GetPersonalAccessToken() string {
-	if o == nil {
-		return ""
-	}
-	return o.PersonalAccessToken
-}
-
 type ListContractsRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`

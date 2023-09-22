@@ -11,25 +11,6 @@ import (
 	"time"
 )
 
-type ListDocumentsSecurity struct {
-	OAuth2              string `security:"scheme,type=oauth2,name=Authorization"`
-	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
-}
-
-func (o *ListDocumentsSecurity) GetOAuth2() string {
-	if o == nil {
-		return ""
-	}
-	return o.OAuth2
-}
-
-func (o *ListDocumentsSecurity) GetPersonalAccessToken() string {
-	if o == nil {
-		return ""
-	}
-	return o.PersonalAccessToken
-}
-
 // ListDocumentsEsigningStatus - Return documents currently having this status in the eSigning process, can be comma separated
 type ListDocumentsEsigningStatus string
 

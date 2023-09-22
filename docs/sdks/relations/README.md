@@ -20,39 +20,40 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.CreateRelationSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Relations.CreateRelation(ctx, operations.CreateRelationRequest{
         RelationWrite: &shared.RelationWrite{
             Address: &shared.Address{
-                AddressLine1: ContractifyProduction.String("221B Baker Street"),
-                AddressLine2: ContractifyProduction.String("Marylebone"),
-                City: ContractifyProduction.String("London"),
-                Country: ContractifyProduction.String("United Kingdom"),
-                PostalCode: ContractifyProduction.String("NW1 6XE"),
+                AddressLine1: contractifyproduction.String("221B Baker Street"),
+                AddressLine2: contractifyproduction.String("Marylebone"),
+                City: contractifyproduction.String("London"),
+                Country: contractifyproduction.String("United Kingdom"),
+                PostalCode: contractifyproduction.String("NW1 6XE"),
             },
-            Email: ContractifyProduction.String("sherlock@example.org"),
-            Fax: ContractifyProduction.String("+3211324354"),
-            MobilePhone: ContractifyProduction.String("+23477123456"),
+            Email: contractifyproduction.String("sherlock@example.org"),
+            Fax: contractifyproduction.String("+3211324354"),
+            MobilePhone: contractifyproduction.String("+23477123456"),
             Name: "Sherlock Holmes Detective Services",
-            Phone: ContractifyProduction.String("+23477123456"),
-            Reference: ContractifyProduction.String("REF123"),
-            Vat: ContractifyProduction.String("BE12345678"),
-            Website: ContractifyProduction.String("https://www.example.org"),
+            Phone: contractifyproduction.String("+23477123456"),
+            Reference: contractifyproduction.String("REF123"),
+            Vat: contractifyproduction.String("BE12345678"),
+            Website: contractifyproduction.String("https://www.example.org"),
         },
-        Company: 521848,
-    }, operationSecurity)
+        Company: 105907,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -65,11 +66,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.CreateRelationRequest](../../models/operations/createrelationrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.CreateRelationSecurity](../../models/operations/createrelationsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.CreateRelationRequest](../../models/operations/createrelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -89,22 +89,24 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.DeleteRelationSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Relations.DeleteRelation(ctx, operations.DeleteRelationRequest{
-        Company: 105907,
-        Relation: 414662,
-    }, operationSecurity)
+        Company: 414662,
+        Relation: 473600,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -117,11 +119,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.DeleteRelationRequest](../../models/operations/deleterelationrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.DeleteRelationSecurity](../../models/operations/deleterelationsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.DeleteRelationRequest](../../models/operations/deleterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -141,22 +142,24 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.GetRelationSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Relations.GetRelation(ctx, operations.GetRelationRequest{
-        Company: 473600,
-        Relation: 264555,
-    }, operationSecurity)
+        Company: 264555,
+        Relation: 186332,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -169,11 +172,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.GetRelationRequest](../../models/operations/getrelationrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.GetRelationSecurity](../../models/operations/getrelationsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.GetRelationRequest](../../models/operations/getrelationrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -193,23 +195,25 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
+	contractifyproduction "ContractifyProduction"
+	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.ListRelationsSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Relations.ListRelations(ctx, operations.ListRelationsRequest{
-        Company: 186332,
-        Page: ContractifyProduction.Int64(774234),
-        Reference: ContractifyProduction.String("cum"),
-    }, operationSecurity)
+        Company: 774234,
+        Page: contractifyproduction.Int64(736918),
+        Reference: contractifyproduction.String("esse"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -222,11 +226,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.ListRelationsRequest](../../models/operations/listrelationsrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.ListRelationsSecurity](../../models/operations/listrelationssecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
+| `request`                                                                          | [operations.ListRelationsRequest](../../models/operations/listrelationsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -246,40 +249,41 @@ package main
 import(
 	"context"
 	"log"
-	"ContractifyProduction"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	"ContractifyProduction/pkg/models/operations"
 )
 
 func main() {
-    s := ContractifyProduction.New()
-    operationSecurity := operations.UpdateRelationSecurity{
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
             OAuth2: "",
             PersonalAccessToken: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Relations.UpdateRelation(ctx, operations.UpdateRelationRequest{
         RelationWrite: &shared.RelationWrite{
             Address: &shared.Address{
-                AddressLine1: ContractifyProduction.String("221B Baker Street"),
-                AddressLine2: ContractifyProduction.String("Marylebone"),
-                City: ContractifyProduction.String("London"),
-                Country: ContractifyProduction.String("United Kingdom"),
-                PostalCode: ContractifyProduction.String("NW1 6XE"),
+                AddressLine1: contractifyproduction.String("221B Baker Street"),
+                AddressLine2: contractifyproduction.String("Marylebone"),
+                City: contractifyproduction.String("London"),
+                Country: contractifyproduction.String("United Kingdom"),
+                PostalCode: contractifyproduction.String("NW1 6XE"),
             },
-            Email: ContractifyProduction.String("sherlock@example.org"),
-            Fax: ContractifyProduction.String("+3211324354"),
-            MobilePhone: ContractifyProduction.String("+23477123456"),
+            Email: contractifyproduction.String("sherlock@example.org"),
+            Fax: contractifyproduction.String("+3211324354"),
+            MobilePhone: contractifyproduction.String("+23477123456"),
             Name: "Sherlock Holmes Detective Services",
-            Phone: ContractifyProduction.String("+23477123456"),
-            Reference: ContractifyProduction.String("REF123"),
-            Vat: ContractifyProduction.String("BE12345678"),
-            Website: ContractifyProduction.String("https://www.example.org"),
+            Phone: contractifyproduction.String("+23477123456"),
+            Reference: contractifyproduction.String("REF123"),
+            Vat: contractifyproduction.String("BE12345678"),
+            Website: contractifyproduction.String("https://www.example.org"),
         },
-        Company: 456150,
-        Relation: 216550,
-    }, operationSecurity)
+        Company: 216550,
+        Relation: 568434,
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -292,11 +296,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.UpdateRelationRequest](../../models/operations/updaterelationrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.UpdateRelationSecurity](../../models/operations/updaterelationsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.UpdateRelationRequest](../../models/operations/updaterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response

@@ -7,25 +7,6 @@ import (
 	"net/http"
 )
 
-type CurrentUserSecurity struct {
-	OAuth2              string `security:"scheme,type=oauth2,name=Authorization"`
-	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
-}
-
-func (o *CurrentUserSecurity) GetOAuth2() string {
-	if o == nil {
-		return ""
-	}
-	return o.OAuth2
-}
-
-func (o *CurrentUserSecurity) GetPersonalAccessToken() string {
-	if o == nil {
-		return ""
-	}
-	return o.PersonalAccessToken
-}
-
 // CurrentUser403ApplicationJSON - Forbidden
 type CurrentUser403ApplicationJSON struct {
 	Message *string `json:"message,omitempty"`

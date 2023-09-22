@@ -7,25 +7,6 @@ import (
 	"net/http"
 )
 
-type ListCustomFieldsSecurity struct {
-	OAuth2              string `security:"scheme,type=oauth2,name=Authorization"`
-	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
-}
-
-func (o *ListCustomFieldsSecurity) GetOAuth2() string {
-	if o == nil {
-		return ""
-	}
-	return o.OAuth2
-}
-
-func (o *ListCustomFieldsSecurity) GetPersonalAccessToken() string {
-	if o == nil {
-		return ""
-	}
-	return o.PersonalAccessToken
-}
-
 type ListCustomFieldsRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`

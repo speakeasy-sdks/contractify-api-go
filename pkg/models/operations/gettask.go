@@ -7,25 +7,6 @@ import (
 	"net/http"
 )
 
-type GetTaskSecurity struct {
-	OAuth2              string `security:"scheme,type=oauth2,name=Authorization"`
-	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
-}
-
-func (o *GetTaskSecurity) GetOAuth2() string {
-	if o == nil {
-		return ""
-	}
-	return o.OAuth2
-}
-
-func (o *GetTaskSecurity) GetPersonalAccessToken() string {
-	if o == nil {
-		return ""
-	}
-	return o.PersonalAccessToken
-}
-
 type GetTaskRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`

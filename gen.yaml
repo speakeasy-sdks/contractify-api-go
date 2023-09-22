@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 35b77c8e231012e142d527cdb5536b80
   docVersion: "2022-08-16"
-  speakeasyVersion: 1.88.0
-  generationVersion: 2.118.1
+  speakeasyVersion: 1.89.0
+  generationVersion: 2.125.1
 generation:
   comments:
     disableComments: false
@@ -14,11 +14,10 @@ generation:
   tagNamespacingDisabled: false
 features:
   go:
-    core: 2.88.3
+    core: 2.88.4
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
-    methodSecurity: 2.81.2
 go:
-  version: 1.5.1
+  version: 1.6.0
   maxMethodParams: 0
   packageName: ContractifyProduction

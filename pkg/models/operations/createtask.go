@@ -7,25 +7,6 @@ import (
 	"net/http"
 )
 
-type CreateTaskSecurity struct {
-	OAuth2              string `security:"scheme,type=oauth2,name=Authorization"`
-	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
-}
-
-func (o *CreateTaskSecurity) GetOAuth2() string {
-	if o == nil {
-		return ""
-	}
-	return o.OAuth2
-}
-
-func (o *CreateTaskSecurity) GetPersonalAccessToken() string {
-	if o == nil {
-		return ""
-	}
-	return o.PersonalAccessToken
-}
-
 type CreateTaskRequest struct {
 	TaskWrite *shared.TaskWrite `request:"mediaType=application/json"`
 	// Id of the company
