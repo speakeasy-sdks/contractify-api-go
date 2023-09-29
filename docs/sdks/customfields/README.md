@@ -1,4 +1,5 @@
 # CustomFields
+(*CustomFields*)
 
 ### Available Operations
 
@@ -31,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CustomFields.ListCustomFields(ctx, operations.ListCustomFieldsRequest{
-        Company: 568045,
+        Company: 318971,
     })
     if err != nil {
         log.Fatal(err)

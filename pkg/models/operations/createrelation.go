@@ -103,8 +103,11 @@ func (o *CreateRelation201ApplicationJSON) GetData() *shared.RelationRead {
 }
 
 type CreateRelationResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Created
 	CreateRelation201ApplicationJSONObject *CreateRelation201ApplicationJSON

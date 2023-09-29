@@ -1,4 +1,5 @@
 # Tasks
+(*Tasks*)
 
 ### Available Operations
 
@@ -48,7 +49,7 @@ func main() {
             Status: shared.TaskWriteStatusAccomplished.ToPointer(),
             Title: contractifyproduction.String("My task"),
         },
-        Company: 18789,
+        Company: 296904,
     })
     if err != nil {
         log.Fatal(err)
@@ -100,8 +101,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Tasks.DeleteTask(ctx, operations.DeleteTaskRequest{
-        Company: 324141,
-        Task: 617636,
+        Company: 357574,
+        Task: 394977,
     })
     if err != nil {
         log.Fatal(err)
@@ -153,8 +154,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Tasks.GetTask(ctx, operations.GetTaskRequest{
-        Company: 149675,
-        Task: 612096,
+        Company: 717011,
+        Task: 649018,
     })
     if err != nil {
         log.Fatal(err)
@@ -206,8 +207,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Tasks.ListTasks(ctx, operations.ListTasksRequest{
-        Company: 222321,
-        Page: contractifyproduction.Int64(616934),
+        Company: 715197,
+        Page: contractifyproduction.Int64(192941),
     })
     if err != nil {
         log.Fatal(err)
@@ -271,8 +272,8 @@ func main() {
             Status: shared.TaskUpdateStatusAccomplished.ToPointer(),
             Title: contractifyproduction.String("My task"),
         },
-        Company: 386489,
-        Task: 943749,
+        Company: 449699,
+        Task: 675064,
     })
     if err != nil {
         log.Fatal(err)

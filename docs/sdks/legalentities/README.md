@@ -1,4 +1,5 @@
 # LegalEntities
+(*LegalEntities*)
 
 ### Available Operations
 
@@ -31,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.LegalEntities.ListLegalEntities(ctx, operations.ListLegalEntitiesRequest{
-        Company: 118274,
+        Company: 730248,
     })
     if err != nil {
         log.Fatal(err)

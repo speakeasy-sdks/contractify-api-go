@@ -62,11 +62,14 @@ func (o *ListRelations401ApplicationJSON) GetMessage() *string {
 }
 
 type ListRelationsResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// OK
 	RelationCollection *shared.RelationCollection
-	StatusCode         int
-	RawResponse        *http.Response
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
 	// Unauthenticated
 	ListRelations401ApplicationJSONObject *ListRelations401ApplicationJSON
 	// Forbidden

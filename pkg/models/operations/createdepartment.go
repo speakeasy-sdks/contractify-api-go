@@ -103,8 +103,11 @@ func (o *CreateDepartment201ApplicationJSON) GetData() *shared.DepartmentRead {
 }
 
 type CreateDepartmentResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Created
 	CreateDepartment201ApplicationJSONObject *CreateDepartment201ApplicationJSON

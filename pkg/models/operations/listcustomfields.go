@@ -44,11 +44,14 @@ func (o *ListCustomFields401ApplicationJSON) GetMessage() *string {
 }
 
 type ListCustomFieldsResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// OK
 	CustomFieldCollection *shared.CustomFieldCollection
-	StatusCode            int
-	RawResponse           *http.Response
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
 	// Unauthenticated
 	ListCustomFields401ApplicationJSONObject *ListCustomFields401ApplicationJSON
 	// Forbidden

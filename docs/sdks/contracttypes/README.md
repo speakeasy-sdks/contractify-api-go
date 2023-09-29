@@ -1,4 +1,5 @@
 # ContractTypes
+(*ContractTypes*)
 
 ### Available Operations
 
@@ -31,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{
-        Company: 715190,
+        Company: 839467,
     })
     if err != nil {
         log.Fatal(err)

@@ -1,4 +1,5 @@
 # Contracts
+(*Contracts*)
 
 ### Available Operations
 
@@ -38,16 +39,16 @@ func main() {
     res, err := s.Contracts.CreateContract(ctx, operations.CreateContractRequest{
         ContractWrite: &shared.ContractWrite{
             ContractTypes: []int64{
-                844266,
+                940947,
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
                     CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("unde"),
+                    Value: contractifyproduction.String("Palladium"),
                 },
             },
             Departments: []int64{
-                857946,
+                559447,
             },
             Documents: []int64{
                 1,
@@ -57,16 +58,16 @@ func main() {
             EndDate: types.MustDateFromString("2021-12-31"),
             IsOpenEnded: contractifyproduction.Bool(false),
             LegalEntities: []int64{
-                544883,
+                657681,
             },
             Name: "Partnership agreement",
             Offices: []int64{
-                847252,
+                410255,
             },
             OwnerID: contractifyproduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
-                423655,
+                867240,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
@@ -82,7 +83,7 @@ func main() {
                 TerminationDuration: contractifyproduction.String("P1M"),
             },
         },
-        Company: 623564,
+        Company: 647814,
     })
     if err != nil {
         log.Fatal(err)
@@ -134,8 +135,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Contracts.DeleteContract(ctx, operations.DeleteContractRequest{
-        Company: 645894,
-        Contract: 384382,
+        Company: 791005,
+        Contract: 200974,
     })
     if err != nil {
         log.Fatal(err)
@@ -187,8 +188,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Contracts.GetContract(ctx, operations.GetContractRequest{
-        Company: 437587,
-        Contract: 297534,
+        Company: 362495,
+        Contract: 163842,
     })
     if err != nil {
         log.Fatal(err)
@@ -240,8 +241,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Contracts.ListContracts(ctx, operations.ListContractsRequest{
-        Company: 891773,
-        Page: contractifyproduction.Int64(56713),
+        Company: 567515,
+        Page: contractifyproduction.Int64(62076),
     })
     if err != nil {
         log.Fatal(err)
@@ -296,16 +297,16 @@ func main() {
     res, err := s.Contracts.UpdateContract(ctx, operations.UpdateContractRequest{
         ContractWrite: &shared.ContractWrite{
             ContractTypes: []int64{
-                963663,
+                60280,
             },
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
                     CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("tempora"),
+                    Value: contractifyproduction.String("synergies"),
                 },
             },
             Departments: []int64{
-                383441,
+                178046,
             },
             Documents: []int64{
                 1,
@@ -315,16 +316,16 @@ func main() {
             EndDate: types.MustDateFromString("2021-12-31"),
             IsOpenEnded: contractifyproduction.Bool(false),
             LegalEntities: []int64{
-                477665,
+                331597,
             },
             Name: "Partnership agreement",
             Offices: []int64{
-                791725,
+                693387,
             },
             OwnerID: contractifyproduction.Int64(1),
             Phase: shared.ContractPhaseOngoing.ToPointer(),
             Relations: []int64{
-                812169,
+                670029,
             },
             Renewal: &shared.ContractRenewal{
                 AutomaticRenewal: &shared.ContractAutomaticRenewal{
@@ -340,8 +341,8 @@ func main() {
                 TerminationDuration: contractifyproduction.String("P1M"),
             },
         },
-        Company: 528895,
-        Contract: 479977,
+        Company: 213877,
+        Contract: 177820,
     })
     if err != nil {
         log.Fatal(err)

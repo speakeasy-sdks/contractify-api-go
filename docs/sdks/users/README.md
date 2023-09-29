@@ -1,4 +1,5 @@
 # Users
+(*Users*)
 
 ### Available Operations
 
@@ -80,8 +81,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Users.ListUsers(ctx, operations.ListUsersRequest{
-        Company: 902599,
-        Page: contractifyproduction.Int64(681820),
+        Company: 606239,
+        Page: contractifyproduction.Int64(283983),
     })
     if err != nil {
         log.Fatal(err)

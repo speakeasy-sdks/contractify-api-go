@@ -103,8 +103,11 @@ func (o *CreateContract201ApplicationJSON) GetData() *shared.ContractRead {
 }
 
 type CreateContractResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
-	StatusCode  int
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Created
 	CreateContract201ApplicationJSONObject *CreateContract201ApplicationJSON
