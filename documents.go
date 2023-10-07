@@ -50,13 +50,6 @@ func (s *documents) DeleteDocument(ctx context.Context, request operations.Delet
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteDocumentResponse{
@@ -64,6 +57,13 @@ func (s *documents) DeleteDocument(ctx context.Context, request operations.Delet
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode == 401:
@@ -145,13 +145,6 @@ func (s *documents) GetDocument(ctx context.Context, request operations.GetDocum
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetDocumentResponse{
@@ -159,6 +152,13 @@ func (s *documents) GetDocument(ctx context.Context, request operations.GetDocum
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -243,13 +243,6 @@ func (s *documents) ListDocuments(ctx context.Context, request operations.ListDo
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListDocumentsResponse{
@@ -257,6 +250,13 @@ func (s *documents) ListDocuments(ctx context.Context, request operations.ListDo
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -332,13 +332,6 @@ func (s *documents) UpdateDocument(ctx context.Context, request operations.Updat
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateDocumentResponse{
@@ -346,6 +339,13 @@ func (s *documents) UpdateDocument(ctx context.Context, request operations.Updat
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {

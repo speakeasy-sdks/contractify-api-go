@@ -57,13 +57,6 @@ func (s *offices) CreateOffice(ctx context.Context, request operations.CreateOff
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateOfficeResponse{
@@ -71,6 +64,13 @@ func (s *offices) CreateOffice(ctx context.Context, request operations.CreateOff
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 201:
 		switch {
@@ -151,13 +151,6 @@ func (s *offices) DeleteOffice(ctx context.Context, request operations.DeleteOff
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteOfficeResponse{
@@ -165,6 +158,13 @@ func (s *offices) DeleteOffice(ctx context.Context, request operations.DeleteOff
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode == 400:
@@ -246,13 +246,6 @@ func (s *offices) GetOffice(ctx context.Context, request operations.GetOfficeReq
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetOfficeResponse{
@@ -260,6 +253,13 @@ func (s *offices) GetOffice(ctx context.Context, request operations.GetOfficeReq
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -340,13 +340,6 @@ func (s *offices) ListOffices(ctx context.Context, request operations.ListOffice
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListOfficesResponse{
@@ -354,6 +347,13 @@ func (s *offices) ListOffices(ctx context.Context, request operations.ListOffice
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -429,13 +429,6 @@ func (s *offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateOfficeResponse{
@@ -443,6 +436,13 @@ func (s *offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {

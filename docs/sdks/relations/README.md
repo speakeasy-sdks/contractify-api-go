@@ -212,8 +212,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Relations.ListRelations(ctx, operations.ListRelationsRequest{
         Company: 454135,
-        Page: contractifyproduction.Int64(761434),
-        Reference: contractifyproduction.String("systemic South"),
     })
     if err != nil {
         log.Fatal(err)

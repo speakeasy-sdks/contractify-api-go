@@ -57,13 +57,6 @@ func (s *departments) CreateDepartment(ctx context.Context, request operations.C
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateDepartmentResponse{
@@ -71,6 +64,13 @@ func (s *departments) CreateDepartment(ctx context.Context, request operations.C
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 201:
 		switch {
@@ -151,13 +151,6 @@ func (s *departments) DeleteDepartment(ctx context.Context, request operations.D
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteDepartmentResponse{
@@ -165,6 +158,13 @@ func (s *departments) DeleteDepartment(ctx context.Context, request operations.D
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode == 400:
@@ -246,13 +246,6 @@ func (s *departments) GetDepartment(ctx context.Context, request operations.GetD
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetDepartmentResponse{
@@ -260,6 +253,13 @@ func (s *departments) GetDepartment(ctx context.Context, request operations.GetD
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -340,13 +340,6 @@ func (s *departments) ListDepartments(ctx context.Context, request operations.Li
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListDepartmentsResponse{
@@ -354,6 +347,13 @@ func (s *departments) ListDepartments(ctx context.Context, request operations.Li
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -429,13 +429,6 @@ func (s *departments) UpdateDepartment(ctx context.Context, request operations.U
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateDepartmentResponse{
@@ -443,6 +436,13 @@ func (s *departments) UpdateDepartment(ctx context.Context, request operations.U
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {

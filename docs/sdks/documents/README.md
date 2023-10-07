@@ -129,7 +129,6 @@ import(
 	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
 	"ContractifyProduction/pkg/models/operations"
-	"ContractifyProduction/pkg/types"
 )
 
 func main() {
@@ -143,11 +142,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Documents.ListDocuments(ctx, operations.ListDocumentsRequest{
         Company: 581480,
-        EsigningStatus: operations.ListDocumentsEsigningStatusLegalDeclined.ToPointer(),
-        EsigningUpdatedAfter: types.MustTimeFromString("2022-04-10T07:42:42.736Z"),
-        Page: contractifyproduction.Int64(893340),
-        RelationID: contractifyproduction.Int64(873217),
-        SignedAfter: types.MustTimeFromString("2021-04-10T09:49:45.540Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -206,7 +200,7 @@ func main() {
             CustomFieldValues: []shared.CustomFieldValueWrite{
                 shared.CustomFieldValueWrite{
                     CustomFieldID: contractifyproduction.Int64(2),
-                    Value: contractifyproduction.String("Product"),
+                    Value: contractifyproduction.String("software"),
                 },
             },
             Description: contractifyproduction.String("Lorem ipsum dolor sit amet."),
@@ -216,8 +210,8 @@ func main() {
             Name: "filename.pdf",
             OwnerID: contractifyproduction.Int64(1),
         },
-        Company: 659951,
-        Document: 513682,
+        Company: 653381,
+        Document: 312704,
     })
     if err != nil {
         log.Fatal(err)

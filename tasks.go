@@ -57,13 +57,6 @@ func (s *tasks) CreateTask(ctx context.Context, request operations.CreateTaskReq
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateTaskResponse{
@@ -71,6 +64,13 @@ func (s *tasks) CreateTask(ctx context.Context, request operations.CreateTaskReq
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -151,13 +151,6 @@ func (s *tasks) DeleteTask(ctx context.Context, request operations.DeleteTaskReq
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteTaskResponse{
@@ -165,6 +158,13 @@ func (s *tasks) DeleteTask(ctx context.Context, request operations.DeleteTaskReq
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 204:
 	case httpRes.StatusCode == 401:
@@ -234,13 +234,6 @@ func (s *tasks) GetTask(ctx context.Context, request operations.GetTaskRequest) 
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetTaskResponse{
@@ -248,6 +241,13 @@ func (s *tasks) GetTask(ctx context.Context, request operations.GetTaskRequest) 
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -332,13 +332,6 @@ func (s *tasks) ListTasks(ctx context.Context, request operations.ListTasksReque
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListTasksResponse{
@@ -346,6 +339,13 @@ func (s *tasks) ListTasks(ctx context.Context, request operations.ListTasksReque
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
@@ -421,13 +421,6 @@ func (s *tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 		return nil, fmt.Errorf("error sending request: no response")
 	}
 
-	rawBody, err := io.ReadAll(httpRes.Body)
-	if err != nil {
-		return nil, fmt.Errorf("error reading response body: %w", err)
-	}
-	httpRes.Body.Close()
-	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateTaskResponse{
@@ -435,6 +428,13 @@ func (s *tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 		ContentType: contentType,
 		RawResponse: httpRes,
 	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 	switch {
 	case httpRes.StatusCode == 200:
 		switch {
