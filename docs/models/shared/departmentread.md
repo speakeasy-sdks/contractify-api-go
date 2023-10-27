@@ -1,0 +1,10 @@
+# DepartmentRead
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `ID`                                                                 | **int64*                                                             | :heavy_minus_sign:                                                   | N/A                                                                  | 1                                                                    |
+| `Name`                                                               | **string*                                                            | :heavy_minus_sign:                                                   | N/A                                                                  | Sales                                                                |
+| `Permalink`                                                          | **string*                                                            | :heavy_minus_sign:                                                   | N/A                                                                  | https://app.contractify.io/client/company/company-slug/departments/1 |
