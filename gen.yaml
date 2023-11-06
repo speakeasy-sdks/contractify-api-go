@@ -1,13 +1,23 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 35b77c8e231012e142d527cdb5536b80
+  docVersion: "2022-08-16"
+  speakeasyVersion: 1.112.1
+  generationVersion: 2.173.0
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
+  comments: {}
   sdkClassName: ContractifyProduction
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  repoURL: https://github.com/speakeasy-sdks/contractify-api-go.git
+features:
+  go:
+    core: 2.94.0
+    globalSecurity: 2.82.2
+    globalServerURLs: 2.82.0
 go:
-  version: 0.0.1
+  version: 0.1.0
+  flattenGlobalSecurity: true
+  installationURL: https://github.com/speakeasy-sdks/contractify-api-go
   maxMethodParams: 0
   packageName: ContractifyProduction
+  published: true
+  repoSubDirectory: .
