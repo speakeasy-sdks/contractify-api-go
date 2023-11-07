@@ -27,75 +27,12 @@ func (o *CreateOfficeRequest) GetCompany() int64 {
 	return o.Company
 }
 
-type CreateOffice422ApplicationJSONErrors struct {
-	Errors []string `json:"errors,omitempty"`
-	Field  *string  `json:"field,omitempty"`
-}
-
-func (o *CreateOffice422ApplicationJSONErrors) GetErrors() []string {
-	if o == nil {
-		return nil
-	}
-	return o.Errors
-}
-
-func (o *CreateOffice422ApplicationJSONErrors) GetField() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Field
-}
-
-// CreateOffice422ApplicationJSON - Invalid data posted
-type CreateOffice422ApplicationJSON struct {
-	Errors  []CreateOffice422ApplicationJSONErrors `json:"errors,omitempty"`
-	Message *string                                `json:"message,omitempty"`
-}
-
-func (o *CreateOffice422ApplicationJSON) GetErrors() []CreateOffice422ApplicationJSONErrors {
-	if o == nil {
-		return nil
-	}
-	return o.Errors
-}
-
-func (o *CreateOffice422ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// CreateOffice403ApplicationJSON - Forbidden
-type CreateOffice403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *CreateOffice403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// CreateOffice401ApplicationJSON - Unauthenticated
-type CreateOffice401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *CreateOffice401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// CreateOffice201ApplicationJSON - Created
-type CreateOffice201ApplicationJSON struct {
+// CreateOfficeResponseBody - Created
+type CreateOfficeResponseBody struct {
 	Data *shared.OfficeRead `json:"data,omitempty"`
 }
 
-func (o *CreateOffice201ApplicationJSON) GetData() *shared.OfficeRead {
+func (o *CreateOfficeResponseBody) GetData() *shared.OfficeRead {
 	if o == nil {
 		return nil
 	}
@@ -103,20 +40,21 @@ func (o *CreateOffice201ApplicationJSON) GetData() *shared.OfficeRead {
 }
 
 type CreateOfficeResponse struct {
+	// Created
+	TwoHundredAndOneApplicationJSONObject *CreateOfficeResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Created
-	CreateOffice201ApplicationJSONObject *CreateOffice201ApplicationJSON
-	// Unauthenticated
-	CreateOffice401ApplicationJSONObject *CreateOffice401ApplicationJSON
-	// Forbidden
-	CreateOffice403ApplicationJSONObject *CreateOffice403ApplicationJSON
-	// Invalid data posted
-	CreateOffice422ApplicationJSONObject *CreateOffice422ApplicationJSON
+}
+
+func (o *CreateOfficeResponse) GetTwoHundredAndOneApplicationJSONObject() *CreateOfficeResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredAndOneApplicationJSONObject
 }
 
 func (o *CreateOfficeResponse) GetContentType() string {
@@ -138,32 +76,4 @@ func (o *CreateOfficeResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateOfficeResponse) GetCreateOffice201ApplicationJSONObject() *CreateOffice201ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateOffice201ApplicationJSONObject
-}
-
-func (o *CreateOfficeResponse) GetCreateOffice401ApplicationJSONObject() *CreateOffice401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateOffice401ApplicationJSONObject
-}
-
-func (o *CreateOfficeResponse) GetCreateOffice403ApplicationJSONObject() *CreateOffice403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateOffice403ApplicationJSONObject
-}
-
-func (o *CreateOfficeResponse) GetCreateOffice422ApplicationJSONObject() *CreateOffice422ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateOffice422ApplicationJSONObject
 }

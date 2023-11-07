@@ -11,25 +11,25 @@ import (
 	"time"
 )
 
-// ListDocumentsEsigningStatus - Return documents currently having this status in the eSigning process, can be comma separated
-type ListDocumentsEsigningStatus string
+// EsigningStatus - Return documents currently having this status in the eSigning process, can be comma separated
+type EsigningStatus string
 
 const (
-	ListDocumentsEsigningStatusNotSent                    ListDocumentsEsigningStatus = "not_sent"
-	ListDocumentsEsigningStatusSentToLegal                ListDocumentsEsigningStatus = "sent_to_legal"
-	ListDocumentsEsigningStatusLegalDeclined              ListDocumentsEsigningStatus = "legal_declined"
-	ListDocumentsEsigningStatusSent                       ListDocumentsEsigningStatus = "sent"
-	ListDocumentsEsigningStatusSigned                     ListDocumentsEsigningStatus = "signed"
-	ListDocumentsEsigningStatusRejectedBySigner           ListDocumentsEsigningStatus = "rejected_by_signer"
-	ListDocumentsEsigningStatusFinishedButPartiallySigned ListDocumentsEsigningStatus = "finished_but_partially_signed"
-	ListDocumentsEsigningStatusRevoked                    ListDocumentsEsigningStatus = "revoked"
+	EsigningStatusNotSent                    EsigningStatus = "not_sent"
+	EsigningStatusSentToLegal                EsigningStatus = "sent_to_legal"
+	EsigningStatusLegalDeclined              EsigningStatus = "legal_declined"
+	EsigningStatusSent                       EsigningStatus = "sent"
+	EsigningStatusSigned                     EsigningStatus = "signed"
+	EsigningStatusRejectedBySigner           EsigningStatus = "rejected_by_signer"
+	EsigningStatusFinishedButPartiallySigned EsigningStatus = "finished_but_partially_signed"
+	EsigningStatusRevoked                    EsigningStatus = "revoked"
 )
 
-func (e ListDocumentsEsigningStatus) ToPointer() *ListDocumentsEsigningStatus {
+func (e EsigningStatus) ToPointer() *EsigningStatus {
 	return &e
 }
 
-func (e *ListDocumentsEsigningStatus) UnmarshalJSON(data []byte) error {
+func (e *EsigningStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -50,10 +50,10 @@ func (e *ListDocumentsEsigningStatus) UnmarshalJSON(data []byte) error {
 	case "finished_but_partially_signed":
 		fallthrough
 	case "revoked":
-		*e = ListDocumentsEsigningStatus(v)
+		*e = EsigningStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ListDocumentsEsigningStatus: %v", v)
+		return fmt.Errorf("invalid value for EsigningStatus: %v", v)
 	}
 }
 
@@ -61,7 +61,7 @@ type ListDocumentsRequest struct {
 	// Id of the company
 	Company int64 `pathParam:"style=simple,explode=false,name=company"`
 	// Return documents currently having this status in the eSigning process, can be comma separated
-	EsigningStatus *ListDocumentsEsigningStatus `queryParam:"style=form,explode=true,name=esigning_status"`
+	EsigningStatus *EsigningStatus `queryParam:"style=form,explode=true,name=esigning_status"`
 	// Return documents where e-signing was updated after the given date
 	EsigningUpdatedAfter *time.Time `queryParam:"style=form,explode=true,name=esigning_updated_after"`
 	// The page to retrieve
@@ -90,7 +90,7 @@ func (o *ListDocumentsRequest) GetCompany() int64 {
 	return o.Company
 }
 
-func (o *ListDocumentsRequest) GetEsigningStatus() *ListDocumentsEsigningStatus {
+func (o *ListDocumentsRequest) GetEsigningStatus() *EsigningStatus {
 	if o == nil {
 		return nil
 	}
@@ -125,30 +125,6 @@ func (o *ListDocumentsRequest) GetSignedAfter() *time.Time {
 	return o.SignedAfter
 }
 
-// ListDocuments403ApplicationJSON - Forbidden
-type ListDocuments403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListDocuments403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListDocuments401ApplicationJSON - Unauthenticated
-type ListDocuments401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListDocuments401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListDocumentsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -158,10 +134,6 @@ type ListDocumentsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListDocuments401ApplicationJSONObject *ListDocuments401ApplicationJSON
-	// Forbidden
-	ListDocuments403ApplicationJSONObject *ListDocuments403ApplicationJSON
 }
 
 func (o *ListDocumentsResponse) GetContentType() string {
@@ -190,18 +162,4 @@ func (o *ListDocumentsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListDocumentsResponse) GetListDocuments401ApplicationJSONObject() *ListDocuments401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListDocuments401ApplicationJSONObject
-}
-
-func (o *ListDocumentsResponse) GetListDocuments403ApplicationJSONObject() *ListDocuments403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListDocuments403ApplicationJSONObject
 }

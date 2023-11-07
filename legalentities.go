@@ -14,19 +14,19 @@ import (
 	"net/http"
 )
 
-type legalEntities struct {
+type LegalEntities struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newLegalEntities(sdkConfig sdkConfiguration) *legalEntities {
-	return &legalEntities{
+func newLegalEntities(sdkConfig sdkConfiguration) *LegalEntities {
+	return &LegalEntities{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // ListLegalEntities - List legal entities
 // List all the legal entities within a company
-func (s *legalEntities) ListLegalEntities(ctx context.Context, request operations.ListLegalEntitiesRequest) (*operations.ListLegalEntitiesResponse, error) {
+func (s *LegalEntities) ListLegalEntities(ctx context.Context, request operations.ListLegalEntitiesRequest) (*operations.ListLegalEntitiesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/companies/{company}/legal-entities", request, nil)
 	if err != nil {
@@ -80,27 +80,33 @@ func (s *legalEntities) ListLegalEntities(ctx context.Context, request operation
 	case httpRes.StatusCode == 401:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListLegalEntities401ApplicationJSON
+			var out sdkerrors.ListLegalEntitiesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.ListLegalEntities401ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListLegalEntities403ApplicationJSON
+			var out sdkerrors.ListLegalEntitiesLegalEntitiesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.ListLegalEntities403ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

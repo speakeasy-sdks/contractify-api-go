@@ -28,48 +28,12 @@ func (o *GetOfficeRequest) GetOffice() int64 {
 	return o.Office
 }
 
-// GetOffice404ApplicationJSON - Not Found
-type GetOffice404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetOffice404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetOffice403ApplicationJSON - Forbidden
-type GetOffice403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetOffice403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetOffice401ApplicationJSON - Unauthenticated
-type GetOffice401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetOffice401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetOffice200ApplicationJSON - OK
-type GetOffice200ApplicationJSON struct {
+// GetOfficeResponseBody - OK
+type GetOfficeResponseBody struct {
 	Data *shared.OfficeRead `json:"data,omitempty"`
 }
 
-func (o *GetOffice200ApplicationJSON) GetData() *shared.OfficeRead {
+func (o *GetOfficeResponseBody) GetData() *shared.OfficeRead {
 	if o == nil {
 		return nil
 	}
@@ -77,20 +41,21 @@ func (o *GetOffice200ApplicationJSON) GetData() *shared.OfficeRead {
 }
 
 type GetOfficeResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetOfficeResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetOffice200ApplicationJSONObject *GetOffice200ApplicationJSON
-	// Unauthenticated
-	GetOffice401ApplicationJSONObject *GetOffice401ApplicationJSON
-	// Forbidden
-	GetOffice403ApplicationJSONObject *GetOffice403ApplicationJSON
-	// Not Found
-	GetOffice404ApplicationJSONObject *GetOffice404ApplicationJSON
+}
+
+func (o *GetOfficeResponse) GetTwoHundredApplicationJSONObject() *GetOfficeResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *GetOfficeResponse) GetContentType() string {
@@ -112,32 +77,4 @@ func (o *GetOfficeResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetOfficeResponse) GetGetOffice200ApplicationJSONObject() *GetOffice200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetOffice200ApplicationJSONObject
-}
-
-func (o *GetOfficeResponse) GetGetOffice401ApplicationJSONObject() *GetOffice401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetOffice401ApplicationJSONObject
-}
-
-func (o *GetOfficeResponse) GetGetOffice403ApplicationJSONObject() *GetOffice403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetOffice403ApplicationJSONObject
-}
-
-func (o *GetOfficeResponse) GetGetOffice404ApplicationJSONObject() *GetOffice404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetOffice404ApplicationJSONObject
 }

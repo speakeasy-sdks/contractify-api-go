@@ -9,19 +9,19 @@ import (
 	"fmt"
 )
 
-type TaskReadDueDateDependsOn string
+type DueDateDependsOn string
 
 const (
-	TaskReadDueDateDependsOnTerminationDate TaskReadDueDateDependsOn = "termination_date"
-	TaskReadDueDateDependsOnEndDate         TaskReadDueDateDependsOn = "end_date"
-	TaskReadDueDateDependsOnStartDate       TaskReadDueDateDependsOn = "start_date"
+	DueDateDependsOnTerminationDate DueDateDependsOn = "termination_date"
+	DueDateDependsOnEndDate         DueDateDependsOn = "end_date"
+	DueDateDependsOnStartDate       DueDateDependsOn = "start_date"
 )
 
-func (e TaskReadDueDateDependsOn) ToPointer() *TaskReadDueDateDependsOn {
+func (e DueDateDependsOn) ToPointer() *DueDateDependsOn {
 	return &e
 }
 
-func (e *TaskReadDueDateDependsOn) UnmarshalJSON(data []byte) error {
+func (e *DueDateDependsOn) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,26 +32,26 @@ func (e *TaskReadDueDateDependsOn) UnmarshalJSON(data []byte) error {
 	case "end_date":
 		fallthrough
 	case "start_date":
-		*e = TaskReadDueDateDependsOn(v)
+		*e = DueDateDependsOn(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for TaskReadDueDateDependsOn: %v", v)
+		return fmt.Errorf("invalid value for DueDateDependsOn: %v", v)
 	}
 }
 
-type TaskReadStatus string
+type Status string
 
 const (
-	TaskReadStatusAccomplished    TaskReadStatus = "accomplished"
-	TaskReadStatusNotAccomplished TaskReadStatus = "not_accomplished"
-	TaskReadStatusInProgress      TaskReadStatus = "in_progress"
+	StatusAccomplished    Status = "accomplished"
+	StatusNotAccomplished Status = "not_accomplished"
+	StatusInProgress      Status = "in_progress"
 )
 
-func (e TaskReadStatus) ToPointer() *TaskReadStatus {
+func (e Status) ToPointer() *Status {
 	return &e
 }
 
-func (e *TaskReadStatus) UnmarshalJSON(data []byte) error {
+func (e *Status) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -62,28 +62,28 @@ func (e *TaskReadStatus) UnmarshalJSON(data []byte) error {
 	case "not_accomplished":
 		fallthrough
 	case "in_progress":
-		*e = TaskReadStatus(v)
+		*e = Status(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for TaskReadStatus: %v", v)
+		return fmt.Errorf("invalid value for Status: %v", v)
 	}
 }
 
 type TaskRead struct {
-	ContractID         *int64                    `json:"contract_id,omitempty"`
-	Description        *string                   `json:"description,omitempty"`
-	DueDate            *types.Date               `json:"due_date,omitempty"`
-	DueDateDependsOn   *TaskReadDueDateDependsOn `json:"due_date_depends_on,omitempty"`
-	DueDateInterval    *string                   `json:"due_date_interval,omitempty"`
-	EscalationDate     *types.Date               `json:"escalation_date,omitempty"`
-	ID                 *int64                    `json:"id,omitempty"`
-	OwnerID            *int64                    `json:"owner_id,omitempty"`
-	Permalink          *string                   `json:"permalink,omitempty"`
-	ReminderDate       *types.Date               `json:"reminder_date,omitempty"`
-	ReminderDuration   *string                   `json:"reminder_duration,omitempty"`
-	RepetitionInterval *string                   `json:"repetition_interval,omitempty"`
-	Status             *TaskReadStatus           `json:"status,omitempty"`
-	Title              *string                   `json:"title,omitempty"`
+	ContractID         *int64            `json:"contract_id,omitempty"`
+	Description        *string           `json:"description,omitempty"`
+	DueDate            *types.Date       `json:"due_date,omitempty"`
+	DueDateDependsOn   *DueDateDependsOn `json:"due_date_depends_on,omitempty"`
+	DueDateInterval    *string           `json:"due_date_interval,omitempty"`
+	EscalationDate     *types.Date       `json:"escalation_date,omitempty"`
+	ID                 *int64            `json:"id,omitempty"`
+	OwnerID            *int64            `json:"owner_id,omitempty"`
+	Permalink          *string           `json:"permalink,omitempty"`
+	ReminderDate       *types.Date       `json:"reminder_date,omitempty"`
+	ReminderDuration   *string           `json:"reminder_duration,omitempty"`
+	RepetitionInterval *string           `json:"repetition_interval,omitempty"`
+	Status             *Status           `json:"status,omitempty"`
+	Title              *string           `json:"title,omitempty"`
 }
 
 func (t TaskRead) MarshalJSON() ([]byte, error) {
@@ -118,7 +118,7 @@ func (o *TaskRead) GetDueDate() *types.Date {
 	return o.DueDate
 }
 
-func (o *TaskRead) GetDueDateDependsOn() *TaskReadDueDateDependsOn {
+func (o *TaskRead) GetDueDateDependsOn() *DueDateDependsOn {
 	if o == nil {
 		return nil
 	}
@@ -181,7 +181,7 @@ func (o *TaskRead) GetRepetitionInterval() *string {
 	return o.RepetitionInterval
 }
 
-func (o *TaskRead) GetStatus() *TaskReadStatus {
+func (o *TaskRead) GetStatus() *Status {
 	if o == nil {
 		return nil
 	}

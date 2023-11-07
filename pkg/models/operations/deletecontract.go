@@ -27,54 +27,6 @@ func (o *DeleteContractRequest) GetContract() int64 {
 	return o.Contract
 }
 
-// DeleteContract404ApplicationJSON - Not Found
-type DeleteContract404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteContract404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteContract403ApplicationJSON - Forbidden
-type DeleteContract403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteContract403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteContract401ApplicationJSON - Unauthenticated
-type DeleteContract401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteContract401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteContract400ApplicationJSON - Precondition failed
-type DeleteContract400ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteContract400ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type DeleteContractResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -82,14 +34,6 @@ type DeleteContractResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Precondition failed
-	DeleteContract400ApplicationJSONObject *DeleteContract400ApplicationJSON
-	// Unauthenticated
-	DeleteContract401ApplicationJSONObject *DeleteContract401ApplicationJSON
-	// Forbidden
-	DeleteContract403ApplicationJSONObject *DeleteContract403ApplicationJSON
-	// Not Found
-	DeleteContract404ApplicationJSONObject *DeleteContract404ApplicationJSON
 }
 
 func (o *DeleteContractResponse) GetContentType() string {
@@ -111,32 +55,4 @@ func (o *DeleteContractResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteContractResponse) GetDeleteContract400ApplicationJSONObject() *DeleteContract400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteContract400ApplicationJSONObject
-}
-
-func (o *DeleteContractResponse) GetDeleteContract401ApplicationJSONObject() *DeleteContract401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteContract401ApplicationJSONObject
-}
-
-func (o *DeleteContractResponse) GetDeleteContract403ApplicationJSONObject() *DeleteContract403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteContract403ApplicationJSONObject
-}
-
-func (o *DeleteContractResponse) GetDeleteContract404ApplicationJSONObject() *DeleteContract404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteContract404ApplicationJSONObject
 }

@@ -28,48 +28,12 @@ func (o *GetRelationRequest) GetRelation() int64 {
 	return o.Relation
 }
 
-// GetRelation404ApplicationJSON - Not Found
-type GetRelation404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetRelation404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetRelation403ApplicationJSON - Forbidden
-type GetRelation403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetRelation403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetRelation401ApplicationJSON - Unauthenticated
-type GetRelation401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetRelation401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetRelation200ApplicationJSON - OK
-type GetRelation200ApplicationJSON struct {
+// GetRelationResponseBody - OK
+type GetRelationResponseBody struct {
 	Data *shared.RelationRead `json:"data,omitempty"`
 }
 
-func (o *GetRelation200ApplicationJSON) GetData() *shared.RelationRead {
+func (o *GetRelationResponseBody) GetData() *shared.RelationRead {
 	if o == nil {
 		return nil
 	}
@@ -77,20 +41,21 @@ func (o *GetRelation200ApplicationJSON) GetData() *shared.RelationRead {
 }
 
 type GetRelationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetRelationResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetRelation200ApplicationJSONObject *GetRelation200ApplicationJSON
-	// Unauthenticated
-	GetRelation401ApplicationJSONObject *GetRelation401ApplicationJSON
-	// Forbidden
-	GetRelation403ApplicationJSONObject *GetRelation403ApplicationJSON
-	// Not Found
-	GetRelation404ApplicationJSONObject *GetRelation404ApplicationJSON
+}
+
+func (o *GetRelationResponse) GetTwoHundredApplicationJSONObject() *GetRelationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *GetRelationResponse) GetContentType() string {
@@ -112,32 +77,4 @@ func (o *GetRelationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetRelationResponse) GetGetRelation200ApplicationJSONObject() *GetRelation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetRelation200ApplicationJSONObject
-}
-
-func (o *GetRelationResponse) GetGetRelation401ApplicationJSONObject() *GetRelation401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetRelation401ApplicationJSONObject
-}
-
-func (o *GetRelationResponse) GetGetRelation403ApplicationJSONObject() *GetRelation403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetRelation403ApplicationJSONObject
-}
-
-func (o *GetRelationResponse) GetGetRelation404ApplicationJSONObject() *GetRelation404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetRelation404ApplicationJSONObject
 }

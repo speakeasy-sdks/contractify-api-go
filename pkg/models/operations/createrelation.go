@@ -27,75 +27,12 @@ func (o *CreateRelationRequest) GetCompany() int64 {
 	return o.Company
 }
 
-type CreateRelation422ApplicationJSONErrors struct {
-	Errors []string `json:"errors,omitempty"`
-	Field  *string  `json:"field,omitempty"`
-}
-
-func (o *CreateRelation422ApplicationJSONErrors) GetErrors() []string {
-	if o == nil {
-		return nil
-	}
-	return o.Errors
-}
-
-func (o *CreateRelation422ApplicationJSONErrors) GetField() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Field
-}
-
-// CreateRelation422ApplicationJSON - Invalid data posted
-type CreateRelation422ApplicationJSON struct {
-	Errors  []CreateRelation422ApplicationJSONErrors `json:"errors,omitempty"`
-	Message *string                                  `json:"message,omitempty"`
-}
-
-func (o *CreateRelation422ApplicationJSON) GetErrors() []CreateRelation422ApplicationJSONErrors {
-	if o == nil {
-		return nil
-	}
-	return o.Errors
-}
-
-func (o *CreateRelation422ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// CreateRelation403ApplicationJSON - Forbidden
-type CreateRelation403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *CreateRelation403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// CreateRelation401ApplicationJSON - Unauthenticated
-type CreateRelation401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *CreateRelation401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// CreateRelation201ApplicationJSON - Created
-type CreateRelation201ApplicationJSON struct {
+// CreateRelationResponseBody - Created
+type CreateRelationResponseBody struct {
 	Data *shared.RelationRead `json:"data,omitempty"`
 }
 
-func (o *CreateRelation201ApplicationJSON) GetData() *shared.RelationRead {
+func (o *CreateRelationResponseBody) GetData() *shared.RelationRead {
 	if o == nil {
 		return nil
 	}
@@ -103,20 +40,21 @@ func (o *CreateRelation201ApplicationJSON) GetData() *shared.RelationRead {
 }
 
 type CreateRelationResponse struct {
+	// Created
+	TwoHundredAndOneApplicationJSONObject *CreateRelationResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Created
-	CreateRelation201ApplicationJSONObject *CreateRelation201ApplicationJSON
-	// Unauthenticated
-	CreateRelation401ApplicationJSONObject *CreateRelation401ApplicationJSON
-	// Forbidden
-	CreateRelation403ApplicationJSONObject *CreateRelation403ApplicationJSON
-	// Invalid data posted
-	CreateRelation422ApplicationJSONObject *CreateRelation422ApplicationJSON
+}
+
+func (o *CreateRelationResponse) GetTwoHundredAndOneApplicationJSONObject() *CreateRelationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredAndOneApplicationJSONObject
 }
 
 func (o *CreateRelationResponse) GetContentType() string {
@@ -138,32 +76,4 @@ func (o *CreateRelationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateRelationResponse) GetCreateRelation201ApplicationJSONObject() *CreateRelation201ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateRelation201ApplicationJSONObject
-}
-
-func (o *CreateRelationResponse) GetCreateRelation401ApplicationJSONObject() *CreateRelation401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateRelation401ApplicationJSONObject
-}
-
-func (o *CreateRelationResponse) GetCreateRelation403ApplicationJSONObject() *CreateRelation403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateRelation403ApplicationJSONObject
-}
-
-func (o *CreateRelationResponse) GetCreateRelation422ApplicationJSONObject() *CreateRelation422ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateRelation422ApplicationJSONObject
 }

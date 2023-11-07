@@ -27,54 +27,6 @@ func (o *DeleteDepartmentRequest) GetDepartment() int64 {
 	return o.Department
 }
 
-// DeleteDepartment404ApplicationJSON - Not Found
-type DeleteDepartment404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteDepartment404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteDepartment403ApplicationJSON - Forbidden
-type DeleteDepartment403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteDepartment403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteDepartment401ApplicationJSON - Unauthenticated
-type DeleteDepartment401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteDepartment401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteDepartment400ApplicationJSON - Precondition failed
-type DeleteDepartment400ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteDepartment400ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type DeleteDepartmentResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -82,14 +34,6 @@ type DeleteDepartmentResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Precondition failed
-	DeleteDepartment400ApplicationJSONObject *DeleteDepartment400ApplicationJSON
-	// Unauthenticated
-	DeleteDepartment401ApplicationJSONObject *DeleteDepartment401ApplicationJSON
-	// Forbidden
-	DeleteDepartment403ApplicationJSONObject *DeleteDepartment403ApplicationJSON
-	// Not Found
-	DeleteDepartment404ApplicationJSONObject *DeleteDepartment404ApplicationJSON
 }
 
 func (o *DeleteDepartmentResponse) GetContentType() string {
@@ -111,32 +55,4 @@ func (o *DeleteDepartmentResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteDepartmentResponse) GetDeleteDepartment400ApplicationJSONObject() *DeleteDepartment400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDepartment400ApplicationJSONObject
-}
-
-func (o *DeleteDepartmentResponse) GetDeleteDepartment401ApplicationJSONObject() *DeleteDepartment401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDepartment401ApplicationJSONObject
-}
-
-func (o *DeleteDepartmentResponse) GetDeleteDepartment403ApplicationJSONObject() *DeleteDepartment403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDepartment403ApplicationJSONObject
-}
-
-func (o *DeleteDepartmentResponse) GetDeleteDepartment404ApplicationJSONObject() *DeleteDepartment404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDepartment404ApplicationJSONObject
 }

@@ -14,19 +14,19 @@ import (
 	"net/http"
 )
 
-type customFields struct {
+type CustomFields struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCustomFields(sdkConfig sdkConfiguration) *customFields {
-	return &customFields{
+func newCustomFields(sdkConfig sdkConfiguration) *CustomFields {
+	return &CustomFields{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // ListCustomFields - List custom fields
 // List all the custom fields within a company
-func (s *customFields) ListCustomFields(ctx context.Context, request operations.ListCustomFieldsRequest) (*operations.ListCustomFieldsResponse, error) {
+func (s *CustomFields) ListCustomFields(ctx context.Context, request operations.ListCustomFieldsRequest) (*operations.ListCustomFieldsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/companies/{company}/custom-fields", request, nil)
 	if err != nil {
@@ -80,27 +80,33 @@ func (s *customFields) ListCustomFields(ctx context.Context, request operations.
 	case httpRes.StatusCode == 401:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListCustomFields401ApplicationJSON
+			var out sdkerrors.ListCustomFieldsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.ListCustomFields401ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 403:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListCustomFields403ApplicationJSON
+			var out sdkerrors.ListCustomFieldsCustomFieldsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.ListCustomFields403ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

@@ -19,30 +19,6 @@ func (o *ListSubfoldersRequest) GetCompany() int64 {
 	return o.Company
 }
 
-// ListSubfolders403ApplicationJSON - Forbidden
-type ListSubfolders403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListSubfolders403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListSubfolders401ApplicationJSON - Unauthenticated
-type ListSubfolders401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListSubfolders401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListSubfoldersResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -52,10 +28,6 @@ type ListSubfoldersResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListSubfolders401ApplicationJSONObject *ListSubfolders401ApplicationJSON
-	// Forbidden
-	ListSubfolders403ApplicationJSONObject *ListSubfolders403ApplicationJSON
 }
 
 func (o *ListSubfoldersResponse) GetContentType() string {
@@ -84,18 +56,4 @@ func (o *ListSubfoldersResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListSubfoldersResponse) GetListSubfolders401ApplicationJSONObject() *ListSubfolders401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSubfolders401ApplicationJSONObject
-}
-
-func (o *ListSubfoldersResponse) GetListSubfolders403ApplicationJSONObject() *ListSubfolders403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSubfolders403ApplicationJSONObject
 }

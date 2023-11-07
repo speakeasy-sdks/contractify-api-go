@@ -1,5 +1,5 @@
 # Documents
-(*Documents*)
+(*.Documents*)
 
 ### Available Operations
 
@@ -95,7 +95,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetDocument200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -217,7 +217,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.UpdateDocument200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }

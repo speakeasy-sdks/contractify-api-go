@@ -1,5 +1,5 @@
 # CustomFields
-(*CustomFields*)
+(*.CustomFields*)
 
 ### Available Operations
 

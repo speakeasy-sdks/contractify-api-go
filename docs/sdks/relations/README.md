@@ -1,5 +1,5 @@
 # Relations
-(*Relations*)
+(*.Relations*)
 
 ### Available Operations
 
@@ -59,7 +59,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateRelation201ApplicationJSONObject != nil {
+    if res.TwoHundredAndOneApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -165,7 +165,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetRelation200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -287,7 +287,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.UpdateRelation200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }

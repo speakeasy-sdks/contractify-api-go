@@ -28,30 +28,6 @@ func (o *ListTasksRequest) GetPage() *int64 {
 	return o.Page
 }
 
-// ListTasks403ApplicationJSON - Forbidden
-type ListTasks403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListTasks403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListTasks401ApplicationJSON - Unauthenticated
-type ListTasks401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListTasks401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListTasksResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -61,10 +37,6 @@ type ListTasksResponse struct {
 	RawResponse *http.Response
 	// OK
 	TaskCollection *shared.TaskCollection
-	// Unauthenticated
-	ListTasks401ApplicationJSONObject *ListTasks401ApplicationJSON
-	// Forbidden
-	ListTasks403ApplicationJSONObject *ListTasks403ApplicationJSON
 }
 
 func (o *ListTasksResponse) GetContentType() string {
@@ -93,18 +65,4 @@ func (o *ListTasksResponse) GetTaskCollection() *shared.TaskCollection {
 		return nil
 	}
 	return o.TaskCollection
-}
-
-func (o *ListTasksResponse) GetListTasks401ApplicationJSONObject() *ListTasks401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListTasks401ApplicationJSONObject
-}
-
-func (o *ListTasksResponse) GetListTasks403ApplicationJSONObject() *ListTasks403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListTasks403ApplicationJSONObject
 }

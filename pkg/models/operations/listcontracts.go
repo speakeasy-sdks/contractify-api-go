@@ -28,30 +28,6 @@ func (o *ListContractsRequest) GetPage() *int64 {
 	return o.Page
 }
 
-// ListContracts403ApplicationJSON - Forbidden
-type ListContracts403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListContracts403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListContracts401ApplicationJSON - Unauthenticated
-type ListContracts401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListContracts401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListContractsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -61,10 +37,6 @@ type ListContractsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListContracts401ApplicationJSONObject *ListContracts401ApplicationJSON
-	// Forbidden
-	ListContracts403ApplicationJSONObject *ListContracts403ApplicationJSON
 }
 
 func (o *ListContractsResponse) GetContentType() string {
@@ -93,18 +65,4 @@ func (o *ListContractsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListContractsResponse) GetListContracts401ApplicationJSONObject() *ListContracts401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListContracts401ApplicationJSONObject
-}
-
-func (o *ListContractsResponse) GetListContracts403ApplicationJSONObject() *ListContracts403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListContracts403ApplicationJSONObject
 }

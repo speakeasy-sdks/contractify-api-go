@@ -27,42 +27,6 @@ func (o *DeleteTaskRequest) GetTask() int64 {
 	return o.Task
 }
 
-// DeleteTask404ApplicationJSON - Not Found
-type DeleteTask404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteTask404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteTask403ApplicationJSON - Forbidden
-type DeleteTask403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteTask403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteTask401ApplicationJSON - Unauthenticated
-type DeleteTask401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteTask401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type DeleteTaskResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -70,12 +34,6 @@ type DeleteTaskResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	DeleteTask401ApplicationJSONObject *DeleteTask401ApplicationJSON
-	// Forbidden
-	DeleteTask403ApplicationJSONObject *DeleteTask403ApplicationJSON
-	// Not Found
-	DeleteTask404ApplicationJSONObject *DeleteTask404ApplicationJSON
 }
 
 func (o *DeleteTaskResponse) GetContentType() string {
@@ -97,25 +55,4 @@ func (o *DeleteTaskResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteTaskResponse) GetDeleteTask401ApplicationJSONObject() *DeleteTask401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteTask401ApplicationJSONObject
-}
-
-func (o *DeleteTaskResponse) GetDeleteTask403ApplicationJSONObject() *DeleteTask403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteTask403ApplicationJSONObject
-}
-
-func (o *DeleteTaskResponse) GetDeleteTask404ApplicationJSONObject() *DeleteTask404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteTask404ApplicationJSONObject
 }

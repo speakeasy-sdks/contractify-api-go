@@ -28,48 +28,12 @@ func (o *GetContractRequest) GetContract() int64 {
 	return o.Contract
 }
 
-// GetContract404ApplicationJSON - Not Found
-type GetContract404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetContract404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetContract403ApplicationJSON - Forbidden
-type GetContract403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetContract403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetContract401ApplicationJSON - Unauthenticated
-type GetContract401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetContract401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetContract200ApplicationJSON - OK
-type GetContract200ApplicationJSON struct {
+// GetContractResponseBody - OK
+type GetContractResponseBody struct {
 	Data *shared.ContractRead `json:"data,omitempty"`
 }
 
-func (o *GetContract200ApplicationJSON) GetData() *shared.ContractRead {
+func (o *GetContractResponseBody) GetData() *shared.ContractRead {
 	if o == nil {
 		return nil
 	}
@@ -77,20 +41,21 @@ func (o *GetContract200ApplicationJSON) GetData() *shared.ContractRead {
 }
 
 type GetContractResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetContractResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetContract200ApplicationJSONObject *GetContract200ApplicationJSON
-	// Unauthenticated
-	GetContract401ApplicationJSONObject *GetContract401ApplicationJSON
-	// Forbidden
-	GetContract403ApplicationJSONObject *GetContract403ApplicationJSON
-	// Not Found
-	GetContract404ApplicationJSONObject *GetContract404ApplicationJSON
+}
+
+func (o *GetContractResponse) GetTwoHundredApplicationJSONObject() *GetContractResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *GetContractResponse) GetContentType() string {
@@ -112,32 +77,4 @@ func (o *GetContractResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetContractResponse) GetGetContract200ApplicationJSONObject() *GetContract200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetContract200ApplicationJSONObject
-}
-
-func (o *GetContractResponse) GetGetContract401ApplicationJSONObject() *GetContract401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetContract401ApplicationJSONObject
-}
-
-func (o *GetContractResponse) GetGetContract403ApplicationJSONObject() *GetContract403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetContract403ApplicationJSONObject
-}
-
-func (o *GetContractResponse) GetGetContract404ApplicationJSONObject() *GetContract404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetContract404ApplicationJSONObject
 }

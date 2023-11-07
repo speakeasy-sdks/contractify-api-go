@@ -1,5 +1,5 @@
 # Tasks
-(*Tasks*)
+(*.Tasks*)
 
 ### Available Operations
 
@@ -55,7 +55,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateTask200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -161,7 +161,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetTask200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -278,7 +278,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.UpdateTask200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }

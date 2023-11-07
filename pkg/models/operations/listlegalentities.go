@@ -19,30 +19,6 @@ func (o *ListLegalEntitiesRequest) GetCompany() int64 {
 	return o.Company
 }
 
-// ListLegalEntities403ApplicationJSON - Forbidden
-type ListLegalEntities403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListLegalEntities403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListLegalEntities401ApplicationJSON - Unauthenticated
-type ListLegalEntities401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListLegalEntities401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListLegalEntitiesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -52,10 +28,6 @@ type ListLegalEntitiesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListLegalEntities401ApplicationJSONObject *ListLegalEntities401ApplicationJSON
-	// Forbidden
-	ListLegalEntities403ApplicationJSONObject *ListLegalEntities403ApplicationJSON
 }
 
 func (o *ListLegalEntitiesResponse) GetContentType() string {
@@ -84,18 +56,4 @@ func (o *ListLegalEntitiesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListLegalEntitiesResponse) GetListLegalEntities401ApplicationJSONObject() *ListLegalEntities401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListLegalEntities401ApplicationJSONObject
-}
-
-func (o *ListLegalEntitiesResponse) GetListLegalEntities403ApplicationJSONObject() *ListLegalEntities403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListLegalEntities403ApplicationJSONObject
 }

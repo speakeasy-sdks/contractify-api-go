@@ -36,48 +36,12 @@ func (o *UpdateDocumentRequest) GetDocument() int64 {
 	return o.Document
 }
 
-// UpdateDocument404ApplicationJSON - Not Found
-type UpdateDocument404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *UpdateDocument404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// UpdateDocument403ApplicationJSON - Forbidden
-type UpdateDocument403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *UpdateDocument403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// UpdateDocument401ApplicationJSON - Unauthenticated
-type UpdateDocument401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *UpdateDocument401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// UpdateDocument200ApplicationJSON - OK
-type UpdateDocument200ApplicationJSON struct {
+// UpdateDocumentResponseBody - OK
+type UpdateDocumentResponseBody struct {
 	Data *shared.DocumentRead `json:"data,omitempty"`
 }
 
-func (o *UpdateDocument200ApplicationJSON) GetData() *shared.DocumentRead {
+func (o *UpdateDocumentResponseBody) GetData() *shared.DocumentRead {
 	if o == nil {
 		return nil
 	}
@@ -85,20 +49,21 @@ func (o *UpdateDocument200ApplicationJSON) GetData() *shared.DocumentRead {
 }
 
 type UpdateDocumentResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateDocumentResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateDocument200ApplicationJSONObject *UpdateDocument200ApplicationJSON
-	// Unauthenticated
-	UpdateDocument401ApplicationJSONObject *UpdateDocument401ApplicationJSON
-	// Forbidden
-	UpdateDocument403ApplicationJSONObject *UpdateDocument403ApplicationJSON
-	// Not Found
-	UpdateDocument404ApplicationJSONObject *UpdateDocument404ApplicationJSON
+}
+
+func (o *UpdateDocumentResponse) GetTwoHundredApplicationJSONObject() *UpdateDocumentResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *UpdateDocumentResponse) GetContentType() string {
@@ -120,32 +85,4 @@ func (o *UpdateDocumentResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateDocumentResponse) GetUpdateDocument200ApplicationJSONObject() *UpdateDocument200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDocument200ApplicationJSONObject
-}
-
-func (o *UpdateDocumentResponse) GetUpdateDocument401ApplicationJSONObject() *UpdateDocument401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDocument401ApplicationJSONObject
-}
-
-func (o *UpdateDocumentResponse) GetUpdateDocument403ApplicationJSONObject() *UpdateDocument403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDocument403ApplicationJSONObject
-}
-
-func (o *UpdateDocumentResponse) GetUpdateDocument404ApplicationJSONObject() *UpdateDocument404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDocument404ApplicationJSONObject
 }

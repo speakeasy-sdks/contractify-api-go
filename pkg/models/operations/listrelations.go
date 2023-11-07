@@ -37,30 +37,6 @@ func (o *ListRelationsRequest) GetReference() *string {
 	return o.Reference
 }
 
-// ListRelations403ApplicationJSON - Forbidden
-type ListRelations403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListRelations403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListRelations401ApplicationJSON - Unauthenticated
-type ListRelations401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListRelations401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListRelationsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -70,10 +46,6 @@ type ListRelationsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListRelations401ApplicationJSONObject *ListRelations401ApplicationJSON
-	// Forbidden
-	ListRelations403ApplicationJSONObject *ListRelations403ApplicationJSON
 }
 
 func (o *ListRelationsResponse) GetContentType() string {
@@ -102,18 +74,4 @@ func (o *ListRelationsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListRelationsResponse) GetListRelations401ApplicationJSONObject() *ListRelations401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListRelations401ApplicationJSONObject
-}
-
-func (o *ListRelationsResponse) GetListRelations403ApplicationJSONObject() *ListRelations403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListRelations403ApplicationJSONObject
 }

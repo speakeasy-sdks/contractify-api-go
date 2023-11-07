@@ -27,54 +27,6 @@ func (o *DeleteRelationRequest) GetRelation() int64 {
 	return o.Relation
 }
 
-// DeleteRelation404ApplicationJSON - Not Found
-type DeleteRelation404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteRelation404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteRelation403ApplicationJSON - Forbidden
-type DeleteRelation403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteRelation403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteRelation401ApplicationJSON - Unauthenticated
-type DeleteRelation401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteRelation401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteRelation400ApplicationJSON - Precondition failed
-type DeleteRelation400ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteRelation400ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type DeleteRelationResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -82,14 +34,6 @@ type DeleteRelationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Precondition failed
-	DeleteRelation400ApplicationJSONObject *DeleteRelation400ApplicationJSON
-	// Unauthenticated
-	DeleteRelation401ApplicationJSONObject *DeleteRelation401ApplicationJSON
-	// Forbidden
-	DeleteRelation403ApplicationJSONObject *DeleteRelation403ApplicationJSON
-	// Not Found
-	DeleteRelation404ApplicationJSONObject *DeleteRelation404ApplicationJSON
 }
 
 func (o *DeleteRelationResponse) GetContentType() string {
@@ -111,32 +55,4 @@ func (o *DeleteRelationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteRelationResponse) GetDeleteRelation400ApplicationJSONObject() *DeleteRelation400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRelation400ApplicationJSONObject
-}
-
-func (o *DeleteRelationResponse) GetDeleteRelation401ApplicationJSONObject() *DeleteRelation401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRelation401ApplicationJSONObject
-}
-
-func (o *DeleteRelationResponse) GetDeleteRelation403ApplicationJSONObject() *DeleteRelation403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRelation403ApplicationJSONObject
-}
-
-func (o *DeleteRelationResponse) GetDeleteRelation404ApplicationJSONObject() *DeleteRelation404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRelation404ApplicationJSONObject
 }

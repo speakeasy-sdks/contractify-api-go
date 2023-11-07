@@ -1,5 +1,5 @@
 # Offices
-(*Offices*)
+(*.Offices*)
 
 ### Available Operations
 
@@ -55,7 +55,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateOffice201ApplicationJSONObject != nil {
+    if res.TwoHundredAndOneApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -161,7 +161,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetOffice200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -279,7 +279,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.UpdateOffice200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }

@@ -1,5 +1,5 @@
 # Departments
-(*Departments*)
+(*.Departments*)
 
 ### Available Operations
 
@@ -45,7 +45,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CreateDepartment201ApplicationJSONObject != nil {
+    if res.TwoHundredAndOneApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -151,7 +151,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetDepartment200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }
@@ -259,7 +259,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.UpdateDepartment200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }

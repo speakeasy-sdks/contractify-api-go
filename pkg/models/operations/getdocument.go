@@ -28,48 +28,12 @@ func (o *GetDocumentRequest) GetDocument() int64 {
 	return o.Document
 }
 
-// GetDocument404ApplicationJSON - Not Found
-type GetDocument404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetDocument404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetDocument403ApplicationJSON - Forbidden
-type GetDocument403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetDocument403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetDocument401ApplicationJSON - Unauthenticated
-type GetDocument401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetDocument401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetDocument200ApplicationJSON - OK
-type GetDocument200ApplicationJSON struct {
+// GetDocumentResponseBody - OK
+type GetDocumentResponseBody struct {
 	Data *shared.DocumentRead `json:"data,omitempty"`
 }
 
-func (o *GetDocument200ApplicationJSON) GetData() *shared.DocumentRead {
+func (o *GetDocumentResponseBody) GetData() *shared.DocumentRead {
 	if o == nil {
 		return nil
 	}
@@ -77,20 +41,21 @@ func (o *GetDocument200ApplicationJSON) GetData() *shared.DocumentRead {
 }
 
 type GetDocumentResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetDocumentResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetDocument200ApplicationJSONObject *GetDocument200ApplicationJSON
-	// Unauthenticated
-	GetDocument401ApplicationJSONObject *GetDocument401ApplicationJSON
-	// Forbidden
-	GetDocument403ApplicationJSONObject *GetDocument403ApplicationJSON
-	// Not Found
-	GetDocument404ApplicationJSONObject *GetDocument404ApplicationJSON
+}
+
+func (o *GetDocumentResponse) GetTwoHundredApplicationJSONObject() *GetDocumentResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *GetDocumentResponse) GetContentType() string {
@@ -112,32 +77,4 @@ func (o *GetDocumentResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetDocumentResponse) GetGetDocument200ApplicationJSONObject() *GetDocument200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDocument200ApplicationJSONObject
-}
-
-func (o *GetDocumentResponse) GetGetDocument401ApplicationJSONObject() *GetDocument401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDocument401ApplicationJSONObject
-}
-
-func (o *GetDocumentResponse) GetGetDocument403ApplicationJSONObject() *GetDocument403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDocument403ApplicationJSONObject
-}
-
-func (o *GetDocumentResponse) GetGetDocument404ApplicationJSONObject() *GetDocument404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDocument404ApplicationJSONObject
 }

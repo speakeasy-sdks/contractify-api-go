@@ -19,30 +19,6 @@ func (o *ListOfficesRequest) GetCompany() int64 {
 	return o.Company
 }
 
-// ListOffices403ApplicationJSON - Forbidden
-type ListOffices403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListOffices403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListOffices401ApplicationJSON - Unauthenticated
-type ListOffices401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListOffices401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListOfficesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -52,10 +28,6 @@ type ListOfficesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListOffices401ApplicationJSONObject *ListOffices401ApplicationJSON
-	// Forbidden
-	ListOffices403ApplicationJSONObject *ListOffices403ApplicationJSON
 }
 
 func (o *ListOfficesResponse) GetContentType() string {
@@ -84,18 +56,4 @@ func (o *ListOfficesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListOfficesResponse) GetListOffices401ApplicationJSONObject() *ListOffices401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListOffices401ApplicationJSONObject
-}
-
-func (o *ListOfficesResponse) GetListOffices403ApplicationJSONObject() *ListOffices403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListOffices403ApplicationJSONObject
 }

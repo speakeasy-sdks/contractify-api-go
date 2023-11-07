@@ -9,19 +9,19 @@ import (
 	"time"
 )
 
-type UserReadRole string
+type Role string
 
 const (
-	UserReadRoleAdmin   UserReadRole = "admin"
-	UserReadRoleManager UserReadRole = "manager"
-	UserReadRoleUser    UserReadRole = "user"
+	RoleAdmin   Role = "admin"
+	RoleManager Role = "manager"
+	RoleUser    Role = "user"
 )
 
-func (e UserReadRole) ToPointer() *UserReadRole {
+func (e Role) ToPointer() *Role {
 	return &e
 }
 
-func (e *UserReadRole) UnmarshalJSON(data []byte) error {
+func (e *Role) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,19 +32,19 @@ func (e *UserReadRole) UnmarshalJSON(data []byte) error {
 	case "manager":
 		fallthrough
 	case "user":
-		*e = UserReadRole(v)
+		*e = Role(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for UserReadRole: %v", v)
+		return fmt.Errorf("invalid value for Role: %v", v)
 	}
 }
 
 type UserRead struct {
-	CreatedAt *time.Time    `json:"created_at,omitempty"`
-	Email     *string       `json:"email,omitempty"`
-	ID        *int64        `json:"id,omitempty"`
-	Name      *string       `json:"name,omitempty"`
-	Role      *UserReadRole `json:"role,omitempty"`
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+	Email     *string    `json:"email,omitempty"`
+	ID        *int64     `json:"id,omitempty"`
+	Name      *string    `json:"name,omitempty"`
+	Role      *Role      `json:"role,omitempty"`
 }
 
 func (u UserRead) MarshalJSON() ([]byte, error) {
@@ -86,7 +86,7 @@ func (o *UserRead) GetName() *string {
 	return o.Name
 }
 
-func (o *UserRead) GetRole() *UserReadRole {
+func (o *UserRead) GetRole() *Role {
 	if o == nil {
 		return nil
 	}

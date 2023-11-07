@@ -28,48 +28,12 @@ func (o *GetDepartmentRequest) GetDepartment() int64 {
 	return o.Department
 }
 
-// GetDepartment404ApplicationJSON - Not Found
-type GetDepartment404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetDepartment404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetDepartment403ApplicationJSON - Forbidden
-type GetDepartment403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetDepartment403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetDepartment401ApplicationJSON - Unauthenticated
-type GetDepartment401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *GetDepartment401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// GetDepartment200ApplicationJSON - OK
-type GetDepartment200ApplicationJSON struct {
+// GetDepartmentResponseBody - OK
+type GetDepartmentResponseBody struct {
 	Data *shared.DepartmentRead `json:"data,omitempty"`
 }
 
-func (o *GetDepartment200ApplicationJSON) GetData() *shared.DepartmentRead {
+func (o *GetDepartmentResponseBody) GetData() *shared.DepartmentRead {
 	if o == nil {
 		return nil
 	}
@@ -77,20 +41,21 @@ func (o *GetDepartment200ApplicationJSON) GetData() *shared.DepartmentRead {
 }
 
 type GetDepartmentResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetDepartmentResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetDepartment200ApplicationJSONObject *GetDepartment200ApplicationJSON
-	// Unauthenticated
-	GetDepartment401ApplicationJSONObject *GetDepartment401ApplicationJSON
-	// Forbidden
-	GetDepartment403ApplicationJSONObject *GetDepartment403ApplicationJSON
-	// Not Found
-	GetDepartment404ApplicationJSONObject *GetDepartment404ApplicationJSON
+}
+
+func (o *GetDepartmentResponse) GetTwoHundredApplicationJSONObject() *GetDepartmentResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *GetDepartmentResponse) GetContentType() string {
@@ -112,32 +77,4 @@ func (o *GetDepartmentResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetDepartmentResponse) GetGetDepartment200ApplicationJSONObject() *GetDepartment200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDepartment200ApplicationJSONObject
-}
-
-func (o *GetDepartmentResponse) GetGetDepartment401ApplicationJSONObject() *GetDepartment401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDepartment401ApplicationJSONObject
-}
-
-func (o *GetDepartmentResponse) GetGetDepartment403ApplicationJSONObject() *GetDepartment403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDepartment403ApplicationJSONObject
-}
-
-func (o *GetDepartmentResponse) GetGetDepartment404ApplicationJSONObject() *GetDepartment404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDepartment404ApplicationJSONObject
 }

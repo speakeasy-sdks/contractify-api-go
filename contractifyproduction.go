@@ -110,17 +110,17 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 //
 // There are multiple places in the API where we allow for sending and receiving durations (sometimes also called periods or intervals). For these durations, we use the ISO 8601 duration format, with one time identifier, and only one of the following time elements: Y, M, W, D. An example would be `P3M` for a period of 3 months.
 type ContractifyProduction struct {
-	ContractTypes *contractTypes
-	Contracts     *contracts
-	CustomFields  *customFields
-	Departments   *departments
-	Documents     *documents
-	LegalEntities *legalEntities
-	Offices       *offices
-	Relations     *relations
-	Subfolders    *subfolders
-	Tasks         *tasks
-	Users         *users
+	ContractTypes *ContractTypes
+	Contracts     *Contracts
+	CustomFields  *CustomFields
+	Departments   *Departments
+	Documents     *Documents
+	Subfolders    *Subfolders
+	LegalEntities *LegalEntities
+	Offices       *Offices
+	Relations     *Relations
+	Tasks         *Tasks
+	Users         *Users
 
 	sdkConfiguration sdkConfiguration
 }
@@ -198,9 +198,9 @@ func New(opts ...SDKOption) *ContractifyProduction {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "2022-08-16",
-			SDKVersion:        "0.1.0",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 0.1.0 2.173.0 2022-08-16 ContractifyProduction",
+			SDKVersion:        "0.2.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.2.0 2.181.1 2022-08-16 ContractifyProduction",
 		},
 	}
 	for _, opt := range opts {
@@ -229,13 +229,13 @@ func New(opts ...SDKOption) *ContractifyProduction {
 
 	sdk.Documents = newDocuments(sdk.sdkConfiguration)
 
+	sdk.Subfolders = newSubfolders(sdk.sdkConfiguration)
+
 	sdk.LegalEntities = newLegalEntities(sdk.sdkConfiguration)
 
 	sdk.Offices = newOffices(sdk.sdkConfiguration)
 
 	sdk.Relations = newRelations(sdk.sdkConfiguration)
-
-	sdk.Subfolders = newSubfolders(sdk.sdkConfiguration)
 
 	sdk.Tasks = newTasks(sdk.sdkConfiguration)
 

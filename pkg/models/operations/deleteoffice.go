@@ -27,54 +27,6 @@ func (o *DeleteOfficeRequest) GetOffice() int64 {
 	return o.Office
 }
 
-// DeleteOffice404ApplicationJSON - Not Found
-type DeleteOffice404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteOffice404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteOffice403ApplicationJSON - Forbidden
-type DeleteOffice403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteOffice403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteOffice401ApplicationJSON - Unauthenticated
-type DeleteOffice401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteOffice401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// DeleteOffice400ApplicationJSON - Precondition failed
-type DeleteOffice400ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *DeleteOffice400ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type DeleteOfficeResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -82,14 +34,6 @@ type DeleteOfficeResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Precondition failed
-	DeleteOffice400ApplicationJSONObject *DeleteOffice400ApplicationJSON
-	// Unauthenticated
-	DeleteOffice401ApplicationJSONObject *DeleteOffice401ApplicationJSON
-	// Forbidden
-	DeleteOffice403ApplicationJSONObject *DeleteOffice403ApplicationJSON
-	// Not Found
-	DeleteOffice404ApplicationJSONObject *DeleteOffice404ApplicationJSON
 }
 
 func (o *DeleteOfficeResponse) GetContentType() string {
@@ -111,32 +55,4 @@ func (o *DeleteOfficeResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteOfficeResponse) GetDeleteOffice400ApplicationJSONObject() *DeleteOffice400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteOffice400ApplicationJSONObject
-}
-
-func (o *DeleteOfficeResponse) GetDeleteOffice401ApplicationJSONObject() *DeleteOffice401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteOffice401ApplicationJSONObject
-}
-
-func (o *DeleteOfficeResponse) GetDeleteOffice403ApplicationJSONObject() *DeleteOffice403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteOffice403ApplicationJSONObject
-}
-
-func (o *DeleteOfficeResponse) GetDeleteOffice404ApplicationJSONObject() *DeleteOffice404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteOffice404ApplicationJSONObject
 }

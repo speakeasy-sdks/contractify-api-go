@@ -1,5 +1,5 @@
 # Users
-(*Users*)
+(*.Users*)
 
 ### Available Operations
 
@@ -36,7 +36,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CurrentUser200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }

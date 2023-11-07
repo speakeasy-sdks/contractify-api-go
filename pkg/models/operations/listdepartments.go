@@ -19,30 +19,6 @@ func (o *ListDepartmentsRequest) GetCompany() int64 {
 	return o.Company
 }
 
-// ListDepartments403ApplicationJSON - Forbidden
-type ListDepartments403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListDepartments403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListDepartments401ApplicationJSON - Unauthenticated
-type ListDepartments401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListDepartments401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListDepartmentsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -52,10 +28,6 @@ type ListDepartmentsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListDepartments401ApplicationJSONObject *ListDepartments401ApplicationJSON
-	// Forbidden
-	ListDepartments403ApplicationJSONObject *ListDepartments403ApplicationJSON
 }
 
 func (o *ListDepartmentsResponse) GetContentType() string {
@@ -84,18 +56,4 @@ func (o *ListDepartmentsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListDepartmentsResponse) GetListDepartments401ApplicationJSONObject() *ListDepartments401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListDepartments401ApplicationJSONObject
-}
-
-func (o *ListDepartmentsResponse) GetListDepartments403ApplicationJSONObject() *ListDepartments403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListDepartments403ApplicationJSONObject
 }

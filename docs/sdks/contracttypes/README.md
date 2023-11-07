@@ -1,5 +1,5 @@
 # ContractTypes
-(*ContractTypes*)
+(*.ContractTypes*)
 
 ### Available Operations
 

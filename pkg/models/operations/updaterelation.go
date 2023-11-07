@@ -36,87 +36,12 @@ func (o *UpdateRelationRequest) GetRelation() int64 {
 	return o.Relation
 }
 
-type UpdateRelation422ApplicationJSONErrors struct {
-	Errors []string `json:"errors,omitempty"`
-	Field  *string  `json:"field,omitempty"`
-}
-
-func (o *UpdateRelation422ApplicationJSONErrors) GetErrors() []string {
-	if o == nil {
-		return nil
-	}
-	return o.Errors
-}
-
-func (o *UpdateRelation422ApplicationJSONErrors) GetField() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Field
-}
-
-// UpdateRelation422ApplicationJSON - Invalid data posted
-type UpdateRelation422ApplicationJSON struct {
-	Errors  []UpdateRelation422ApplicationJSONErrors `json:"errors,omitempty"`
-	Message *string                                  `json:"message,omitempty"`
-}
-
-func (o *UpdateRelation422ApplicationJSON) GetErrors() []UpdateRelation422ApplicationJSONErrors {
-	if o == nil {
-		return nil
-	}
-	return o.Errors
-}
-
-func (o *UpdateRelation422ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// UpdateRelation404ApplicationJSON - Not Found
-type UpdateRelation404ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *UpdateRelation404ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// UpdateRelation403ApplicationJSON - Forbidden
-type UpdateRelation403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *UpdateRelation403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// UpdateRelation401ApplicationJSON - Unauthenticated
-type UpdateRelation401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *UpdateRelation401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// UpdateRelation200ApplicationJSON - OK
-type UpdateRelation200ApplicationJSON struct {
+// UpdateRelationResponseBody - OK
+type UpdateRelationResponseBody struct {
 	Data *shared.RelationRead `json:"data,omitempty"`
 }
 
-func (o *UpdateRelation200ApplicationJSON) GetData() *shared.RelationRead {
+func (o *UpdateRelationResponseBody) GetData() *shared.RelationRead {
 	if o == nil {
 		return nil
 	}
@@ -124,22 +49,21 @@ func (o *UpdateRelation200ApplicationJSON) GetData() *shared.RelationRead {
 }
 
 type UpdateRelationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateRelationResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateRelation200ApplicationJSONObject *UpdateRelation200ApplicationJSON
-	// Unauthenticated
-	UpdateRelation401ApplicationJSONObject *UpdateRelation401ApplicationJSON
-	// Forbidden
-	UpdateRelation403ApplicationJSONObject *UpdateRelation403ApplicationJSON
-	// Not Found
-	UpdateRelation404ApplicationJSONObject *UpdateRelation404ApplicationJSON
-	// Invalid data posted
-	UpdateRelation422ApplicationJSONObject *UpdateRelation422ApplicationJSON
+}
+
+func (o *UpdateRelationResponse) GetTwoHundredApplicationJSONObject() *UpdateRelationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *UpdateRelationResponse) GetContentType() string {
@@ -161,39 +85,4 @@ func (o *UpdateRelationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateRelationResponse) GetUpdateRelation200ApplicationJSONObject() *UpdateRelation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateRelation200ApplicationJSONObject
-}
-
-func (o *UpdateRelationResponse) GetUpdateRelation401ApplicationJSONObject() *UpdateRelation401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateRelation401ApplicationJSONObject
-}
-
-func (o *UpdateRelationResponse) GetUpdateRelation403ApplicationJSONObject() *UpdateRelation403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateRelation403ApplicationJSONObject
-}
-
-func (o *UpdateRelationResponse) GetUpdateRelation404ApplicationJSONObject() *UpdateRelation404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateRelation404ApplicationJSONObject
-}
-
-func (o *UpdateRelationResponse) GetUpdateRelation422ApplicationJSONObject() *UpdateRelation422ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateRelation422ApplicationJSONObject
 }

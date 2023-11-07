@@ -19,30 +19,6 @@ func (o *ListCustomFieldsRequest) GetCompany() int64 {
 	return o.Company
 }
 
-// ListCustomFields403ApplicationJSON - Forbidden
-type ListCustomFields403ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListCustomFields403ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
-// ListCustomFields401ApplicationJSON - Unauthenticated
-type ListCustomFields401ApplicationJSON struct {
-	Message *string `json:"message,omitempty"`
-}
-
-func (o *ListCustomFields401ApplicationJSON) GetMessage() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Message
-}
-
 type ListCustomFieldsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -52,10 +28,6 @@ type ListCustomFieldsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// Unauthenticated
-	ListCustomFields401ApplicationJSONObject *ListCustomFields401ApplicationJSON
-	// Forbidden
-	ListCustomFields403ApplicationJSONObject *ListCustomFields403ApplicationJSON
 }
 
 func (o *ListCustomFieldsResponse) GetContentType() string {
@@ -84,18 +56,4 @@ func (o *ListCustomFieldsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListCustomFieldsResponse) GetListCustomFields401ApplicationJSONObject() *ListCustomFields401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListCustomFields401ApplicationJSONObject
-}
-
-func (o *ListCustomFieldsResponse) GetListCustomFields403ApplicationJSONObject() *ListCustomFields403ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListCustomFields403ApplicationJSONObject
 }
