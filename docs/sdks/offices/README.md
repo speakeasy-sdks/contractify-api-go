@@ -1,5 +1,5 @@
 # Offices
-(*.Offices*)
+(*Offices*)
 
 ### Available Operations
 
@@ -63,16 +63,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.CreateOfficeRequest](../../models/operations/createofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.CreateOfficeRequest](../../pkg/models/operations/createofficerequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
 
-**[*operations.CreateOfficeResponse](../../models/operations/createofficeresponse.md), error**
-
+**[*operations.CreateOfficeResponse](../../pkg/models/operations/createofficeresponse.md), error**
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| sdkerrors.CreateOfficeResponseBody                | 401                                               | application/json                                  |
+| sdkerrors.CreateOfficeOfficesResponseBody         | 403                                               | application/json                                  |
+| sdkerrors.CreateOfficeOfficesResponseResponseBody | 422                                               | application/json                                  |
+| sdkerrors.SDKError                                | 400-600                                           | */*                                               |
 
 ## DeleteOffice
 
@@ -116,16 +121,22 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.DeleteOfficeRequest](../../models/operations/deleteofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.DeleteOfficeRequest](../../pkg/models/operations/deleteofficerequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
 
-**[*operations.DeleteOfficeResponse](../../models/operations/deleteofficeresponse.md), error**
-
+**[*operations.DeleteOfficeResponse](../../pkg/models/operations/deleteofficeresponse.md), error**
+| Error Object                                         | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| sdkerrors.DeleteOfficeResponseBody                   | 400                                                  | application/json                                     |
+| sdkerrors.DeleteOfficeOfficesResponseBody            | 401                                                  | application/json                                     |
+| sdkerrors.DeleteOfficeOfficesResponseResponseBody    | 403                                                  | application/json                                     |
+| sdkerrors.DeleteOfficeOfficesResponse404ResponseBody | 404                                                  | application/json                                     |
+| sdkerrors.SDKError                                   | 400-600                                              | */*                                                  |
 
 ## GetOffice
 
@@ -169,16 +180,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
-| `request`                                                                  | [operations.GetOfficeRequest](../../models/operations/getofficerequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.GetOfficeRequest](../../pkg/models/operations/getofficerequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
 
-**[*operations.GetOfficeResponse](../../models/operations/getofficeresponse.md), error**
-
+**[*operations.GetOfficeResponse](../../pkg/models/operations/getofficeresponse.md), error**
+| Error Object                                   | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| sdkerrors.GetOfficeResponseBody                | 401                                            | application/json                               |
+| sdkerrors.GetOfficeOfficesResponseBody         | 403                                            | application/json                               |
+| sdkerrors.GetOfficeOfficesResponseResponseBody | 404                                            | application/json                               |
+| sdkerrors.SDKError                             | 400-600                                        | */*                                            |
 
 ## ListOffices
 
@@ -221,16 +237,20 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [operations.ListOfficesRequest](../../models/operations/listofficesrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
+| `request`                                                                          | [operations.ListOfficesRequest](../../pkg/models/operations/listofficesrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[*operations.ListOfficesResponse](../../models/operations/listofficesresponse.md), error**
-
+**[*operations.ListOfficesResponse](../../pkg/models/operations/listofficesresponse.md), error**
+| Error Object                             | Status Code                              | Content Type                             |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| sdkerrors.ListOfficesResponseBody        | 401                                      | application/json                         |
+| sdkerrors.ListOfficesOfficesResponseBody | 403                                      | application/json                         |
+| sdkerrors.SDKError                       | 400-600                                  | */*                                      |
 
 ## UpdateOffice
 
@@ -287,13 +307,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.UpdateOfficeRequest](../../models/operations/updateofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.UpdateOfficeRequest](../../pkg/models/operations/updateofficerequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
 
-**[*operations.UpdateOfficeResponse](../../models/operations/updateofficeresponse.md), error**
-
+**[*operations.UpdateOfficeResponse](../../pkg/models/operations/updateofficeresponse.md), error**
+| Error Object                                         | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| sdkerrors.UpdateOfficeResponseBody                   | 401                                                  | application/json                                     |
+| sdkerrors.UpdateOfficeOfficesResponseBody            | 403                                                  | application/json                                     |
+| sdkerrors.UpdateOfficeOfficesResponseResponseBody    | 404                                                  | application/json                                     |
+| sdkerrors.UpdateOfficeOfficesResponse422ResponseBody | 422                                                  | application/json                                     |
+| sdkerrors.SDKError                                   | 400-600                                              | */*                                                  |

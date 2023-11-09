@@ -63,11 +63,11 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.ContractTypes](docs/sdks/contracttypes/README.md)
+### [ContractTypes](docs/sdks/contracttypes/README.md)
 
 * [ListContractTypes](docs/sdks/contracttypes/README.md#listcontracttypes) - List contract types
 
-### [.Contracts](docs/sdks/contracts/README.md)
+### [Contracts](docs/sdks/contracts/README.md)
 
 * [CreateContract](docs/sdks/contracts/README.md#createcontract) - Create a contract
 * [DeleteContract](docs/sdks/contracts/README.md#deletecontract) - Delete a contract
@@ -75,11 +75,11 @@ func main() {
 * [ListContracts](docs/sdks/contracts/README.md#listcontracts) - List contracts
 * [UpdateContract](docs/sdks/contracts/README.md#updatecontract) - Update a contract
 
-### [.CustomFields](docs/sdks/customfields/README.md)
+### [CustomFields](docs/sdks/customfields/README.md)
 
 * [ListCustomFields](docs/sdks/customfields/README.md#listcustomfields) - List custom fields
 
-### [.Departments](docs/sdks/departments/README.md)
+### [Departments](docs/sdks/departments/README.md)
 
 * [CreateDepartment](docs/sdks/departments/README.md#createdepartment) - Create a department
 * [DeleteDepartment](docs/sdks/departments/README.md#deletedepartment) - Delete a department
@@ -87,22 +87,22 @@ func main() {
 * [ListDepartments](docs/sdks/departments/README.md#listdepartments) - List departments
 * [UpdateDepartment](docs/sdks/departments/README.md#updatedepartment) - Update a department
 
-### [.Documents](docs/sdks/documents/README.md)
+### [Documents](docs/sdks/documents/README.md)
 
 * [DeleteDocument](docs/sdks/documents/README.md#deletedocument) - Delete a document
 * [GetDocument](docs/sdks/documents/README.md#getdocument) - Get a document
 * [ListDocuments](docs/sdks/documents/README.md#listdocuments) - List documents
 * [UpdateDocument](docs/sdks/documents/README.md#updatedocument) - Update a document
 
-### [.Subfolders](docs/sdks/subfolders/README.md)
+### [Subfolders](docs/sdks/subfolders/README.md)
 
 * [ListSubfolders](docs/sdks/subfolders/README.md#listsubfolders) - List subfolders
 
-### [.LegalEntities](docs/sdks/legalentities/README.md)
+### [LegalEntities](docs/sdks/legalentities/README.md)
 
 * [ListLegalEntities](docs/sdks/legalentities/README.md#listlegalentities) - List legal entities
 
-### [.Offices](docs/sdks/offices/README.md)
+### [Offices](docs/sdks/offices/README.md)
 
 * [CreateOffice](docs/sdks/offices/README.md#createoffice) - Create an office
 * [DeleteOffice](docs/sdks/offices/README.md#deleteoffice) - Delete an office
@@ -110,7 +110,7 @@ func main() {
 * [ListOffices](docs/sdks/offices/README.md#listoffices) - List offices
 * [UpdateOffice](docs/sdks/offices/README.md#updateoffice) - Update an office
 
-### [.Relations](docs/sdks/relations/README.md)
+### [Relations](docs/sdks/relations/README.md)
 
 * [CreateRelation](docs/sdks/relations/README.md#createrelation) - Create a relation
 * [DeleteRelation](docs/sdks/relations/README.md#deleterelation) - Delete a relation
@@ -118,7 +118,7 @@ func main() {
 * [ListRelations](docs/sdks/relations/README.md#listrelations) - List relations
 * [UpdateRelation](docs/sdks/relations/README.md#updaterelation) - Update a relation
 
-### [.Tasks](docs/sdks/tasks/README.md)
+### [Tasks](docs/sdks/tasks/README.md)
 
 * [CreateTask](docs/sdks/tasks/README.md#createtask) - Create a task
 * [DeleteTask](docs/sdks/tasks/README.md#deletetask) - Delete a task
@@ -126,7 +126,7 @@ func main() {
 * [ListTasks](docs/sdks/tasks/README.md#listtasks) - List tasks
 * [UpdateTask](docs/sdks/tasks/README.md#updatetask) - Update a task
 
-### [.Users](docs/sdks/users/README.md)
+### [Users](docs/sdks/users/README.md)
 
 * [CurrentUser](docs/sdks/users/README.md#currentuser) - Current User
 * [ListUsers](docs/sdks/users/README.md#listusers) - List users
@@ -139,7 +139,13 @@ func main() {
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object                                         | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| sdkerrors.ListContractTypesResponseBody              | 401                                                  | application/json                                     |
+| sdkerrors.ListContractTypesContractTypesResponseBody | 403                                                  | application/json                                     |
+| sdkerrors.SDKError                                   | 400-600                                              | */*                                                  |
 
 
 ## Example
@@ -181,6 +187,11 @@ func main() {
 			log.Fatal(e.Error())
 		}
 
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
 	}
 }
 
@@ -334,12 +345,11 @@ d6 := types.MustDateFromString("2019-01-01") // returns types.Date and panics on
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name                  | Type                  | Scheme                |
 | --------------------- | --------------------- | --------------------- |

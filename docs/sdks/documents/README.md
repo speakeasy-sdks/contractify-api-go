@@ -1,5 +1,5 @@
 # Documents
-(*.Documents*)
+(*Documents*)
 
 ### Available Operations
 
@@ -50,16 +50,22 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.DeleteDocumentRequest](../../models/operations/deletedocumentrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.DeleteDocumentRequest](../../pkg/models/operations/deletedocumentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[*operations.DeleteDocumentResponse](../../models/operations/deletedocumentresponse.md), error**
-
+**[*operations.DeleteDocumentResponse](../../pkg/models/operations/deletedocumentresponse.md), error**
+| Error Object                                             | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| sdkerrors.DeleteDocumentResponseBody                     | 401                                                      | application/json                                         |
+| sdkerrors.DeleteDocumentDocumentsResponseBody            | 403                                                      | application/json                                         |
+| sdkerrors.DeleteDocumentDocumentsResponseResponseBody    | 404                                                      | application/json                                         |
+| sdkerrors.DeleteDocumentDocumentsResponse422ResponseBody | 422                                                      | application/json                                         |
+| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
 
 ## GetDocument
 
@@ -103,16 +109,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [operations.GetDocumentRequest](../../models/operations/getdocumentrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
+| `request`                                                                          | [operations.GetDocumentRequest](../../pkg/models/operations/getdocumentrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[*operations.GetDocumentResponse](../../models/operations/getdocumentresponse.md), error**
-
+**[*operations.GetDocumentResponse](../../pkg/models/operations/getdocumentresponse.md), error**
+| Error Object                                       | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| sdkerrors.GetDocumentResponseBody                  | 401                                                | application/json                                   |
+| sdkerrors.GetDocumentDocumentsResponseBody         | 403                                                | application/json                                   |
+| sdkerrors.GetDocumentDocumentsResponseResponseBody | 404                                                | application/json                                   |
+| sdkerrors.SDKError                                 | 400-600                                            | */*                                                |
 
 ## ListDocuments
 
@@ -155,16 +166,20 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.ListDocumentsRequest](../../models/operations/listdocumentsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.ListDocumentsRequest](../../pkg/models/operations/listdocumentsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
 
-**[*operations.ListDocumentsResponse](../../models/operations/listdocumentsresponse.md), error**
-
+**[*operations.ListDocumentsResponse](../../pkg/models/operations/listdocumentsresponse.md), error**
+| Error Object                                 | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| sdkerrors.ListDocumentsResponseBody          | 401                                          | application/json                             |
+| sdkerrors.ListDocumentsDocumentsResponseBody | 403                                          | application/json                             |
+| sdkerrors.SDKError                           | 400-600                                      | */*                                          |
 
 ## UpdateDocument
 
@@ -225,13 +240,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.UpdateDocumentRequest](../../models/operations/updatedocumentrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.UpdateDocumentRequest](../../pkg/models/operations/updatedocumentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[*operations.UpdateDocumentResponse](../../models/operations/updatedocumentresponse.md), error**
-
+**[*operations.UpdateDocumentResponse](../../pkg/models/operations/updatedocumentresponse.md), error**
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| sdkerrors.UpdateDocumentResponseBody                  | 401                                                   | application/json                                      |
+| sdkerrors.UpdateDocumentDocumentsResponseBody         | 403                                                   | application/json                                      |
+| sdkerrors.UpdateDocumentDocumentsResponseResponseBody | 404                                                   | application/json                                      |
+| sdkerrors.SDKError                                    | 400-600                                               | */*                                                   |

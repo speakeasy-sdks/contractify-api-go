@@ -1,5 +1,5 @@
 # Subfolders
-(*.Subfolders*)
+(*Subfolders*)
 
 ### Available Operations
 
@@ -46,13 +46,17 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.ListSubfoldersRequest](../../models/operations/listsubfoldersrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.ListSubfoldersRequest](../../pkg/models/operations/listsubfoldersrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[*operations.ListSubfoldersResponse](../../models/operations/listsubfoldersresponse.md), error**
-
+**[*operations.ListSubfoldersResponse](../../pkg/models/operations/listsubfoldersresponse.md), error**
+| Error Object                                   | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| sdkerrors.ListSubfoldersResponseBody           | 401                                            | application/json                               |
+| sdkerrors.ListSubfoldersSubfoldersResponseBody | 403                                            | application/json                               |
+| sdkerrors.SDKError                             | 400-600                                        | */*                                            |

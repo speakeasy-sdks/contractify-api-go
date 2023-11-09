@@ -1,5 +1,5 @@
 # Departments
-(*.Departments*)
+(*Departments*)
 
 ### Available Operations
 
@@ -53,16 +53,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.CreateDepartmentRequest](../../models/operations/createdepartmentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.CreateDepartmentRequest](../../pkg/models/operations/createdepartmentrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
 
-**[*operations.CreateDepartmentResponse](../../models/operations/createdepartmentresponse.md), error**
-
+**[*operations.CreateDepartmentResponse](../../pkg/models/operations/createdepartmentresponse.md), error**
+| Error Object                                              | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| sdkerrors.CreateDepartmentResponseBody                    | 401                                                       | application/json                                          |
+| sdkerrors.CreateDepartmentDepartmentsResponseBody         | 403                                                       | application/json                                          |
+| sdkerrors.CreateDepartmentDepartmentsResponseResponseBody | 422                                                       | application/json                                          |
+| sdkerrors.SDKError                                        | 400-600                                                   | */*                                                       |
 
 ## DeleteDepartment
 
@@ -106,16 +111,22 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.DeleteDepartmentRequest](../../models/operations/deletedepartmentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.DeleteDepartmentRequest](../../pkg/models/operations/deletedepartmentrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
 
-**[*operations.DeleteDepartmentResponse](../../models/operations/deletedepartmentresponse.md), error**
-
+**[*operations.DeleteDepartmentResponse](../../pkg/models/operations/deletedepartmentresponse.md), error**
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| sdkerrors.DeleteDepartmentResponseBody                       | 400                                                          | application/json                                             |
+| sdkerrors.DeleteDepartmentDepartmentsResponseBody            | 401                                                          | application/json                                             |
+| sdkerrors.DeleteDepartmentDepartmentsResponseResponseBody    | 403                                                          | application/json                                             |
+| sdkerrors.DeleteDepartmentDepartmentsResponse404ResponseBody | 404                                                          | application/json                                             |
+| sdkerrors.SDKError                                           | 400-600                                                      | */*                                                          |
 
 ## GetDepartment
 
@@ -159,16 +170,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.GetDepartmentRequest](../../models/operations/getdepartmentrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.GetDepartmentRequest](../../pkg/models/operations/getdepartmentrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
 
-**[*operations.GetDepartmentResponse](../../models/operations/getdepartmentresponse.md), error**
-
+**[*operations.GetDepartmentResponse](../../pkg/models/operations/getdepartmentresponse.md), error**
+| Error Object                                           | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| sdkerrors.GetDepartmentResponseBody                    | 401                                                    | application/json                                       |
+| sdkerrors.GetDepartmentDepartmentsResponseBody         | 403                                                    | application/json                                       |
+| sdkerrors.GetDepartmentDepartmentsResponseResponseBody | 404                                                    | application/json                                       |
+| sdkerrors.SDKError                                     | 400-600                                                | */*                                                    |
 
 ## ListDepartments
 
@@ -211,16 +227,20 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.ListDepartmentsRequest](../../models/operations/listdepartmentsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `request`                                                                                  | [operations.ListDepartmentsRequest](../../pkg/models/operations/listdepartmentsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response
 
-**[*operations.ListDepartmentsResponse](../../models/operations/listdepartmentsresponse.md), error**
-
+**[*operations.ListDepartmentsResponse](../../pkg/models/operations/listdepartmentsresponse.md), error**
+| Error Object                                     | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| sdkerrors.ListDepartmentsResponseBody            | 401                                              | application/json                                 |
+| sdkerrors.ListDepartmentsDepartmentsResponseBody | 403                                              | application/json                                 |
+| sdkerrors.SDKError                               | 400-600                                          | */*                                              |
 
 ## UpdateDepartment
 
@@ -267,13 +287,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.UpdateDepartmentRequest](../../models/operations/updatedepartmentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.UpdateDepartmentRequest](../../pkg/models/operations/updatedepartmentrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
 
-**[*operations.UpdateDepartmentResponse](../../models/operations/updatedepartmentresponse.md), error**
-
+**[*operations.UpdateDepartmentResponse](../../pkg/models/operations/updatedepartmentresponse.md), error**
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| sdkerrors.UpdateDepartmentResponseBody                       | 401                                                          | application/json                                             |
+| sdkerrors.UpdateDepartmentDepartmentsResponseBody            | 403                                                          | application/json                                             |
+| sdkerrors.UpdateDepartmentDepartmentsResponseResponseBody    | 404                                                          | application/json                                             |
+| sdkerrors.UpdateDepartmentDepartmentsResponse422ResponseBody | 422                                                          | application/json                                             |
+| sdkerrors.SDKError                                           | 400-600                                                      | */*                                                          |

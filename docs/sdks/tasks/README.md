@@ -1,5 +1,5 @@
 # Tasks
-(*.Tasks*)
+(*Tasks*)
 
 ### Available Operations
 
@@ -63,16 +63,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
-| `request`                                                                    | [operations.CreateTaskRequest](../../models/operations/createtaskrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `request`                                                                        | [operations.CreateTaskRequest](../../pkg/models/operations/createtaskrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
 
-**[*operations.CreateTaskResponse](../../models/operations/createtaskresponse.md), error**
-
+**[*operations.CreateTaskResponse](../../pkg/models/operations/createtaskresponse.md), error**
+| Error Object                                  | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| sdkerrors.CreateTaskResponseBody              | 401                                           | application/json                              |
+| sdkerrors.CreateTaskTasksResponseBody         | 403                                           | application/json                              |
+| sdkerrors.CreateTaskTasksResponseResponseBody | 422                                           | application/json                              |
+| sdkerrors.SDKError                            | 400-600                                       | */*                                           |
 
 ## DeleteTask
 
@@ -116,16 +121,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
-| `request`                                                                    | [operations.DeleteTaskRequest](../../models/operations/deletetaskrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `request`                                                                        | [operations.DeleteTaskRequest](../../pkg/models/operations/deletetaskrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
 
-**[*operations.DeleteTaskResponse](../../models/operations/deletetaskresponse.md), error**
-
+**[*operations.DeleteTaskResponse](../../pkg/models/operations/deletetaskresponse.md), error**
+| Error Object                                  | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| sdkerrors.DeleteTaskResponseBody              | 401                                           | application/json                              |
+| sdkerrors.DeleteTaskTasksResponseBody         | 403                                           | application/json                              |
+| sdkerrors.DeleteTaskTasksResponseResponseBody | 404                                           | application/json                              |
+| sdkerrors.SDKError                            | 400-600                                       | */*                                           |
 
 ## GetTask
 
@@ -169,16 +179,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
-| `request`                                                              | [operations.GetTaskRequest](../../models/operations/gettaskrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
+| `request`                                                                  | [operations.GetTaskRequest](../../pkg/models/operations/gettaskrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
 
-**[*operations.GetTaskResponse](../../models/operations/gettaskresponse.md), error**
-
+**[*operations.GetTaskResponse](../../pkg/models/operations/gettaskresponse.md), error**
+| Error Object                               | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| sdkerrors.GetTaskResponseBody              | 401                                        | application/json                           |
+| sdkerrors.GetTaskTasksResponseBody         | 403                                        | application/json                           |
+| sdkerrors.GetTaskTasksResponseResponseBody | 404                                        | application/json                           |
+| sdkerrors.SDKError                         | 400-600                                    | */*                                        |
 
 ## ListTasks
 
@@ -221,16 +236,20 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
-| `request`                                                                  | [operations.ListTasksRequest](../../models/operations/listtasksrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.ListTasksRequest](../../pkg/models/operations/listtasksrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
 
-**[*operations.ListTasksResponse](../../models/operations/listtasksresponse.md), error**
-
+**[*operations.ListTasksResponse](../../pkg/models/operations/listtasksresponse.md), error**
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| sdkerrors.ListTasksResponseBody      | 401                                  | application/json                     |
+| sdkerrors.ListTasksTasksResponseBody | 403                                  | application/json                     |
+| sdkerrors.SDKError                   | 400-600                              | */*                                  |
 
 ## UpdateTask
 
@@ -286,13 +305,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
-| `request`                                                                    | [operations.UpdateTaskRequest](../../models/operations/updatetaskrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `request`                                                                        | [operations.UpdateTaskRequest](../../pkg/models/operations/updatetaskrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
 
-**[*operations.UpdateTaskResponse](../../models/operations/updatetaskresponse.md), error**
-
+**[*operations.UpdateTaskResponse](../../pkg/models/operations/updatetaskresponse.md), error**
+| Error Object                                     | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| sdkerrors.UpdateTaskResponseBody                 | 401                                              | application/json                                 |
+| sdkerrors.UpdateTaskTasksResponseBody            | 403                                              | application/json                                 |
+| sdkerrors.UpdateTaskTasksResponseResponseBody    | 404                                              | application/json                                 |
+| sdkerrors.UpdateTaskTasksResponse422ResponseBody | 422                                              | application/json                                 |
+| sdkerrors.SDKError                               | 400-600                                          | */*                                              |

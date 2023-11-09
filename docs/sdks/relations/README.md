@@ -1,5 +1,5 @@
 # Relations
-(*.Relations*)
+(*Relations*)
 
 ### Available Operations
 
@@ -67,16 +67,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.CreateRelationRequest](../../models/operations/createrelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.CreateRelationRequest](../../pkg/models/operations/createrelationrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[*operations.CreateRelationResponse](../../models/operations/createrelationresponse.md), error**
-
+**[*operations.CreateRelationResponse](../../pkg/models/operations/createrelationresponse.md), error**
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| sdkerrors.CreateRelationResponseBody                  | 401                                                   | application/json                                      |
+| sdkerrors.CreateRelationRelationsResponseBody         | 403                                                   | application/json                                      |
+| sdkerrors.CreateRelationRelationsResponseResponseBody | 422                                                   | application/json                                      |
+| sdkerrors.SDKError                                    | 400-600                                               | */*                                                   |
 
 ## DeleteRelation
 
@@ -120,16 +125,22 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.DeleteRelationRequest](../../models/operations/deleterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.DeleteRelationRequest](../../pkg/models/operations/deleterelationrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[*operations.DeleteRelationResponse](../../models/operations/deleterelationresponse.md), error**
-
+**[*operations.DeleteRelationResponse](../../pkg/models/operations/deleterelationresponse.md), error**
+| Error Object                                             | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| sdkerrors.DeleteRelationResponseBody                     | 400                                                      | application/json                                         |
+| sdkerrors.DeleteRelationRelationsResponseBody            | 401                                                      | application/json                                         |
+| sdkerrors.DeleteRelationRelationsResponseResponseBody    | 403                                                      | application/json                                         |
+| sdkerrors.DeleteRelationRelationsResponse404ResponseBody | 404                                                      | application/json                                         |
+| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
 
 ## GetRelation
 
@@ -173,16 +184,21 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [operations.GetRelationRequest](../../models/operations/getrelationrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
+| `request`                                                                          | [operations.GetRelationRequest](../../pkg/models/operations/getrelationrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[*operations.GetRelationResponse](../../models/operations/getrelationresponse.md), error**
-
+**[*operations.GetRelationResponse](../../pkg/models/operations/getrelationresponse.md), error**
+| Error Object                                       | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| sdkerrors.GetRelationResponseBody                  | 401                                                | application/json                                   |
+| sdkerrors.GetRelationRelationsResponseBody         | 403                                                | application/json                                   |
+| sdkerrors.GetRelationRelationsResponseResponseBody | 404                                                | application/json                                   |
+| sdkerrors.SDKError                                 | 400-600                                            | */*                                                |
 
 ## ListRelations
 
@@ -225,16 +241,20 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.ListRelationsRequest](../../models/operations/listrelationsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.ListRelationsRequest](../../pkg/models/operations/listrelationsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
 
-**[*operations.ListRelationsResponse](../../models/operations/listrelationsresponse.md), error**
-
+**[*operations.ListRelationsResponse](../../pkg/models/operations/listrelationsresponse.md), error**
+| Error Object                                 | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| sdkerrors.ListRelationsResponseBody          | 401                                          | application/json                             |
+| sdkerrors.ListRelationsRelationsResponseBody | 403                                          | application/json                             |
+| sdkerrors.SDKError                           | 400-600                                      | */*                                          |
 
 ## UpdateRelation
 
@@ -295,13 +315,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.UpdateRelationRequest](../../models/operations/updaterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.UpdateRelationRequest](../../pkg/models/operations/updaterelationrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[*operations.UpdateRelationResponse](../../models/operations/updaterelationresponse.md), error**
-
+**[*operations.UpdateRelationResponse](../../pkg/models/operations/updaterelationresponse.md), error**
+| Error Object                                             | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| sdkerrors.UpdateRelationResponseBody                     | 401                                                      | application/json                                         |
+| sdkerrors.UpdateRelationRelationsResponseBody            | 403                                                      | application/json                                         |
+| sdkerrors.UpdateRelationRelationsResponseResponseBody    | 404                                                      | application/json                                         |
+| sdkerrors.UpdateRelationRelationsResponse422ResponseBody | 422                                                      | application/json                                         |
+| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
