@@ -27,12 +27,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Offices.CreateOffice(ctx, operations.CreateOfficeRequest{
@@ -97,12 +92,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Offices.DeleteOffice(ctx, operations.DeleteOfficeRequest{
@@ -156,12 +146,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Offices.GetOffice(ctx, operations.GetOfficeRequest{
@@ -214,12 +199,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Offices.ListOffices(ctx, operations.ListOfficesRequest{
@@ -270,12 +250,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Offices.UpdateOffice(ctx, operations.UpdateOfficeRequest{

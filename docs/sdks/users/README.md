@@ -23,12 +23,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Users.CurrentUser(ctx)
@@ -76,12 +71,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Users.ListUsers(ctx, operations.ListUsersRequest{

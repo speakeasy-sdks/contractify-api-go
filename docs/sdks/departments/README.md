@@ -27,12 +27,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Departments.CreateDepartment(ctx, operations.CreateDepartmentRequest{
@@ -87,12 +82,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Departments.DeleteDepartment(ctx, operations.DeleteDepartmentRequest{
@@ -146,12 +136,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Departments.GetDepartment(ctx, operations.GetDepartmentRequest{
@@ -204,12 +189,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Departments.ListDepartments(ctx, operations.ListDepartmentsRequest{
@@ -260,12 +240,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Departments.UpdateDepartment(ctx, operations.UpdateDepartmentRequest{

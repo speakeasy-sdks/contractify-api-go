@@ -27,12 +27,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Relations.CreateRelation(ctx, operations.CreateRelationRequest{
@@ -101,12 +96,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Relations.DeleteRelation(ctx, operations.DeleteRelationRequest{
@@ -160,12 +150,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Relations.GetRelation(ctx, operations.GetRelationRequest{
@@ -218,12 +203,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Relations.ListRelations(ctx, operations.ListRelationsRequest{
@@ -274,12 +254,7 @@ import(
 )
 
 func main() {
-    s := contractifyproduction.New(
-        contractifyproduction.WithSecurity(shared.Security{
-            OAuth2: "",
-            PersonalAccessToken: "",
-        }),
-    )
+    s := contractifyproduction.New()
 
     ctx := context.Background()
     res, err := s.Relations.UpdateRelation(ctx, operations.UpdateRelationRequest{

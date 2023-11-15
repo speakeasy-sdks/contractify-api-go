@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
@@ -13,12 +11,7 @@ import (
 )
 
 func main() {
-	s := contractifyproduction.New(
-		contractifyproduction.WithSecurity(shared.Security{
-			OAuth2:              "",
-			PersonalAccessToken: "",
-		}),
-	)
+	s := contractifyproduction.New()
 
 	ctx := context.Background()
 	res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{

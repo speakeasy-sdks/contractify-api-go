@@ -24,6 +24,8 @@ go get github.com/speakeasy-sdks/contractify-api-go
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```go
 package main
 
@@ -36,12 +38,7 @@ import (
 )
 
 func main() {
-	s := contractifyproduction.New(
-		contractifyproduction.WithSecurity(shared.Security{
-			OAuth2:              "",
-			PersonalAccessToken: "",
-		}),
-	)
+	s := contractifyproduction.New()
 
 	ctx := context.Background()
 	res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{
@@ -137,7 +134,7 @@ func main() {
 <!-- End Dev Containers -->
 
 <!-- Start Error Handling -->
-# Error Handling
+## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
 
@@ -147,8 +144,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | sdkerrors.ListContractTypesContractTypesResponseBody | 403                                                  | application/json                                     |
 | sdkerrors.SDKError                                   | 400-600                                              | */*                                                  |
 
-
-## Example
+### Example
 
 ```go
 package main
@@ -162,12 +158,7 @@ import (
 )
 
 func main() {
-	s := contractifyproduction.New(
-		contractifyproduction.WithSecurity(shared.Security{
-			OAuth2:              "",
-			PersonalAccessToken: "",
-		}),
-	)
+	s := contractifyproduction.New()
 
 	ctx := context.Background()
 	res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{
@@ -199,9 +190,9 @@ func main() {
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
-# Server Selection
+## Server Selection
 
-## Select Server by Index
+### Select Server by Index
 
 You can override the default server globally using the `WithServerIndex` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
@@ -209,7 +200,7 @@ You can override the default server globally using the `WithServerIndex` option 
 | - | ------ | --------- |
 | 0 | `https://app.contractify.be` | None |
 
-For example:
+#### Example
 
 ```go
 package main
@@ -225,10 +216,6 @@ import (
 func main() {
 	s := contractifyproduction.New(
 		contractifyproduction.WithServerIndex(0),
-		contractifyproduction.WithSecurity(shared.Security{
-			OAuth2:              "",
-			PersonalAccessToken: "",
-		}),
 	)
 
 	ctx := context.Background()
@@ -247,10 +234,9 @@ func main() {
 ```
 
 
-## Override Server URL Per-Client
+### Override Server URL Per-Client
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
-
 ```go
 package main
 
@@ -265,10 +251,6 @@ import (
 func main() {
 	s := contractifyproduction.New(
 		contractifyproduction.WithServerURL("https://app.contractify.be"),
-		contractifyproduction.WithSecurity(shared.Security{
-			OAuth2:              "",
-			PersonalAccessToken: "",
-		}),
 	)
 
 	ctx := context.Background()
@@ -288,7 +270,7 @@ func main() {
 <!-- End Server Selection -->
 
 <!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+## Custom HTTP Client
 
 The Go SDK makes API calls that wrap an internal HTTP client. The requirements for the HTTP client are very simple. It must match this interface:
 
@@ -345,9 +327,9 @@ d6 := types.MustDateFromString("2019-01-01") // returns types.Date and panics on
 
 
 <!-- Start Authentication -->
-# Authentication
+## Authentication
 
-## Per-Client Security Schemes
+### Per-Client Security Schemes
 
 This SDK supports the following security schemes globally:
 
@@ -357,7 +339,6 @@ This SDK supports the following security schemes globally:
 | `PersonalAccessToken` | http                  | HTTP Bearer           |
 
 You can set the security parameters through the `WithSecurity` option when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
-
 ```go
 package main
 
