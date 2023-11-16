@@ -19,15 +19,20 @@ Create an office
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.CreateOffice(ctx, operations.CreateOfficeRequest{
@@ -84,15 +89,21 @@ Delete an office
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.DeleteOffice(ctx, operations.DeleteOfficeRequest{
@@ -138,15 +149,20 @@ Get information about an office
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.GetOffice(ctx, operations.GetOfficeRequest{
@@ -191,15 +207,20 @@ List all the offices within a company
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.ListOffices(ctx, operations.ListOfficesRequest{
@@ -242,15 +263,20 @@ Update an office
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Offices.UpdateOffice(ctx, operations.UpdateOfficeRequest{

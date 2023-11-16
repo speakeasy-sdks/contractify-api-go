@@ -19,15 +19,20 @@ Create a department
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Departments.CreateDepartment(ctx, operations.CreateDepartmentRequest{
@@ -74,15 +79,21 @@ Delete a department
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Departments.DeleteDepartment(ctx, operations.DeleteDepartmentRequest{
@@ -128,15 +139,20 @@ Get information about a department
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Departments.GetDepartment(ctx, operations.GetDepartmentRequest{
@@ -181,15 +197,20 @@ List all the departments within a company
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Departments.ListDepartments(ctx, operations.ListDepartmentsRequest{
@@ -232,15 +253,20 @@ Update a department
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Departments.UpdateDepartment(ctx, operations.UpdateDepartmentRequest{

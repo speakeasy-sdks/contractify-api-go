@@ -18,15 +18,21 @@ Delete a document
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Documents.DeleteDocument(ctx, operations.DeleteDocumentRequest{
@@ -72,15 +78,20 @@ Get information about a document
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Documents.GetDocument(ctx, operations.GetDocumentRequest{
@@ -125,15 +136,20 @@ List all the documents within a company
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Documents.ListDocuments(ctx, operations.ListDocumentsRequest{
@@ -176,15 +192,20 @@ Update a document
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Documents.UpdateDocument(ctx, operations.UpdateDocumentRequest{

@@ -38,7 +38,12 @@ import (
 )
 
 func main() {
-	s := contractifyproduction.New()
+	s := contractifyproduction.New(
+		contractifyproduction.WithSecurity(shared.Security{
+			OAuth2:              "",
+			PersonalAccessToken: "",
+		}),
+	)
 
 	ctx := context.Background()
 	res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{
@@ -152,13 +157,20 @@ package main
 import (
 	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/operations"
+	"ContractifyProduction/pkg/models/sdkerrors"
 	"ContractifyProduction/pkg/models/shared"
 	"context"
+	"errors"
 	"log"
 )
 
 func main() {
-	s := contractifyproduction.New()
+	s := contractifyproduction.New(
+		contractifyproduction.WithSecurity(shared.Security{
+			OAuth2:              "",
+			PersonalAccessToken: "",
+		}),
+	)
 
 	ctx := context.Background()
 	res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{
@@ -216,6 +228,10 @@ import (
 func main() {
 	s := contractifyproduction.New(
 		contractifyproduction.WithServerIndex(0),
+		contractifyproduction.WithSecurity(shared.Security{
+			OAuth2:              "",
+			PersonalAccessToken: "",
+		}),
 	)
 
 	ctx := context.Background()
@@ -251,6 +267,10 @@ import (
 func main() {
 	s := contractifyproduction.New(
 		contractifyproduction.WithServerURL("https://app.contractify.be"),
+		contractifyproduction.WithSecurity(shared.Security{
+			OAuth2:              "",
+			PersonalAccessToken: "",
+		}),
 	)
 
 	ctx := context.Background()

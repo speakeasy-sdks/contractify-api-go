@@ -15,15 +15,20 @@ List all the legal entities within a company
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.LegalEntities.ListLegalEntities(ctx, operations.ListLegalEntitiesRequest{

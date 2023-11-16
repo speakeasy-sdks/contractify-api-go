@@ -19,16 +19,21 @@ Create a task
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/types"
+	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Tasks.CreateTask(ctx, operations.CreateTaskRequest{
@@ -84,15 +89,21 @@ Delete a task
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Tasks.DeleteTask(ctx, operations.DeleteTaskRequest{
@@ -137,15 +148,20 @@ Get a task
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Tasks.GetTask(ctx, operations.GetTaskRequest{
@@ -190,15 +206,20 @@ List all tasks within a company
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Tasks.ListTasks(ctx, operations.ListTasksRequest{
@@ -241,16 +262,21 @@ Update a task
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
-	"ContractifyProduction/pkg/models/operations"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/types"
+	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Tasks.UpdateTask(ctx, operations.UpdateTaskRequest{

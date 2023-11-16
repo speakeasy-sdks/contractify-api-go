@@ -11,7 +11,12 @@ import (
 )
 
 func main() {
-	s := contractifyproduction.New()
+	s := contractifyproduction.New(
+		contractifyproduction.WithSecurity(shared.Security{
+			OAuth2:              "",
+			PersonalAccessToken: "",
+		}),
+	)
 
 	ctx := context.Background()
 	res, err := s.ContractTypes.ListContractTypes(ctx, operations.ListContractTypesRequest{

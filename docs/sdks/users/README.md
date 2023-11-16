@@ -16,14 +16,19 @@ Get the current user details
 package main
 
 import(
+	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
 	"context"
 	"log"
-	contractifyproduction "ContractifyProduction"
-	"ContractifyProduction/pkg/models/shared"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Users.CurrentUser(ctx)
@@ -63,15 +68,20 @@ List all the users within a company
 package main
 
 import(
-	"context"
-	"log"
-	contractifyproduction "ContractifyProduction"
 	"ContractifyProduction/pkg/models/shared"
+	contractifyproduction "ContractifyProduction"
+	"context"
 	"ContractifyProduction/pkg/models/operations"
+	"log"
 )
 
 func main() {
-    s := contractifyproduction.New()
+    s := contractifyproduction.New(
+        contractifyproduction.WithSecurity(shared.Security{
+            OAuth2: "",
+            PersonalAccessToken: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Users.ListUsers(ctx, operations.ListUsersRequest{
