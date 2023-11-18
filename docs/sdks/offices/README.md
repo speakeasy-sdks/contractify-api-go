@@ -55,7 +55,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TwoHundredAndOneApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -173,7 +173,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TwoHundredApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -300,7 +300,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TwoHundredApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }

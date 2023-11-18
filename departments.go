@@ -80,7 +80,7 @@ func (s *Departments) CreateDepartment(ctx context.Context, request operations.C
 				return nil, err
 			}
 
-			res.TwoHundredAndOneApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -284,7 +284,7 @@ func (s *Departments) GetDepartment(ctx context.Context, request operations.GetD
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -480,7 +480,7 @@ func (s *Departments) UpdateDepartment(ctx context.Context, request operations.U
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

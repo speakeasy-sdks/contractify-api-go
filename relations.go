@@ -80,7 +80,7 @@ func (s *Relations) CreateRelation(ctx context.Context, request operations.Creat
 				return nil, err
 			}
 
-			res.TwoHundredAndOneApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -284,7 +284,7 @@ func (s *Relations) GetRelation(ctx context.Context, request operations.GetRelat
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -484,7 +484,7 @@ func (s *Relations) UpdateRelation(ctx context.Context, request operations.Updat
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

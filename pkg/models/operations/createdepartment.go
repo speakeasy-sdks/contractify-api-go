@@ -40,21 +40,14 @@ func (o *CreateDepartmentResponseBody) GetData() *shared.DepartmentRead {
 }
 
 type CreateDepartmentResponse struct {
-	// Created
-	TwoHundredAndOneApplicationJSONObject *CreateDepartmentResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *CreateDepartmentResponse) GetTwoHundredAndOneApplicationJSONObject() *CreateDepartmentResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredAndOneApplicationJSONObject
+	// Created
+	Object *CreateDepartmentResponseBody
 }
 
 func (o *CreateDepartmentResponse) GetContentType() string {
@@ -76,4 +69,11 @@ func (o *CreateDepartmentResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *CreateDepartmentResponse) GetObject() *CreateDepartmentResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

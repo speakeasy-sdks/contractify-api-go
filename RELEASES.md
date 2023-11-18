@@ -49,3 +49,13 @@ Based on:
 - [go v0.2.3] .
 ### Releases
 - [Go v0.2.3] https://github.com/speakeasy-sdks/contractify-api-go/releases/tag/v0.2.3 - .
+
+## 2023-11-18 00:56:13
+### Changes
+Based on:
+- OpenAPI Doc 2022-08-16 
+- Speakeasy CLI 1.121.1 (2.194.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.2.4] .
+### Releases
+- [Go v0.2.4] https://github.com/speakeasy-sdks/contractify-api-go/releases/tag/v0.2.4 - .

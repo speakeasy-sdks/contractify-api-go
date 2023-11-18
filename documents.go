@@ -176,7 +176,7 @@ func (s *Documents) GetDocument(ctx context.Context, request operations.GetDocum
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -376,7 +376,7 @@ func (s *Documents) UpdateDocument(ctx context.Context, request operations.Updat
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

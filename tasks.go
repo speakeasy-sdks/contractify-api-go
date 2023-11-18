@@ -80,7 +80,7 @@ func (s *Tasks) CreateTask(ctx context.Context, request operations.CreateTaskReq
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -271,7 +271,7 @@ func (s *Tasks) GetTask(ctx context.Context, request operations.GetTaskRequest) 
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -471,7 +471,7 @@ func (s *Tasks) UpdateTask(ctx context.Context, request operations.UpdateTaskReq
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

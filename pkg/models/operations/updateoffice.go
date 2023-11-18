@@ -49,21 +49,14 @@ func (o *UpdateOfficeResponseBody) GetData() *shared.OfficeRead {
 }
 
 type UpdateOfficeResponse struct {
-	// OK
-	TwoHundredApplicationJSONObject *UpdateOfficeResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *UpdateOfficeResponse) GetTwoHundredApplicationJSONObject() *UpdateOfficeResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredApplicationJSONObject
+	// OK
+	Object *UpdateOfficeResponseBody
 }
 
 func (o *UpdateOfficeResponse) GetContentType() string {
@@ -85,4 +78,11 @@ func (o *UpdateOfficeResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *UpdateOfficeResponse) GetObject() *UpdateOfficeResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

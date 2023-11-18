@@ -41,21 +41,14 @@ func (o *GetTaskResponseBody) GetData() *shared.TaskRead {
 }
 
 type GetTaskResponse struct {
-	// OK
-	TwoHundredApplicationJSONObject *GetTaskResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetTaskResponse) GetTwoHundredApplicationJSONObject() *GetTaskResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredApplicationJSONObject
+	// OK
+	Object *GetTaskResponseBody
 }
 
 func (o *GetTaskResponse) GetContentType() string {
@@ -77,4 +70,11 @@ func (o *GetTaskResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetTaskResponse) GetObject() *GetTaskResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

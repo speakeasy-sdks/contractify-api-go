@@ -20,21 +20,14 @@ func (o *CurrentUserResponseBody) GetData() *shared.UserCurrent {
 }
 
 type CurrentUserResponse struct {
-	// OK
-	TwoHundredApplicationJSONObject *CurrentUserResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *CurrentUserResponse) GetTwoHundredApplicationJSONObject() *CurrentUserResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredApplicationJSONObject
+	// OK
+	Object *CurrentUserResponseBody
 }
 
 func (o *CurrentUserResponse) GetContentType() string {
@@ -56,4 +49,11 @@ func (o *CurrentUserResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *CurrentUserResponse) GetObject() *CurrentUserResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

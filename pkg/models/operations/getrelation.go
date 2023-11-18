@@ -41,21 +41,14 @@ func (o *GetRelationResponseBody) GetData() *shared.RelationRead {
 }
 
 type GetRelationResponse struct {
-	// OK
-	TwoHundredApplicationJSONObject *GetRelationResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetRelationResponse) GetTwoHundredApplicationJSONObject() *GetRelationResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredApplicationJSONObject
+	// OK
+	Object *GetRelationResponseBody
 }
 
 func (o *GetRelationResponse) GetContentType() string {
@@ -77,4 +70,11 @@ func (o *GetRelationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetRelationResponse) GetObject() *GetRelationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

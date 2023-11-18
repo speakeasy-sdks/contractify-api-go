@@ -49,21 +49,14 @@ func (o *UpdateContractResponseBody) GetData() *shared.ContractRead {
 }
 
 type UpdateContractResponse struct {
-	// OK
-	TwoHundredApplicationJSONObject *UpdateContractResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *UpdateContractResponse) GetTwoHundredApplicationJSONObject() *UpdateContractResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredApplicationJSONObject
+	// OK
+	Object *UpdateContractResponseBody
 }
 
 func (o *UpdateContractResponse) GetContentType() string {
@@ -85,4 +78,11 @@ func (o *UpdateContractResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *UpdateContractResponse) GetObject() *UpdateContractResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

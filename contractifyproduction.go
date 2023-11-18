@@ -198,9 +198,9 @@ func New(opts ...SDKOption) *ContractifyProduction {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "2022-08-16",
-			SDKVersion:        "0.2.3",
-			GenVersion:        "2.192.1",
-			UserAgent:         "speakeasy-sdk/go 0.2.3 2.192.1 2022-08-16 ContractifyProduction",
+			SDKVersion:        "0.2.4",
+			GenVersion:        "2.194.1",
+			UserAgent:         "speakeasy-sdk/go 0.2.4 2.194.1 2022-08-16 ContractifyProduction",
 		},
 	}
 	for _, opt := range opts {

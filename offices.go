@@ -80,7 +80,7 @@ func (s *Offices) CreateOffice(ctx context.Context, request operations.CreateOff
 				return nil, err
 			}
 
-			res.TwoHundredAndOneApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -284,7 +284,7 @@ func (s *Offices) GetOffice(ctx context.Context, request operations.GetOfficeReq
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -480,7 +480,7 @@ func (s *Offices) UpdateOffice(ctx context.Context, request operations.UpdateOff
 				return nil, err
 			}
 
-			res.TwoHundredApplicationJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
