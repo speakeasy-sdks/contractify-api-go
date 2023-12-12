@@ -170,7 +170,6 @@ func withSecurity(security interface{}) func(context.Context) (interface{}, erro
 }
 
 // WithSecurity configures the SDK to use the provided security details
-
 func WithSecurity(security shared.Security) SDKOption {
 	return func(sdk *ContractifyProduction) {
 		sdk.sdkConfiguration.Security = withSecurity(security)
@@ -198,9 +197,9 @@ func New(opts ...SDKOption) *ContractifyProduction {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "2022-08-16",
-			SDKVersion:        "0.2.4",
-			GenVersion:        "2.194.1",
-			UserAgent:         "speakeasy-sdk/go 0.2.4 2.194.1 2022-08-16 ContractifyProduction",
+			SDKVersion:        "0.3.0",
+			GenVersion:        "2.213.3",
+			UserAgent:         "speakeasy-sdk/go 0.3.0 2.213.3 2022-08-16 ContractifyProduction",
 		},
 	}
 	for _, opt := range opts {

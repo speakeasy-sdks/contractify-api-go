@@ -3,20 +3,20 @@
 package shared
 
 type Security struct {
-	OAuth2              string `security:"scheme,type=oauth2,name=Authorization"`
-	PersonalAccessToken string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
+	OAuth2              *string `security:"scheme,type=oauth2,name=Authorization"`
+	PersonalAccessToken *string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *Security) GetOAuth2() string {
+func (o *Security) GetOAuth2() *string {
 	if o == nil {
-		return ""
+		return nil
 	}
 	return o.OAuth2
 }
 
-func (o *Security) GetPersonalAccessToken() string {
+func (o *Security) GetPersonalAccessToken() *string {
 	if o == nil {
-		return ""
+		return nil
 	}
 	return o.PersonalAccessToken
 }

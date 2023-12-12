@@ -142,7 +142,6 @@ pkg/utils/utils.go
 /pkg/models/sdkerrors/updatetask.go
 /pkg/models/sdkerrors/currentuser.go
 /pkg/models/sdkerrors/listusers.go
-USAGE.md
 docs/pkg/models/operations/listcontracttypesrequest.md
 docs/pkg/models/operations/listcontracttypesresponse.md
 docs/pkg/models/operations/createcontractrequest.md
@@ -408,4 +407,5 @@ docs/sdks/offices/README.md
 docs/sdks/relations/README.md
 docs/sdks/tasks/README.md
 docs/sdks/users/README.md
+USAGE.md
 .gitattributes

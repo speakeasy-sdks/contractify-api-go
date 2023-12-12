@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```go
 package main
 
@@ -13,8 +13,7 @@ import (
 func main() {
 	s := contractifyproduction.New(
 		contractifyproduction.WithSecurity(shared.Security{
-			OAuth2:              "",
-			PersonalAccessToken: "",
+			OAuth2: contractifyproduction.String("Bearer <YOUR_ACCESS_TOKEN_HERE>"),
 		}),
 	)
 
@@ -32,4 +31,4 @@ func main() {
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
