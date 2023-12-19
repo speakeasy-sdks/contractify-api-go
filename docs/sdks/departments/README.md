@@ -66,7 +66,7 @@ func main() {
 | sdkerrors.CreateDepartmentResponseBody                    | 401                                                       | application/json                                          |
 | sdkerrors.CreateDepartmentDepartmentsResponseBody         | 403                                                       | application/json                                          |
 | sdkerrors.CreateDepartmentDepartmentsResponseResponseBody | 422                                                       | application/json                                          |
-| sdkerrors.SDKError                                        | 400-600                                                   | */*                                                       |
+| sdkerrors.SDKError                                        | 4xx-5xx                                                   | */*                                                       |
 
 ## DeleteDepartment
 
@@ -125,7 +125,7 @@ func main() {
 | sdkerrors.DeleteDepartmentDepartmentsResponseBody            | 401                                                          | application/json                                             |
 | sdkerrors.DeleteDepartmentDepartmentsResponseResponseBody    | 403                                                          | application/json                                             |
 | sdkerrors.DeleteDepartmentDepartmentsResponse404ResponseBody | 404                                                          | application/json                                             |
-| sdkerrors.SDKError                                           | 400-600                                                      | */*                                                          |
+| sdkerrors.SDKError                                           | 4xx-5xx                                                      | */*                                                          |
 
 ## GetDepartment
 
@@ -182,7 +182,7 @@ func main() {
 | sdkerrors.GetDepartmentResponseBody                    | 401                                                    | application/json                                       |
 | sdkerrors.GetDepartmentDepartmentsResponseBody         | 403                                                    | application/json                                       |
 | sdkerrors.GetDepartmentDepartmentsResponseResponseBody | 404                                                    | application/json                                       |
-| sdkerrors.SDKError                                     | 400-600                                                | */*                                                    |
+| sdkerrors.SDKError                                     | 4xx-5xx                                                | */*                                                    |
 
 ## ListDepartments
 
@@ -237,7 +237,7 @@ func main() {
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | sdkerrors.ListDepartmentsResponseBody            | 401                                              | application/json                                 |
 | sdkerrors.ListDepartmentsDepartmentsResponseBody | 403                                              | application/json                                 |
-| sdkerrors.SDKError                               | 400-600                                          | */*                                              |
+| sdkerrors.SDKError                               | 4xx-5xx                                          | */*                                              |
 
 ## UpdateDepartment
 
@@ -298,4 +298,4 @@ func main() {
 | sdkerrors.UpdateDepartmentDepartmentsResponseBody            | 403                                                          | application/json                                             |
 | sdkerrors.UpdateDepartmentDepartmentsResponseResponseBody    | 404                                                          | application/json                                             |
 | sdkerrors.UpdateDepartmentDepartmentsResponse422ResponseBody | 422                                                          | application/json                                             |
-| sdkerrors.SDKError                                           | 400-600                                                      | */*                                                          |
+| sdkerrors.SDKError                                           | 4xx-5xx                                                      | */*                                                          |

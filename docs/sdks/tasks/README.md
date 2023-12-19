@@ -76,7 +76,7 @@ func main() {
 | sdkerrors.CreateTaskResponseBody              | 401                                           | application/json                              |
 | sdkerrors.CreateTaskTasksResponseBody         | 403                                           | application/json                              |
 | sdkerrors.CreateTaskTasksResponseResponseBody | 422                                           | application/json                              |
-| sdkerrors.SDKError                            | 400-600                                       | */*                                           |
+| sdkerrors.SDKError                            | 4xx-5xx                                       | */*                                           |
 
 ## DeleteTask
 
@@ -134,7 +134,7 @@ func main() {
 | sdkerrors.DeleteTaskResponseBody              | 401                                           | application/json                              |
 | sdkerrors.DeleteTaskTasksResponseBody         | 403                                           | application/json                              |
 | sdkerrors.DeleteTaskTasksResponseResponseBody | 404                                           | application/json                              |
-| sdkerrors.SDKError                            | 400-600                                       | */*                                           |
+| sdkerrors.SDKError                            | 4xx-5xx                                       | */*                                           |
 
 ## GetTask
 
@@ -191,7 +191,7 @@ func main() {
 | sdkerrors.GetTaskResponseBody              | 401                                        | application/json                           |
 | sdkerrors.GetTaskTasksResponseBody         | 403                                        | application/json                           |
 | sdkerrors.GetTaskTasksResponseResponseBody | 404                                        | application/json                           |
-| sdkerrors.SDKError                         | 400-600                                    | */*                                        |
+| sdkerrors.SDKError                         | 4xx-5xx                                    | */*                                        |
 
 ## ListTasks
 
@@ -246,7 +246,7 @@ func main() {
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | sdkerrors.ListTasksResponseBody      | 401                                  | application/json                     |
 | sdkerrors.ListTasksTasksResponseBody | 403                                  | application/json                     |
-| sdkerrors.SDKError                   | 400-600                              | */*                                  |
+| sdkerrors.SDKError                   | 4xx-5xx                              | */*                                  |
 
 ## UpdateTask
 
@@ -316,4 +316,4 @@ func main() {
 | sdkerrors.UpdateTaskTasksResponseBody            | 403                                              | application/json                                 |
 | sdkerrors.UpdateTaskTasksResponseResponseBody    | 404                                              | application/json                                 |
 | sdkerrors.UpdateTaskTasksResponse422ResponseBody | 422                                              | application/json                                 |
-| sdkerrors.SDKError                               | 400-600                                          | */*                                              |
+| sdkerrors.SDKError                               | 4xx-5xx                                          | */*                                              |

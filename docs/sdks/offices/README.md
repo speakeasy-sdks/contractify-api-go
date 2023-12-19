@@ -76,7 +76,7 @@ func main() {
 | sdkerrors.CreateOfficeResponseBody                | 401                                               | application/json                                  |
 | sdkerrors.CreateOfficeOfficesResponseBody         | 403                                               | application/json                                  |
 | sdkerrors.CreateOfficeOfficesResponseResponseBody | 422                                               | application/json                                  |
-| sdkerrors.SDKError                                | 400-600                                           | */*                                               |
+| sdkerrors.SDKError                                | 4xx-5xx                                           | */*                                               |
 
 ## DeleteOffice
 
@@ -135,7 +135,7 @@ func main() {
 | sdkerrors.DeleteOfficeOfficesResponseBody            | 401                                                  | application/json                                     |
 | sdkerrors.DeleteOfficeOfficesResponseResponseBody    | 403                                                  | application/json                                     |
 | sdkerrors.DeleteOfficeOfficesResponse404ResponseBody | 404                                                  | application/json                                     |
-| sdkerrors.SDKError                                   | 400-600                                              | */*                                                  |
+| sdkerrors.SDKError                                   | 4xx-5xx                                              | */*                                                  |
 
 ## GetOffice
 
@@ -192,7 +192,7 @@ func main() {
 | sdkerrors.GetOfficeResponseBody                | 401                                            | application/json                               |
 | sdkerrors.GetOfficeOfficesResponseBody         | 403                                            | application/json                               |
 | sdkerrors.GetOfficeOfficesResponseResponseBody | 404                                            | application/json                               |
-| sdkerrors.SDKError                             | 400-600                                        | */*                                            |
+| sdkerrors.SDKError                             | 4xx-5xx                                        | */*                                            |
 
 ## ListOffices
 
@@ -247,7 +247,7 @@ func main() {
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | sdkerrors.ListOfficesResponseBody        | 401                                      | application/json                         |
 | sdkerrors.ListOfficesOfficesResponseBody | 403                                      | application/json                         |
-| sdkerrors.SDKError                       | 400-600                                  | */*                                      |
+| sdkerrors.SDKError                       | 4xx-5xx                                  | */*                                      |
 
 ## UpdateOffice
 
@@ -318,4 +318,4 @@ func main() {
 | sdkerrors.UpdateOfficeOfficesResponseBody            | 403                                                  | application/json                                     |
 | sdkerrors.UpdateOfficeOfficesResponseResponseBody    | 404                                                  | application/json                                     |
 | sdkerrors.UpdateOfficeOfficesResponse422ResponseBody | 422                                                  | application/json                                     |
-| sdkerrors.SDKError                                   | 400-600                                              | */*                                                  |
+| sdkerrors.SDKError                                   | 4xx-5xx                                              | */*                                                  |

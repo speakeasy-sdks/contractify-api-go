@@ -80,7 +80,7 @@ func main() {
 | sdkerrors.CreateRelationResponseBody                  | 401                                                   | application/json                                      |
 | sdkerrors.CreateRelationRelationsResponseBody         | 403                                                   | application/json                                      |
 | sdkerrors.CreateRelationRelationsResponseResponseBody | 422                                                   | application/json                                      |
-| sdkerrors.SDKError                                    | 400-600                                               | */*                                                   |
+| sdkerrors.SDKError                                    | 4xx-5xx                                               | */*                                                   |
 
 ## DeleteRelation
 
@@ -139,7 +139,7 @@ func main() {
 | sdkerrors.DeleteRelationRelationsResponseBody            | 401                                                      | application/json                                         |
 | sdkerrors.DeleteRelationRelationsResponseResponseBody    | 403                                                      | application/json                                         |
 | sdkerrors.DeleteRelationRelationsResponse404ResponseBody | 404                                                      | application/json                                         |
-| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
+| sdkerrors.SDKError                                       | 4xx-5xx                                                  | */*                                                      |
 
 ## GetRelation
 
@@ -196,7 +196,7 @@ func main() {
 | sdkerrors.GetRelationResponseBody                  | 401                                                | application/json                                   |
 | sdkerrors.GetRelationRelationsResponseBody         | 403                                                | application/json                                   |
 | sdkerrors.GetRelationRelationsResponseResponseBody | 404                                                | application/json                                   |
-| sdkerrors.SDKError                                 | 400-600                                            | */*                                                |
+| sdkerrors.SDKError                                 | 4xx-5xx                                            | */*                                                |
 
 ## ListRelations
 
@@ -251,7 +251,7 @@ func main() {
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
 | sdkerrors.ListRelationsResponseBody          | 401                                          | application/json                             |
 | sdkerrors.ListRelationsRelationsResponseBody | 403                                          | application/json                             |
-| sdkerrors.SDKError                           | 400-600                                      | */*                                          |
+| sdkerrors.SDKError                           | 4xx-5xx                                      | */*                                          |
 
 ## UpdateRelation
 
@@ -326,4 +326,4 @@ func main() {
 | sdkerrors.UpdateRelationRelationsResponseBody            | 403                                                      | application/json                                         |
 | sdkerrors.UpdateRelationRelationsResponseResponseBody    | 404                                                      | application/json                                         |
 | sdkerrors.UpdateRelationRelationsResponse422ResponseBody | 422                                                      | application/json                                         |
-| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
+| sdkerrors.SDKError                                       | 4xx-5xx                                                  | */*                                                      |

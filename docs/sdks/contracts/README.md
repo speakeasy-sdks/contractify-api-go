@@ -112,7 +112,7 @@ func main() {
 | sdkerrors.CreateContractResponseBody                  | 401                                                   | application/json                                      |
 | sdkerrors.CreateContractContractsResponseBody         | 403                                                   | application/json                                      |
 | sdkerrors.CreateContractContractsResponseResponseBody | 422                                                   | application/json                                      |
-| sdkerrors.SDKError                                    | 400-600                                               | */*                                                   |
+| sdkerrors.SDKError                                    | 4xx-5xx                                               | */*                                                   |
 
 ## DeleteContract
 
@@ -171,7 +171,7 @@ func main() {
 | sdkerrors.DeleteContractContractsResponseBody            | 401                                                      | application/json                                         |
 | sdkerrors.DeleteContractContractsResponseResponseBody    | 403                                                      | application/json                                         |
 | sdkerrors.DeleteContractContractsResponse404ResponseBody | 404                                                      | application/json                                         |
-| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
+| sdkerrors.SDKError                                       | 4xx-5xx                                                  | */*                                                      |
 
 ## GetContract
 
@@ -228,7 +228,7 @@ func main() {
 | sdkerrors.GetContractResponseBody                  | 401                                                | application/json                                   |
 | sdkerrors.GetContractContractsResponseBody         | 403                                                | application/json                                   |
 | sdkerrors.GetContractContractsResponseResponseBody | 404                                                | application/json                                   |
-| sdkerrors.SDKError                                 | 400-600                                            | */*                                                |
+| sdkerrors.SDKError                                 | 4xx-5xx                                            | */*                                                |
 
 ## ListContracts
 
@@ -283,7 +283,7 @@ func main() {
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
 | sdkerrors.ListContractsResponseBody          | 401                                          | application/json                             |
 | sdkerrors.ListContractsContractsResponseBody | 403                                          | application/json                             |
-| sdkerrors.SDKError                           | 400-600                                      | */*                                          |
+| sdkerrors.SDKError                           | 4xx-5xx                                      | */*                                          |
 
 ## UpdateContract
 
@@ -390,4 +390,4 @@ func main() {
 | sdkerrors.UpdateContractContractsResponseBody            | 403                                                      | application/json                                         |
 | sdkerrors.UpdateContractContractsResponseResponseBody    | 404                                                      | application/json                                         |
 | sdkerrors.UpdateContractContractsResponse422ResponseBody | 422                                                      | application/json                                         |
-| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
+| sdkerrors.SDKError                                       | 4xx-5xx                                                  | */*                                                      |

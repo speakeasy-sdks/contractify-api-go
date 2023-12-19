@@ -65,7 +65,7 @@ func main() {
 | sdkerrors.DeleteDocumentDocumentsResponseBody            | 403                                                      | application/json                                         |
 | sdkerrors.DeleteDocumentDocumentsResponseResponseBody    | 404                                                      | application/json                                         |
 | sdkerrors.DeleteDocumentDocumentsResponse422ResponseBody | 422                                                      | application/json                                         |
-| sdkerrors.SDKError                                       | 400-600                                                  | */*                                                      |
+| sdkerrors.SDKError                                       | 4xx-5xx                                                  | */*                                                      |
 
 ## GetDocument
 
@@ -122,7 +122,7 @@ func main() {
 | sdkerrors.GetDocumentResponseBody                  | 401                                                | application/json                                   |
 | sdkerrors.GetDocumentDocumentsResponseBody         | 403                                                | application/json                                   |
 | sdkerrors.GetDocumentDocumentsResponseResponseBody | 404                                                | application/json                                   |
-| sdkerrors.SDKError                                 | 400-600                                            | */*                                                |
+| sdkerrors.SDKError                                 | 4xx-5xx                                            | */*                                                |
 
 ## ListDocuments
 
@@ -177,7 +177,7 @@ func main() {
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
 | sdkerrors.ListDocumentsResponseBody          | 401                                          | application/json                             |
 | sdkerrors.ListDocumentsDocumentsResponseBody | 403                                          | application/json                             |
-| sdkerrors.SDKError                           | 400-600                                      | */*                                          |
+| sdkerrors.SDKError                           | 4xx-5xx                                      | */*                                          |
 
 ## UpdateDocument
 
@@ -251,4 +251,4 @@ func main() {
 | sdkerrors.UpdateDocumentResponseBody                  | 401                                                   | application/json                                      |
 | sdkerrors.UpdateDocumentDocumentsResponseBody         | 403                                                   | application/json                                      |
 | sdkerrors.UpdateDocumentDocumentsResponseResponseBody | 404                                                   | application/json                                      |
-| sdkerrors.SDKError                                    | 400-600                                               | */*                                                   |
+| sdkerrors.SDKError                                    | 4xx-5xx                                               | */*                                                   |

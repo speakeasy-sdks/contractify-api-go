@@ -55,7 +55,7 @@ func main() {
 | -------------------------------------- | -------------------------------------- | -------------------------------------- |
 | sdkerrors.CurrentUserResponseBody      | 401                                    | application/json                       |
 | sdkerrors.CurrentUserUsersResponseBody | 403                                    | application/json                       |
-| sdkerrors.SDKError                     | 400-600                                | */*                                    |
+| sdkerrors.SDKError                     | 4xx-5xx                                | */*                                    |
 
 ## ListUsers
 
@@ -110,4 +110,4 @@ func main() {
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | sdkerrors.ListUsersResponseBody      | 401                                  | application/json                     |
 | sdkerrors.ListUsersUsersResponseBody | 403                                  | application/json                     |
-| sdkerrors.SDKError                   | 400-600                              | */*                                  |
+| sdkerrors.SDKError                   | 4xx-5xx                              | */*                                  |

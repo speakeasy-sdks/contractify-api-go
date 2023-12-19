@@ -58,4 +58,4 @@ func main() {
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
 | sdkerrors.ListCustomFieldsResponseBody             | 401                                                | application/json                                   |
 | sdkerrors.ListCustomFieldsCustomFieldsResponseBody | 403                                                | application/json                                   |
-| sdkerrors.SDKError                                 | 400-600                                            | */*                                                |
+| sdkerrors.SDKError                                 | 4xx-5xx                                            | */*                                                |
