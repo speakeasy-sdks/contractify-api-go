@@ -1,0 +1,16 @@
+# RelationWrite
+
+
+## Fields
+
+| Field                                                    | Type                                                     | Required                                                 | Description                                              | Example                                                  |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `Address`                                                | [*shared.Address](../../../pkg/models/shared/address.md) | :heavy_minus_sign:                                       | N/A                                                      |                                                          |
+| `Email`                                                  | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | sherlock@example.org                                     |
+| `Fax`                                                    | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | +3211324354                                              |
+| `MobilePhone`                                            | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | +23477123456                                             |
+| `Name`                                                   | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      | Sherlock Holmes Detective Services                       |
+| `Phone`                                                  | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | +23477123456                                             |
+| `Reference`                                              | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | REF123                                                   |
+| `Vat`                                                    | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | BE12345678                                               |
+| `Website`                                                | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | https://www.example.org                                  |

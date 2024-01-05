@@ -1,13 +1,23 @@
-configVersion: 1.0.0
+configVersion: 2.0.0
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
   sdkClassName: ContractifyProduction
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 go:
-  version: 0.0.1
+  version: 0.3.1
+  clientServerStatusCodesAsErrors: true
+  flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: pkg/models/callbacks
+      errors: pkg/models/sdkerrors
+      operations: pkg/models/operations
+      shared: pkg/models/shared
+      webhooks: pkg/models/webhooks
+  inputModelSuffix: input
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: ContractifyProduction
